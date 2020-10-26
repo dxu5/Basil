@@ -14,7 +14,7 @@ class SignupForm extends React.Component {
     };
     this.password = React.createRef()
     this.email = React.createRef()
-    this.password2 = Rect.createRef()
+    this.password2 = React.createRef()
     
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearedErrors = false;
