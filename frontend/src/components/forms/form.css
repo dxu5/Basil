@@ -19,7 +19,7 @@ form {
     /* overflow-y: hidden; */
 
 }
-    input, .btn {
+input, .btn {
     position: fixed;
     top: 50%;
     left: 50%;
