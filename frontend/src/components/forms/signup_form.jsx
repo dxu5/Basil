@@ -78,18 +78,9 @@ class SignupForm extends React.Component {
                 <div className="signup-button-trigger">Sign up</div>
               </label>
             
-              <input id="input-2" type="text"
-                value={this.state.handle}
-                onChange={this.update('handle')}
-                placeholder="Handle"
-                
-              />
-              <label for="input-2">
-                <span className="label-text">Handle</span>
-                <span className="nav-dot"></span>
-              </label>
+            
            
-              <input id="input-3"
+              <input id="input-2"
                 type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
@@ -97,12 +88,12 @@ class SignupForm extends React.Component {
                 // placeholder="Password"
                 placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
               />
-              <label for="input-3">
+              <label for="input-2">
                 <span className="label-text">Password</span>
                 <span className="nav-dot"></span>
               </label>
             
-              <input id="input-4"
+              <input id="input-3"
                 type="password"
                 value={this.state.password2}
                 onChange={this.update('password2')}
@@ -110,7 +101,7 @@ class SignupForm extends React.Component {
                 placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
               />
 
-              <label for="input-4">
+              <label for="input-3">
                 <span className="label-text">Confirm Password</span>
                 <span className="nav-dot"></span>
               </label>
