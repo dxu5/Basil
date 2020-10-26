@@ -6,7 +6,7 @@ import SplashPage from "./splash/splash_page";
 
 const App = () => (
   <Switch>
-    <AuthRoute exact path="/" component={SplashPage} />
+    <Route exact path="/" component={SplashPage} />
   </Switch>
 );
 
