@@ -25,7 +25,7 @@ class SignupForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser === true) {
-      this.props.history.push('/');
+      this.props.history.push('/home');
     }
 
     this.setState({errors: nextProps.errors})
@@ -62,7 +62,7 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
+      <div className="form-container">
         <form onSubmit={this.handleSubmit}>
               <input id="input-1" type="text"
                 value={this.state.username}

@@ -3,10 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
-.login-form-container{
+.form-container{
     width: inherit;
     height: inherit;
-    background-image: linear-gradient(to bottom right, #111e25 0%, #111 100%);
+    /* background-image: linear-gradient(to bottom right, #111e25 0%, #111 100%); */
+    background-color: #013328;
     font-family: 'Roboto Condensed',sans-serif;
     /* overflow-x: hidden;
     overflow-y: hidden; */
@@ -18,7 +19,6 @@ form {
     /* overflow-y: hidden; */
 
 }
-
     input, .btn {
     position: fixed;
     top: 50%;
@@ -33,7 +33,7 @@ form {
 input {
     padding: 0.25rem 0;
     border: 0;
-    border-bottom: 8px solid #bb1515;
+    border-bottom: 8px solid #cc8b65;
     outline: 0;
     background: transparent;
     color: #fff;
@@ -49,8 +49,9 @@ input::selection {
     padding: 10px 20px !important;
     border: 0;
     outline: 0;
-    background: #18b7cc;
-    color: rgba(255, 255, 255, 0.85);
+    border-radius: 5px;
+    background: #cc8b65;
+    color: #e3dcd2;
     font-size: 2rem;
     line-height: 3.6rem;
     letter-spacing: 0.0625rem;
@@ -84,8 +85,8 @@ input:focus + label .label-text {
     transition: all 0.3s cubic-bezier(0.1, 0.45, 0.1, 0.85) 0.4s;
 }
 input:focus + label .nav-dot:before {
-    background: #a41212;
-    box-shadow: 0 0 0 0.15rem #111, 0 0 0.05rem 0.26rem #bb1515;
+    background: #e3dcd2;
+    box-shadow: 0 0 0 0.15rem #111, 0 0 0.05rem 0.26rem #e3dcd2;
 }
 .tip {
     position: fixed;
@@ -164,7 +165,7 @@ input:focus + label .nav-dot:before {
     height: 0.625rem;
     margin-top: -0.125rem;
     margin-left: -0.125rem;
-    background-color: #a41212;
+    background-color: #e3dcd2;
 }
 label[for="input-1"] .nav-dot {
     margin-top: -125px;
