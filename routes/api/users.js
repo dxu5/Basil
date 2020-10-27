@@ -27,10 +27,12 @@ router.patch(
   "/mealplan",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    const query = { id: req.user.id };
+    const query = { _id: req.user.id };
     User.findOneAndUpdate(query, {
       currentMealplan: req.body.mealplan,
-    }).then((user) => res.json(req.body.mealplan));
+    }).then((user) => {
+      User.findOne({ _id: user.id }).then((user) => res.json(user));
+    });
   }
 );
 
