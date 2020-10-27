@@ -79,7 +79,7 @@ class SignupForm extends React.Component {
             <span className="label-text">Username</span>
             <span className="nav-dot"></span>
             <div className="signup-button-trigger">Sign up</div>
-            {this.state.errors["username"] ? <div className="label-text">
+            {this.state.errors["username"] ? <div className="error-text">
               {this.state.errors["username"]}
             </div> : null}
           </label>
@@ -94,7 +94,7 @@ class SignupForm extends React.Component {
           <label for="input-2">
             <span className="label-text">Password</span>
             <span className="nav-dot"></span>
-            {this.state.errors["password"] ? <div className="label-text">
+            {this.state.errors["password"] ? <div className="error-text">
               {this.state.errors["password"]}
             </div> : null}
           </label>
@@ -110,7 +110,7 @@ class SignupForm extends React.Component {
           <label for="input-3">
             <span className="label-text">Confirm Password</span>
             <span className="nav-dot"></span>
-            {this.state.errors["password2"] ? <div className="label-text">
+            {this.state.errors["password2"] ? <div className="error-text">
               {this.state.errors["password2"]}
             </div> : null}
           </label>
