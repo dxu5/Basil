@@ -1,0 +1,24 @@
+.navbar-brand > img {
+    width: 150px;
+}
+
+.navbar {
+    background-color: none;
+}
+
+.nav-link {
+    color: black;
+}
+
+a {
+    color: var(--black)
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.navbar-links {
+    display: flex;
+}
