@@ -6,12 +6,19 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
     this.getLinks = this.getLinks.bind(this);
   }
 
   logoutUser(e) {
       e.preventDefault();
       this.props.logout()
+  }
+
+  handleDemo(e) {
+    e.preventDefault();
+    const demoUser = {username: 'basil', password: 'password'};
+    this.props.login(demoUser);
   }
 
   // Selectively render links dependent on whether the user is logged in
@@ -29,9 +36,10 @@ class NavBar extends React.Component {
         );
       } else {
         return (
-            <nav className='navbar fixed-top'>
+          <nav className='navbar fixed-top'>
                 <a class="navbar-brand" href="#"><img src="/logoDark.png"/></a>
                 <div className='navbar-links'>
+                    <a class="nav-link" href="#"><div onClick={this.handleDemo}>Demo</div></a>
                     <a class="nav-link" href="#"><Link to={'/signup'}>Signup</Link></a>
                     <a class="nav-link" href="#"><Link to={'/login'}>Login</Link></a>
                 </div>
