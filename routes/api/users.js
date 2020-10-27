@@ -61,7 +61,12 @@ router.post("/register", (req, res) => {
           newUser
             .save()
             .then((user) => {
-              const payload = { id: user.id, username: user.username };
+              const payload = {
+                id: user.id,
+                username: user.username,
+                currentMealplan: undefined,
+                currentMealplanStartTime: undefined,
+              };
 
               jwt.sign(
                 payload,
