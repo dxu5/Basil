@@ -56,7 +56,7 @@ class NavBar extends React.Component {
       return (
         <div className='container'>
             <nav className='navbar fixed-top navbar-dark bg-dark'>
-                <a class="navbar-brand" href="#">Logo</a>
+                <a class="navbar-brand" href="#"><img src="/logoDark.png"/></a>
                 { this.getLinks() }
             </nav>
         </div>
