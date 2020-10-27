@@ -6,12 +6,13 @@ import NavBarContainer from "./navbar/navbar_container";
 import SplashPage from "./splash/splash_page";
 import LoginFormContainer from "./forms/login_form_container";
 import SignupFormContainer from "./forms/signup_form_container";
+import HomeContainer from "./home/home_container"
 
 const App = () => (
   <div>
     <NavBarContainer />
     <Switch>
-      {/* <ProtectedRoute path="/home" component /> */}
+      <ProtectedRoute path="/home" component={HomeContainer} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <Route exact path="/" component={SplashPage} />
