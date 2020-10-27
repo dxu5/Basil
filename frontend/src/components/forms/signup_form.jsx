@@ -11,8 +11,8 @@ class SignupForm extends React.Component {
       password2: '',
       errors: {}
     };
-    this.password = React.createRef()
     this.username= React.createRef()
+    this.password = React.createRef()
     this.password2 = React.createRef()
     
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -68,6 +68,7 @@ class SignupForm extends React.Component {
             value={this.state.username}
             onChange={this.update('username')}
             placeholder="Username"
+            ref={this.username}
           />
 
           <label for="input-1">
@@ -95,6 +96,7 @@ class SignupForm extends React.Component {
             onChange={this.update('password2')}
             // placeholder="Confirm Password"
             placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
+            ref={this.password2}
           />
 
           <label for="input-3">

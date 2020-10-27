@@ -11,13 +11,13 @@ class LoginForm extends React.Component {
       password: '',
       errors: {}
     };
-    this.password = React.createRef()
     this.username= React.createRef()
-    this.password2 = React.createRef()
-
+    this.password = React.createRef()
+  
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
   }
+
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser === true) {
@@ -45,6 +45,11 @@ class LoginForm extends React.Component {
   }
 
   renderErrors() {
+
+    // Username field is required
+    // Password field is required
+    // Incorrect password
+    // This user does not exist
     return(
       <ul>
         {Object.keys(this.state.errors).map((error, i) => (
@@ -54,6 +59,24 @@ class LoginForm extends React.Component {
         ))}
       </ul>
     );
+    // let err;
+    // let errBox = <div>
+    //   {err}
+    // </div>
+    // let errs = Object.keys(this.state.errors)
+    // if(errs.length === 0){
+    //   return null;
+    // }
+    // if(this.state.errors["username"].length !== 0){
+    //   this.username.current.focus();
+    //   err = this.state.errors["username"];
+    //   return errBox;
+    // }
+    // if(this.state.errors["password"].length !== 0){
+    //   this.password.current.focus();
+    //   err = this.state.errors["password"];
+    //   return errBox;
+    // }
   }
 
   render() {
@@ -64,42 +87,34 @@ class LoginForm extends React.Component {
             value={this.state.username}
             onChange={this.update('username')}
             placeholder="Username"
+            ref={this.username}
             // autoFocus
           />
           <label for="input-1">
+            
             <span className="label-text">Username</span>
             <span className="nav-dot"></span>
             <div className="signup-button-trigger">Log in</div>
           </label>
+          {this.renderErrors()}
 
           <input id="input-2"
             type="password"
             value={this.state.password}
             onChange={this.update('password')}
+            ref={this.password}
             placeholder="Password"
           />
           <label for="input-2">
             <span className="label-text">Password</span>
             <span className="nav-dot"></span>
           </label>
+          {this.renderErrors()}
 
-          <input id="input-3"
-            type="password"
-            value={this.state.password2}
-            onChange={this.update('password2')}
-            // placeholder="Confirm Password"
-            placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
-          />
-
-          <label for="input-3">
-            <span className="label-text">Confirm Password</span>
-            <span className="nav-dot"></span>
-          </label>
-        
           <button className="btn" type="submit">Sign in</button>
           <p className="tip">Press Tab</p>
           <div className="signup-button">Log in</div>
-          {this.renderErrors()}
+          {/* {this.renderErrors()} */}
         </form>
       </div>
     );
