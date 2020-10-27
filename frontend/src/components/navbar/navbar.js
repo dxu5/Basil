@@ -18,18 +18,24 @@ class NavBar extends React.Component {
   getLinks() {
       if (this.props.loggedIn) {
         return (
-            <div className='navbar-links'>
-                <a class="nav-link" href="#"><Link to={'/home'}>Home</Link></a>
-                <a class="nav-link" href="#"><Link to={'/profile'}>Profile</Link></a>
-                <a class="nav-link" href="#"><div onClick={this.logoutUser}>Logout</div></a>
-            </div>
+            <nav className='navbar fixed-top navbar-light bg-light'>
+                <a class="navbar-brand" href="#"><img src="/logoDark.png"/></a>
+                <div className='navbar-links'>
+                    <a class="nav-link" href="#"><Link to={'/home'}>Home</Link></a>
+                    <a class="nav-link" href="#"><Link to={'/profile'}>Profile</Link></a>
+                    <a class="nav-link" href="#"><div onClick={this.logoutUser}>Logout</div></a>
+                </div>
+            </nav>
         );
       } else {
         return (
-            <div className='navbar-links'>
-                <a class="nav-link" href="#"><Link to={'/signup'}>Signup</Link></a>
-                <a class="nav-link" href="#"><Link to={'/login'}>Login</Link></a>
-            </div>
+            <nav className='navbar fixed-top'>
+                <a class="navbar-brand" href="#"><img src="/logoDark.png"/></a>
+                <div className='navbar-links'>
+                    <a class="nav-link" href="#"><Link to={'/signup'}>Signup</Link></a>
+                    <a class="nav-link" href="#"><Link to={'/login'}>Login</Link></a>
+                </div>
+            </nav>
         );
       }
   }
@@ -37,10 +43,7 @@ class NavBar extends React.Component {
   render() {
       return (
         <div className='container'>
-            <nav className='navbar fixed-top'>
-                <a class="navbar-brand" href="#"><img src="/logoDark.png"/></a>
                 { this.getLinks() }
-            </nav>
         </div>
       );
   }
