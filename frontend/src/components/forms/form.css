@@ -6,17 +6,13 @@
 .form-container{
     width: inherit;
     height: inherit;
-    /* background-image: linear-gradient(to bottom right, #111e25 0%, #111 100%); */
     background-color: #013328;
     font-family: 'Roboto Condensed',sans-serif;
-    /* overflow-x: hidden;
-    overflow-y: hidden; */
 } 
 form {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    /* overflow-y: hidden; */
 
 }
 input, .btn {
