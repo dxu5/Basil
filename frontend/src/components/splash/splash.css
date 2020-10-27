@@ -1,3 +1,12 @@
+:root{
+    --black: #100C0D;
+    --dark-green: #013328;
+    --green: #0e6c57;
+
+    --oatmeal: #e3dcd2;
+    --salmon: #cc8b65;
+}
+
 body, html{
   height:100%;
   margin:0;
@@ -43,13 +52,13 @@ body, html{
 }
 
 .section-light{
-  background-color:#f4f4f4;
+  background-color:var(--oatmeal);
   color:#666;
 }
 
 .section-dark{
   background-color:#282e34;
-  color:#ddd;
+  color: var(--oatmeal);
 }
 
 .ptext{
@@ -69,18 +78,34 @@ body, html{
   padding:20px;
 }
 
-/* .border-top{
-  background-image:url('../../images/splashLogo2.png');
-  background-color:#111;
-  background-size: cover;
-  background-position:center;
-  border: none;
-  height: 60px;
-  width: 250px;
-} */
-
 .ptext .border.trans{
   background-color:transparent;
+}
+
+.profiles{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  position: absolute;
+  top: 60%;
+}
+
+.profile{
+  display: flex;
+  flex-direction: column;
+  text-align:center;
+}
+
+.dev-img{
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.prof-name, .dev-img{
+  border: solid 1px var(--oatmeal);
 }
 
 @media(max-width:568px){

@@ -11,8 +11,8 @@ class SignupForm extends React.Component {
       password2: '',
       errors: {}
     };
+    this.username= React.createRef()
     this.password = React.createRef()
-    this.email = React.createRef()
     this.password2 = React.createRef()
     
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,10 +22,24 @@ class SignupForm extends React.Component {
   // componentDidMount(){
   //   this.password.current.focus()
   // }
+  componentDidUpdate(prevProps){
+    if(prevProps.errors !== this.props.errors){
+      if(this.state.errors["username"]){  
+        this.username.current.focus();
+        // this.username.current.blur();
+      }else{
+        if(this.state.errors["password"]){
+          this.password.current.focus();
+        }else if(this.state.errors["password2"]){
+          this.password2.current.focus();
+        }
+      }
+    }    
+  }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser === true) {
-      this.props.history.push('/');
+      this.props.history.push('/home');
     }
 
     this.setState({errors: nextProps.errors})
@@ -48,78 +62,62 @@ class SignupForm extends React.Component {
     this.props.signup(user, this.props.history); 
   }
 
-  renderErrors() {
-    return(
-      <ul>
-        {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>
-            {this.state.errors[error]}
-          </li>
-        ))}
-      </ul>
-    );
-  }
+  
 
   render() {
     return (
-      <div className="login-form-container">
+      <div className="form-container">
         <form onSubmit={this.handleSubmit}>
-              <input id="input-1" type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                placeholder="Username"
-                
-              />
+          <input id="input-1" type="text"
+            value={this.state.username}
+            onChange={this.update('username')}
+            placeholder="Username"
+            ref={this.username}
+          />
 
-              <label for="input-1">
-                <span className="label-text">Username</span>
-                {/* <span className="label-text">Hello</span> */}
-                <span className="nav-dot"></span>
-                <div className="signup-button-trigger">Sign up</div>
-              </label>
-            
-              <input id="input-2" type="text"
-                value={this.state.handle}
-                onChange={this.update('handle')}
-                placeholder="Handle"
-                
-              />
-              <label for="input-2">
-                <span className="label-text">Handle</span>
-                <span className="nav-dot"></span>
-              </label>
-           
-              <input id="input-3"
-                type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                ref={this.password}
-                // placeholder="Password"
-                placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
-              />
-              <label for="input-3">
-                <span className="label-text">Password</span>
-                <span className="nav-dot"></span>
-              </label>
-            
-              <input id="input-4"
-                type="password"
-                value={this.state.password2}
-                onChange={this.update('password2')}
-                // placeholder="Confirm Password"
-                placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
-              />
+          <label for="input-1">
+            <span className="label-text">Username</span>
+            <span className="nav-dot"></span>
+            <div className="signup-button-trigger">Sign up</div>
+            {this.state.errors["username"] ? <div className="label-text">
+              {this.state.errors["username"]}
+            </div> : null}
+          </label>
+        
+          <input id="input-2"
+            type="password"
+            value={this.state.password}
+            onChange={this.update('password')}
+            ref={this.password}
+            placeholder="Password"
+          />
+          <label for="input-2">
+            <span className="label-text">Password</span>
+            <span className="nav-dot"></span>
+            {this.state.errors["password"] ? <div className="label-text">
+              {this.state.errors["password"]}
+            </div> : null}
+          </label>
+        
+          <input id="input-3"
+            type="password"
+            value={this.state.password2}
+            onChange={this.update('password2')}
+            placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
+            ref={this.password2}
+          />
 
-              <label for="input-4">
-                <span className="label-text">Confirm Password</span>
-                <span className="nav-dot"></span>
-              </label>
+          <label for="input-3">
+            <span className="label-text">Confirm Password</span>
+            <span className="nav-dot"></span>
+            {this.state.errors["password2"] ? <div className="label-text">
+              {this.state.errors["password2"]}
+            </div> : null}
+          </label>
             
-            {/* <input type="submit" value="Submit" /> */}
-            <button className="btn" type="submit">Create your Account</button>
-            <p className="tip">Press Tab</p>
-            <div className="signup-button">Sign up</div>
-            {this.renderErrors()}
+          <button className="btn" type="submit">Create your Account</button>
+          <p className="tip">Press Tab</p>
+          <div className="signup-button">Sign up</div>
         </form>
       </div>
     );
