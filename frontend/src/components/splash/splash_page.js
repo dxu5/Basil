@@ -22,16 +22,16 @@ class SplashPage extends React.Component {
             <section className="section section-light">
               <h2>A Customizable Meal Planner</h2>
               <p>
-                From clean eating to diabetic meal plans, kid friendly recipes
-                or calorie-balanced nutrition, our software will keep you
-                satisfied all year long.
+                From clean eating to calorie-balanced nutritious meals to kid friendly recipes, 
+                get access to thousands of appetizing meals made by certified chefs. 
+                Our app accommodates all dietary restrictions.
               </p>
             </section>
 
             <div className="pimg2">
               <div className="ptext">
                 <span className="border trans">
-                  Best in className meal plan app
+                  Best in class meal plan app
                 </span>
               </div>
             </div>
@@ -39,15 +39,15 @@ class SplashPage extends React.Component {
             <section className="section section-dark">
               <h2>Your meals at a glance</h2>
               <p>
-                Access all of your meals for the week in one place. Clean and
-                easy is the name of the game.
+                Access all of your meals for the week in one place. Get detailed information
+                on instructions, ingredients, and nutritional facts. We make it easy for you.
               </p>
             </section>
 
             <div className="pimg3">
               <div className="ptext">
                 <Link to="/signup" className="border trans">
-                  Sign Up
+                  Signup
                 </Link>
               </div>
             </div>
@@ -55,7 +55,7 @@ class SplashPage extends React.Component {
             <section className="section section-dark">
               <h2>Get Rewarded</h2>
               <p>
-                Who doesn't like a little bit of encouragement? Feel good with a
+                Track your progress each day. Feel good with a
                 little praise from us.
               </p>
             </section>
