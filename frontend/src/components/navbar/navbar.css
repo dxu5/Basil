@@ -9,9 +9,6 @@
 .nav-link {
   color: black;
   height: 100%;
-  -webkit-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
 }
 
 a {
@@ -27,8 +24,36 @@ a:hover {
   display: flex;
 }
 
+.nav-link {
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #031d44;
+  padding: 20px 0px;
+  margin: 0px 20px;
+  display: inline-block;
+  position: relative;
+  opacity: 0.75;
+}
+
 .nav-link:hover {
-  background-color: white;
-  border-radius: 4px;
-  color: #333333;
+  opacity: 1;
+}
+
+.nav-link::before {
+  transition: 300ms;
+  height: 3px;
+  content: "";
+  position: absolute;
+  background-color: #031d44;
+}
+
+.nav-link::before {
+  width: 0%;
+  bottom: 10px;
+}
+
+.nav-link:hover::before {
+  width: 100%;
 }
