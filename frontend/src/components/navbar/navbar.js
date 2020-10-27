@@ -11,24 +11,24 @@ class NavBar extends React.Component {
 
   logoutUser(e) {
       e.preventDefault();
-      this.props.logout();
+      this.props.logout()
   }
 
   // Selectively render links dependent on whether the user is logged in
   getLinks() {
       if (this.props.loggedIn) {
         return (
-            <div>
-                <Link to={'/home'}>Home</Link>
-                <Link to={'/profile'}>Profile</Link>
-                <button onClick={this.logoutUser}>Logout</button>
+            <div className='navbar-links'>
+                <a class="nav-link" href="#"><Link to={'/home'}>Home</Link></a>
+                <a class="nav-link" href="#"><Link to={'/profile'}>Profile</Link></a>
+                <a class="nav-link" href="#"><div onClick={this.logoutUser}>Logout</div></a>
             </div>
         );
       } else {
         return (
-            <div>
-                <Link to={'/signup'}>Signup</Link>
-                <Link to={'/login'}>Login</Link>
+            <div className='navbar-links'>
+                <a class="nav-link" href="#"><Link to={'/signup'}>Signup</Link></a>
+                <a class="nav-link" href="#"><Link to={'/login'}>Login</Link></a>
             </div>
         );
       }
@@ -36,9 +36,11 @@ class NavBar extends React.Component {
 
   render() {
       return (
-        <div>
-            <h1>Chirper</h1>
-            { this.getLinks() }
+        <div className='container'>
+            <nav className='navbar fixed-top'>
+                <a class="navbar-brand" href="#"><img src="/logoDark.png"/></a>
+                { this.getLinks() }
+            </nav>
         </div>
       );
   }
