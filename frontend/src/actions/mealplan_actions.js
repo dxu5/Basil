@@ -16,3 +16,9 @@ export const receiveMealInfo = (meal) => {
     meal,
   };
 };
+
+export const getMealPlans = (details) => (dispatch) => {
+  return MealplanAPIUtil.getWeeklyMealPlan(details).then((res) => {
+    dispatch(receiveMealPlan(res.data));
+  });
+};
