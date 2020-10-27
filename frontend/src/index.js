@@ -5,6 +5,7 @@ import configureStore from "./store/store";
 import jwt_decode from "jwt-decode";
 import { setAuthToken } from "./util/session_api_util";
 import { logout } from "./actions/session_actions";
+import { getMealInfo } from "./actions/meal_actions";
 
 // discuss whether to delete
 // import './index.css';
@@ -32,6 +33,9 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore({});
   }
   const root = document.getElementById("root");
+
+  window.getMealInfo = getMealInfo;
+  window.dispatch = store.dispatch;
 
   ReactDOM.render(<Root store={store} />, root);
 });
