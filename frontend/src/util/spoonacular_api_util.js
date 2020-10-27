@@ -17,7 +17,8 @@ export const getWeeklyMealPlan = (details) => {
   });
 };
 
-//takes in a meal id and serves over 500 lines of information for the meal, including ingredients, instructions, equipment, pictures
+//takes in a meal id and serves over 500 lines of information for the meal,
+//including ingredients, instructions, equipment, pictures
 
 export const getMealInfo = (mealId) => {
   return axios.get(`${apiBaseURL}/recipes/${mealId}/information`, {
