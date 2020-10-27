@@ -1,5 +1,6 @@
 import React from 'react';
 import './home.css'
+import CalendarContainer from '../calendar/calendar_container'
 
 class Home extends React.Component{
     constructor(props){
@@ -12,6 +13,8 @@ class Home extends React.Component{
                 <section className="progress">Progress</section>
                 <section className="calendar">Calendar</section>
                 <section className="user-infor">User Info</section>
+
+                <CalendarContainer />
             </div>
         )
     }
