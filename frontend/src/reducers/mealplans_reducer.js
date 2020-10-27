@@ -16,8 +16,15 @@ const mealplansReducer = (state = _nullState, action) => {
       newState.prospectiveMealplan = action.mealplan;
       return newState;
     case RECEIVE_CURRENT_USER:
-      newState.currentMealplan = action.currentMealplan;
-      newState.currentMealplanStartTime = action.currentMealplanStartTime;
+      if (action.currentUser.currentMealplan) {
+        newState.currentMealplan = JSON.parse(
+          JSON.parse(action.currentUser.currentMealplan)
+        );
+      }
+      if (action.currentUser.currentMealplanStartTime) {
+        newState.currentMealplanStartTime =
+          action.currentUser.currentMealplanStartTime;
+      }
       return newState;
     default:
       return state;
