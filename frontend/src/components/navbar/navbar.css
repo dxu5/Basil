@@ -1,15 +1,14 @@
 .navbar-brand > img {
   width: 150px;
-  z-index: 1;
 }
 
 .navbar {
-  background: white;
-  opacity: 0.4;
+  background: rgba(220, 220, 220, 0.4);
 }
 
 .nav-link {
   color: black;
+  height: 100%;
 }
 
 a {
@@ -23,4 +22,38 @@ a:hover {
 
 .navbar-links {
   display: flex;
+}
+
+.nav-link {
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #031d44;
+  padding: 20px 0px;
+  margin: 0px 20px;
+  display: inline-block;
+  position: relative;
+  opacity: 0.75;
+}
+
+.nav-link:hover {
+  opacity: 1;
+}
+
+.nav-link::before {
+  transition: 300ms;
+  height: 3px;
+  content: "";
+  position: absolute;
+  background-color: #031d44;
+}
+
+.nav-link::before {
+  width: 0%;
+  bottom: 10px;
+}
+
+.nav-link:hover::before {
+  width: 100%;
 }
