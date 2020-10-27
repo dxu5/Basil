@@ -15,11 +15,11 @@ class LoginForm extends React.Component {
     this.password = React.createRef()
   
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.renderErrors = this.renderErrors.bind(this);
   }
 
 
   componentWillReceiveProps(nextProps) {
+    // debugger
     if (nextProps.currentUser === true) {
       this.props.history.push('/home');
     }
@@ -31,6 +31,7 @@ class LoginForm extends React.Component {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
+    
   }
 
   handleSubmit(e) {
@@ -44,39 +45,17 @@ class LoginForm extends React.Component {
     this.props.login(user); 
   }
 
-  renderErrors() {
-
-    // Username field is required
-    // Password field is required
-    // Incorrect password
-    // This user does not exist
-    return(
-      <ul>
-        {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>
-            {this.state.errors[error]}
-          </li>
-        ))}
-      </ul>
-    );
-    // let err;
-    // let errBox = <div>
-    //   {err}
-    // </div>
-    // let errs = Object.keys(this.state.errors)
-    // if(errs.length === 0){
-    //   return null;
-    // }
-    // if(this.state.errors["username"].length !== 0){
-    //   this.username.current.focus();
-    //   err = this.state.errors["username"];
-    //   return errBox;
-    // }
-    // if(this.state.errors["password"].length !== 0){
-    //   this.password.current.focus();
-    //   err = this.state.errors["password"];
-    //   return errBox;
-    // }
+  componentDidUpdate(prevProps){
+    if(prevProps.errors !== this.props.errors){
+      if(this.state.errors["username"]){  
+        this.username.current.focus();
+        // this.username.current.blur();
+      }else{
+        if(this.state.errors["password"]){
+          this.password.current.focus();
+        }
+      }
+    }    
   }
 
   render() {
@@ -88,15 +67,15 @@ class LoginForm extends React.Component {
             onChange={this.update('username')}
             placeholder="Username"
             ref={this.username}
-            // autoFocus
           />
           <label for="input-1">
-            
             <span className="label-text">Username</span>
             <span className="nav-dot"></span>
             <div className="signup-button-trigger">Log in</div>
+            {this.state.errors["username"] ? <div className="error-text">
+              {this.state.errors["username"]}
+          </div> : null}
           </label>
-          {this.renderErrors()}
 
           <input id="input-2"
             type="password"
@@ -108,13 +87,15 @@ class LoginForm extends React.Component {
           <label for="input-2">
             <span className="label-text">Password</span>
             <span className="nav-dot"></span>
+            {this.state.errors["password"] ? <div className="error-text">
+              {this.state.errors["password"]}
+          </div> : null}
           </label>
-          {this.renderErrors()}
+
 
           <button className="btn" type="submit">Sign in</button>
           <p className="tip">Press Tab</p>
           <div className="signup-button">Log in</div>
-          {/* {this.renderErrors()} */}
         </form>
       </div>
     );

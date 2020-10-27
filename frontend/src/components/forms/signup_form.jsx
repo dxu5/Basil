@@ -22,6 +22,20 @@ class SignupForm extends React.Component {
   // componentDidMount(){
   //   this.password.current.focus()
   // }
+  componentDidUpdate(prevProps){
+    if(prevProps.errors !== this.props.errors){
+      if(this.state.errors["username"]){  
+        this.username.current.focus();
+        // this.username.current.blur();
+      }else{
+        if(this.state.errors["password"]){
+          this.password.current.focus();
+        }else if(this.state.errors["password2"]){
+          this.password2.current.focus();
+        }
+      }
+    }    
+  }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser === true) {
@@ -48,17 +62,7 @@ class SignupForm extends React.Component {
     this.props.signup(user, this.props.history); 
   }
 
-  renderErrors() {
-    return(
-      <ul>
-        {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>
-            {this.state.errors[error]}
-          </li>
-        ))}
-      </ul>
-    );
-  }
+  
 
   render() {
     return (
@@ -75,6 +79,9 @@ class SignupForm extends React.Component {
             <span className="label-text">Username</span>
             <span className="nav-dot"></span>
             <div className="signup-button-trigger">Sign up</div>
+            {this.state.errors["username"] ? <div className="label-text">
+              {this.state.errors["username"]}
+            </div> : null}
           </label>
         
           <input id="input-2"
@@ -82,19 +89,20 @@ class SignupForm extends React.Component {
             value={this.state.password}
             onChange={this.update('password')}
             ref={this.password}
-            // placeholder="Password"
             placeholder="Password"
           />
           <label for="input-2">
             <span className="label-text">Password</span>
             <span className="nav-dot"></span>
+            {this.state.errors["password"] ? <div className="label-text">
+              {this.state.errors["password"]}
+            </div> : null}
           </label>
         
           <input id="input-3"
             type="password"
             value={this.state.password2}
             onChange={this.update('password2')}
-            // placeholder="Confirm Password"
             placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
             ref={this.password2}
           />
@@ -102,13 +110,14 @@ class SignupForm extends React.Component {
           <label for="input-3">
             <span className="label-text">Confirm Password</span>
             <span className="nav-dot"></span>
+            {this.state.errors["password2"] ? <div className="label-text">
+              {this.state.errors["password2"]}
+            </div> : null}
           </label>
             
-          {/* <input type="submit" value="Submit" /> */}
           <button className="btn" type="submit">Create your Account</button>
           <p className="tip">Press Tab</p>
           <div className="signup-button">Sign up</div>
-          {this.renderErrors()}
         </form>
       </div>
     );

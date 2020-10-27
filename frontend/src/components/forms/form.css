@@ -73,6 +73,11 @@ input:focus ~ label .label-text {
     transform: translate(-50%, 300%);
     transition: all 0.5s ease-in;
 }
+
+input:focus ~ label .error-text {
+    transform: translate(-50%, 300%);
+    transition: all 0.5s ease-in;
+}
 input:focus ~ .tip {
     opacity: 1;
 }
@@ -84,6 +89,13 @@ input:focus + label .label-text {
     transform: translate(-50%, -100%);
     transition: all 0.3s cubic-bezier(0.1, 0.45, 0.1, 0.85) 0.4s;
 }
+
+input:focus + label .error-text {
+    opacity: 1;
+    transform: translate(-50%, -100%);
+    transition: all 0.3s cubic-bezier(0.1, 0.45, 0.1, 0.85) 0.4s;
+}
+
 input:focus + label .nav-dot:before {
     background: #e3dcd2;
     box-shadow: 0 0 0 0.15rem #111, 0 0 0.05rem 0.26rem #e3dcd2;
@@ -140,6 +152,25 @@ input:focus + label .nav-dot:before {
     pointer-events: none;
     transition: all 0.4s cubic-bezier(0.4, 0.25, 0.8, 0.3) 0.05s;
     font-family: 'Roboto Condensed',sans-serif;
+}
+.error-text{
+    position: fixed;
+    top: calc(70% - 4rem);
+    left: 50%;
+    transform: translate(-50%, -300%);
+    width: 70vw;
+    padding: 3.125rem 0 1.5rem;
+    text-transform: uppercase;
+    color: #fff;
+    opacity: 0;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.125rem;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.4, 0.25, 0.8, 0.3) 0.05s;
+    font-family: 'Roboto Condensed',sans-serif;
+    
+    
 }
 .nav-dot {
     cursor: pointer;
