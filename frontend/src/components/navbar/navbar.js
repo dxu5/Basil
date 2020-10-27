@@ -27,8 +27,26 @@ class NavBar extends React.Component {
       } else {
         return (
             <div>
-                <Link to={'/signup'}>Signup</Link>
-                <Link to={'/login'}>Login</Link>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" 
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><Link to={'/signup'}>Signup</Link></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><Link to={'/login'}>Login</Link></a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         );
       }
@@ -36,9 +54,11 @@ class NavBar extends React.Component {
 
   render() {
       return (
-        <div>
-            <h1>Chirper</h1>
-            { this.getLinks() }
+        <div className='container'>
+            <nav className='navbar fixed-top navbar-dark bg-dark'>
+                <a class="navbar-brand" href="#">Logo</a>
+                { this.getLinks() }
+            </nav>
         </div>
       );
   }
