@@ -12,9 +12,9 @@ class Home extends React.Component{
             <div className="home">
                 <section className="progress">Progress</section>
                 <section className="calendar">Calendar</section>
+                <CalendarContainer />
                 <section className="user-infor">User Info</section>
 
-                <CalendarContainer />
             </div>
         )
     }

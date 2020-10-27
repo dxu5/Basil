@@ -29,6 +29,7 @@ class Calendar extends React.Component {
         this.state[field].meals.map((meal, idx) => {
             <CalendarItem key={meal.id}
                 id={meal.id}
+                day={field}
                 imageType={meal.imageType}
                 title={meal.title}
                 readyInMinutes={meal.readyInMinutes}
@@ -49,24 +50,181 @@ class Calendar extends React.Component {
                 <div>{this.displayMeal('Friday')}</div>
                 <div>{this.displayMeal('Saturday')}</div>
                 <div>{this.displayMeal('Sunday')}</div> */}
-                
-                <div>Monday
-                    <div className='meal-0'>
-                        <img src={`https://spoonacular.com/recipeImages/720583-636x393.jpg`}/>
-                        <p>Quinoa Breakfast Tacos with Kale + Butternut Squash</p>
-                        <p>25 minutes</p>
-                    </div>
-                    <div className='meal-1'>
-                        <img src={`https://spoonacular.com/recipeImages/720583-636x393.jpg`}/>
-                        <p>Quinoa Breakfast Tacos with Kale + Butternut Squash</p>
-                        <p>25 minutes</p>
-                    </div>
-                    <div className='meal-2'>
-                        <img src={`https://spoonacular.com/recipeImages/720583-636x393.jpg`}/>
-                        <p>Quinoa Breakfast Tacos with Kale + Butternut Squash</p>
-                        <p>25 minutes</p>
-                    </div>
+                <div className='table-responsive'>
+                    <table className='table'>
+
+                        <div className='day-container'>
+                            <p>Monday</p>
+                            <div className='meal-0'>
+                                <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/720583-636x393.jpg`}/></div>
+                                <div className='meal-description'>
+                                    <p className='meal-title'>Quinoa Breakfast Tacos with Kale + Butternut Squash</p>
+                                    <p className='meal-time'>25 minutes</p>
+                                </div>
+                            </div>
+                            <div className='meal-1'>
+                                <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/91909-636x393.jpg`}/></div>
+                                <div className='meal-description'>
+                                    <p className='meal-title'>Clams with Black Bean Sauce, Bok Choy, and Noodles</p>
+                                    <p className='meal-time'>30 minutes</p>
+                                </div>
+                            </div>
+                            <div className='meal-2'>
+                                <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/598933-636x393.jpg`}/></div>
+                                <div className='meal-description'>
+                                    <p className='meal-title'>Black and White Chocolate Cake with Crème Anglaise</p>
+                                    <p className='meal-time'>60 minutes</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='day-container'>
+                            <p>Monday</p>
+                            <div className='meal-0'>
+                                <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/720583-636x393.jpg`}/></div>
+                                <div className='meal-description'>
+                                    <p className='meal-title'>Quinoa Breakfast Tacos with Kale + Butternut Squash</p>
+                                    <p className='meal-time'>25 minutes</p>
+                                </div>
+                            </div>
+                            <div className='meal-1'>
+                                <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/91909-636x393.jpg`}/></div>
+                                <div className='meal-description'>
+                                    <p className='meal-title'>Clams with Black Bean Sauce, Bok Choy, and Noodles</p>
+                                    <p className='meal-time'>30 minutes</p>
+                                </div>
+                            </div>
+                            <div className='meal-2'>
+                                <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/598933-636x393.jpg`}/></div>
+                                <div className='meal-description'>
+                                    <p className='meal-title'>Black and White Chocolate Cake with Crème Anglaise</p>
+                                    <p className='meal-time'>60 minutes</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='day-container'>
+                            <p>Monday</p>
+                            <div className='meal-0'>
+                                <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/720583-636x393.jpg`}/></div>
+                                <div className='meal-description'>
+                                    <p className='meal-title'>Quinoa Breakfast Tacos with Kale + Butternut Squash</p>
+                                    <p className='meal-time'>25 minutes</p>
+                                </div>
+                            </div>
+                            <div className='meal-1'>
+                                <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/91909-636x393.jpg`}/></div>
+                                <div className='meal-description'>
+                                    <p className='meal-title'>Clams with Black Bean Sauce, Bok Choy, and Noodles</p>
+                                    <p className='meal-time'>30 minutes</p>
+                                </div>
+                            </div>
+                            <div className='meal-2'>
+                                <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/598933-636x393.jpg`}/></div>
+                                <div className='meal-description'>
+                                    <p className='meal-title'>Black and White Chocolate Cake with Crème Anglaise</p>
+                                    <p className='meal-time'>60 minutes</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='day-container'>
+                            <p>Monday</p>
+                            <div className='meal-0'>
+                                <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/720583-636x393.jpg`}/></div>
+                                <div className='meal-description'>
+                                    <p className='meal-title'>Quinoa Breakfast Tacos with Kale + Butternut Squash</p>
+                                    <p className='meal-time'>25 minutes</p>
+                                </div>
+                            </div>
+                            <div className='meal-1'>
+                                <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/91909-636x393.jpg`}/></div>
+                                <div className='meal-description'>
+                                    <p className='meal-title'>Clams with Black Bean Sauce, Bok Choy, and Noodles</p>
+                                    <p className='meal-time'>30 minutes</p>
+                                </div>
+                            </div>
+                            <div className='meal-2'>
+                                <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/598933-636x393.jpg`}/></div>
+                                <div className='meal-description'>
+                                    <p className='meal-title'>Black and White Chocolate Cake with Crème Anglaise</p>
+                                    <p className='meal-time'>60 minutes</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='day-container'>
+                            <p>Monday</p>
+                            <div className='meal-0'>
+                                <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/720583-636x393.jpg`}/></div>
+                                <div className='meal-description'>
+                                    <p className='meal-title'>Quinoa Breakfast Tacos with Kale + Butternut Squash</p>
+                                    <p className='meal-time'>25 minutes</p>
+                                </div>
+                            </div>
+                            <div className='meal-1'>
+                                <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/91909-636x393.jpg`}/></div>
+                                <div className='meal-description'>
+                                    <p className='meal-title'>Clams with Black Bean Sauce, Bok Choy, and Noodles</p>
+                                    <p className='meal-time'>30 minutes</p>
+                                </div>
+                            </div>
+                            <div className='meal-2'>
+                                <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/598933-636x393.jpg`}/></div>
+                                <div className='meal-description'>
+                                    <p className='meal-title'>Black and White Chocolate Cake with Crème Anglaise</p>
+                                    <p className='meal-time'>60 minutes</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='day-container'>
+                            <p>Monday</p>
+                            <div className='meal-0'>
+                                <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/720583-636x393.jpg`}/></div>
+                                <div className='meal-description'>
+                                    <p className='meal-title'>Quinoa Breakfast Tacos with Kale + Butternut Squash</p>
+                                    <p className='meal-time'>25 minutes</p>
+                                </div>
+                            </div>
+                            <div className='meal-1'>
+                                <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/91909-636x393.jpg`}/></div>
+                                <div className='meal-description'>
+                                    <p className='meal-title'>Clams with Black Bean Sauce, Bok Choy, and Noodles</p>
+                                    <p className='meal-time'>30 minutes</p>
+                                </div>
+                            </div>
+                            <div className='meal-2'>
+                                <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/598933-636x393.jpg`}/></div>
+                                <div className='meal-description'>
+                                    <p className='meal-title'>Black and White Chocolate Cake with Crème Anglaise</p>
+                                    <p className='meal-time'>60 minutes</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='day-container'>
+                            <p>Monday</p>
+                            <div className='meal-0'>
+                                <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/720583-636x393.jpg`}/></div>
+                                <div className='meal-description'>
+                                    <p className='meal-title'>Quinoa Breakfast Tacos with Kale + Butternut Squash</p>
+                                    <p className='meal-time'>25 minutes</p>
+                                </div>
+                            </div>
+                            <div className='meal-1'>
+                                <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/91909-636x393.jpg`}/></div>
+                                <div className='meal-description'>
+                                    <p className='meal-title'>Clams with Black Bean Sauce, Bok Choy, and Noodles</p>
+                                    <p className='meal-time'>30 minutes</p>
+                                </div>
+                            </div>
+                            <div className='meal-2'>
+                                <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/598933-636x393.jpg`}/></div>
+                                <div className='meal-description'>
+                                    <p className='meal-title'>Black and White Chocolate Cake with Crème Anglaise</p>
+                                    <p className='meal-time'>60 minutes</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </table>
                 </div>
+
             </div>
         );
     }
