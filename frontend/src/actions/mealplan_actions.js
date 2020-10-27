@@ -22,3 +22,9 @@ export const getMealPlans = (details) => (dispatch) => {
     dispatch(receiveMealPlan(res.data));
   });
 };
+
+export const getMealInfo = (id) => (dispatch) => {
+  return MealplanAPIUtil.getMealInfo(id).then((res) => {
+    dispatch(receiveMealInfo(res.data));
+  });
+};
