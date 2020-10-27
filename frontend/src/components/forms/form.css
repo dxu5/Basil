@@ -1,13 +1,9 @@
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
+
 .form-container{
     width: inherit;
     height: inherit;
     /* background-color: #e3dcd2; */
-    font-family: 'Roboto Condensed',sans-serif;
+    /* font-family: 'Roboto Condensed',sans-serif; */
 } 
 form {
     width: 100vw;
@@ -15,6 +11,9 @@ form {
     overflow: hidden;
 
 }
+
+
+
 
 /* btn */
 input {
@@ -31,10 +30,10 @@ input {
 input {
     padding: 0.25rem 0;
     border: 0;
-    border-bottom: 8px solid #cc8b65;
+    border-bottom: 8px solid #013328;
     outline: 0;
     background: transparent;
-    color: #fff;
+    color: #013328;
     font-size: 3rem;
     line-height: 4rem;
     letter-spacing: 0.125rem;
@@ -45,7 +44,6 @@ input::selection {
 }
 
 .btn, .signup-button {
-    /* width: 150px; */
     padding: 10px 20px !important;
     border: 0;
     outline: 0;
@@ -54,17 +52,22 @@ input::selection {
     font-size: 2rem;
     line-height: 3.6rem;
     letter-spacing: 0.0625rem;
+    outline:none;
+    text-transform: uppercase;
+
     /* box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.25); */
     /* text-shadow: 0 -2px 0 rgba(0, 0, 0, 0.25), 0 1px 0 rgba(255, 255, 255, 0.2); */
 }
 .btn{
-    background-color: #e3dcd2;  
-    border: 2px solid #013328;position: fixed;
+    /* background-color: #e3dcd2;   */
+    outline: none;
+    border: 2px solid #013328;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -300%);
     display: block;
-    width: 10vw;
+    width: 15vw;
     opacity: 0;
     pointer-events: none;
     transition: all 0.5s cubic-bezier(0.4, 0.25, 0.8, 0.3);
@@ -75,6 +78,7 @@ input:focus, .btn:focus {
     pointer-events: auto;
     transition: all 0.4s cubic-bezier(0.1, 0.45, 0.1, 0.85) 0.5s;
     z-index: 10;
+    
 }
 input:focus ~ input, input:focus ~ .btn {
     transform: translate(-50%, 500%);
@@ -162,7 +166,7 @@ input:focus + label .nav-dot:before {
     letter-spacing: 0.125rem;
     pointer-events: none;
     transition: all 0.4s cubic-bezier(0.4, 0.25, 0.8, 0.3) 0.05s;
-    font-family: 'Roboto Condensed',sans-serif;
+    /* font-family: 'Roboto Condensed',sans-serif; */
 }
 .error-text{
     position: fixed;
@@ -179,7 +183,7 @@ input:focus + label .nav-dot:before {
     letter-spacing: 0.125rem;
     pointer-events: none;
     transition: all 0.4s cubic-bezier(0.4, 0.25, 0.8, 0.3) 0.05s;
-    font-family: 'Roboto Condensed',sans-serif;
+    /* font-family: 'Roboto Condensed',sans-serif; */
     
     
 }
@@ -220,4 +224,9 @@ label[for="input-3"] .nav-dot {
 }
 label[for="input-4"] .nav-dot {
     margin-top: -50px;
+}
+
+.btn:focus {
+    outline:none;
+    box-shadow:none;
 }

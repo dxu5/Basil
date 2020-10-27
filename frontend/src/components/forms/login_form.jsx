@@ -91,9 +91,9 @@ class LoginForm extends React.Component {
           </label>
 
 
-          <button className="btn" type="submit">Log in</button>
+          <button className="btn" type="submit">Login</button>
           <p className="tip">Press Tab</p>
-          <div className="signup-button">Log in</div>
+          <div className="signup-button">Welcome back</div>
         </form>
       </div>
     );
