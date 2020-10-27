@@ -61,8 +61,8 @@ class SplashPage extends React.Component {
             </section>
 
             <div className="pimg4">
-              <div className="ptext">
-                <span className="border trans">About Us</span>
+              <div className="ptext about-us">
+                <span className="about-us-span">About Us</span>
               </div>
             </div>
 
