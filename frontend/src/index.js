@@ -33,6 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore({});
   }
   const root = document.getElementById("root");
-  window.getWeeklyMealPlan = getWeeklyMealPlan;
+
   ReactDOM.render(<Root store={store} />, root);
 });
