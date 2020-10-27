@@ -1,0 +1,17 @@
+.progress-bar-div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.progress-bar{
+    width: 90vh;
+    background: transparent;
+    color: var(--dark-green);
+}
+
+.progress-bar-info{
+    color: var(--dark-green);
+    margin-top: 15px;
+    text-transform: uppercase;
+}

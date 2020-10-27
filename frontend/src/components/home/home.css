@@ -1,9 +1,11 @@
 .home{
-    /* padding-top: 80px; */
+    padding-top: 100px;
     width: 100vw;
 }
 
 .progress, .user-info{
+    justify-content: center;
+    background-color: white;
     height: 15vh;
 }
 
