@@ -4,16 +4,16 @@ import { Switch, Route } from "react-router-dom";
 import NavBarContainer from './navbar/navbar_container'
 
 import SplashPage from "./splash/splash_page";
-import LoginFormContainer from './forms/login_form_container';
-import SignupFormContainer from './forms/signup_form_container';
+import LoginFormContainer from "./forms/login_form_container";
+import SignupFormContainer from "./forms/signup_form_container";
 
 const App = () => (
   <div>
     <NavBarContainer />
     <Switch>
-        <Route exact path="/" component={SplashPage} />
-        <Route exact path="/login" component={LoginFormContainer} />
-        <Route exact path="/signup" component={SignupFormContainer} />
+      <Route exact path="/" component={SplashPage} />
+      <AuthRoute exact path="/login" component={LoginFormContainer} />
+      <AuthRoute exact path="/signup" component={SignupFormContainer} />
     </Switch>
   </div>
 );
