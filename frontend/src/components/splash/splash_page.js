@@ -6,85 +6,80 @@ class SplashPage extends React.Component {
     render() {
         return (
           <div>
-              <div class="pimg1">
-                <div class="ptext">
-                {/* <div class="border-top"> */}
-                  <span class="border">Basil
-                      {/* <img src="../../images/splashLogo3.png" /> */}
-                    </span>
+            <div className="pimg1">
+              <div className="ptext">
+                {/* <div className="border-top"> */}
+                <span className="border">
+                  {/* Basil */}
+                  <img src="/images/splashLogo2.png" />
+                </span>
                 {/* </div> */}
+              </div>
+            </div>
+
+            <section className="section section-light">
+              <h2>A Customizable Meal Planner</h2>
+              <p>
+                From clean eating to diabetic meal plans, kid friendly recipes
+                or calorie-balanced nutrition, our software will keep you
+                satisfied all year long.
+              </p>
+            </section>
+
+            <div className="pimg2">
+              <div className="ptext">
+                <span className="border trans">
+                  Best in className meal plan app
+                </span>
+              </div>
+            </div>
+
+            <section className="section section-dark">
+              <h2>Your meals at a glance</h2>
+              <p>
+                Access all of your meals for the week in one place. Clean and
+                easy is the name of the game.
+              </p>
+            </section>
+
+            <div className="pimg3">
+              <div className="ptext">
+                <span className="border trans">Sign Up</span>
+              </div>
+            </div>
+
+            <section className="section section-dark">
+              <h2>Get Rewarded</h2>
+              <p>
+                Who doesn't like a little bit of encouragement? Feel good with a
+                little praise from us.
+              </p>
+            </section>
+
+            <div className="pimg1">
+              <div className="ptext">
+                <span className="border">About Us</span>
+              </div>
+              <div className="profiles">
+                <div className="profile">
+                  <img src="/logoDark.png" className="dev-img"></img>
+                  <span className="prof-name">Derek</span>
+                </div>
+                <div className="profile">
+                  <img src="/logoDark.png" className="dev-img"></img>
+                  <span className="prof-name">Lisa</span>
+                </div>
+                <div className="profile">
+                  <img src="/logoDark.png" className="dev-img"></img>
+                  <span className="prof-name">Nate</span>
+                </div>
+                <div className="profile">
+                  <img src="/logoDark.png" className="dev-img"></img>
+                  <span className="prof-name">Zhang</span>
                 </div>
               </div>
-
-              <section class="section section-light">
-                <h2>Section One</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Sunt, laudantium, quibusdam? Nobis, delectus, commodi, fugit
-                  amet tempora facere dolores nisi facilis consequatur, odio hic
-                  minima nostrum. Perferendis eos earum praesentium, blanditiis
-                  sapiente labore aliquam ipsa architecto vitae. Minima soluta
-                  temporibus voluptates inventore commodi cumque esse suscipit
-                  optio aliquam et, dolorem a cupiditate nihil fuga laboriosam
-                  fugiat placeat dignissimos! Unde eveniet placeat quisquam
-                  blanditiis voluptatem doloremque fugiat dolor repellendus
-                  ratione in. Distinctio provident dolorem modi cumque illo enim
-                  quidem tempora deserunt nostrum voluptate labore repellat
-                  quisquam quasi cum suscipit dolore ab consequuntur, ad porro
-                  earum temporibus. Laborum ad temporibus ex, omnis!
-                </p>
-              </section>
-
-              <div class="pimg2">
-                <div class="ptext">
-                  <span class="border trans">Image Two Text</span>
-                </div>
-              </div>
-
-              <section class="section section-dark">
-                <h2>Section Two</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Sunt, laudantium, quibusdam? Nobis, delectus, commodi, fugit
-                  amet tempora facere dolores nisi facilis consequatur, odio hic
-                  minima nostrum. Perferendis eos earum praesentium, blanditiis
-                  sapiente labore aliquam ipsa architecto vitae. Minima soluta
-                  temporibus voluptates inventore commodi cumque esse suscipit
-                  optio aliquam et, dolorem a cupiditate nihil fuga laboriosam
-                  fugiat placeat dignissimos! Unde eveniet placeat quisquam
-                  blanditiis voluptatem doloremque fugiat dolor repellendus
-                  ratione in.
-                </p>
-              </section>
-
-              <div class="pimg3">
-                <div class="ptext">
-                  <span class="border trans">Image Three Text</span>
-                </div>
-              </div>
-
-              <section class="section section-dark">
-                <h2>Section Three</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Sunt, laudantium, quibusdam? Nobis, delectus, commodi, fugit
-                  amet tempora facere dolores nisi facilis consequatur, odio hic
-                  minima nostrum. Perferendis eos earum praesentium, blanditiis
-                  sapiente labore aliquam ipsa architecto vitae. Minima soluta
-                  temporibus voluptates inventore commodi cumque esse suscipit
-                  optio aliquam et, dolorem a cupiditate nihil fuga laboriosam
-                  fugiat placeat dignissimos! Unde eveniet placeat quisquam
-                  blanditiis voluptatem doloremque fugiat dolor repellendus
-                  ratione in.
-                </p>
-              </section>
-
-              <div class="pimg1">
-                <div class="ptext">
-                  <span class="border">GROUP NAME?</span>
-                </div>
-              </div>
-            <footer>Copyright &copy; 2020 Basil</footer>
+            </div>
+            {/* <footer>Copyright &copy; 2020 Basil</footer> */}
           </div>
         );
     }
