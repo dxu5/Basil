@@ -115,9 +115,9 @@ class SignupForm extends React.Component {
             </div> : null}
           </label>
             
-          <button className="btn" type="submit">Create your Account</button>
+          <button className="btn" type="submit">Signup</button>
           <p className="tip">Press Tab</p>
-          <div className="signup-button">Sign up</div>
+          <div className="signup-button">Get started</div>
         </form>
       </div>
     );
