@@ -1,5 +1,8 @@
 import { RECEIVE_MEAL_PLAN } from "../actions/mealplan_actions";
-import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
+import {
+  RECEIVE_CURRENT_USER,
+  RECEIVE_USER_LOGOUT,
+} from "../actions/session_actions";
 
 const _nullState = {
   currentMealplan: undefined,
@@ -26,6 +29,8 @@ const mealplansReducer = (state = _nullState, action) => {
           action.currentUser.currentMealplanStartTime;
       }
       return newState;
+    case RECEIVE_USER_LOGOUT:
+      return _nullState;
     default:
       return state;
   }
