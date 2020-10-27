@@ -1,11 +1,9 @@
 .navbar-brand > img {
   width: 150px;
-  z-index: 1;
 }
 
 .navbar {
-  background: white;
-  opacity: 0.4;
+  background: rgba(220, 220, 220, 0.4);
 }
 
 .nav-link {
