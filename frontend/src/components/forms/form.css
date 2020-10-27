@@ -1,12 +1,12 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} */
 .form-container{
     width: inherit;
     height: inherit;
-    background-color: #013328;
+    /* background-color: #e3dcd2; */
     font-family: 'Roboto Condensed',sans-serif;
 } 
 form {
@@ -15,7 +15,9 @@ form {
     overflow: hidden;
 
 }
-input, .btn {
+
+/* btn */
+input {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -41,18 +43,31 @@ input {
 input::selection {
     background: rgba(187, 21, 21, 0.25);
 }
+
 .btn, .signup-button {
+    /* width: 150px; */
     padding: 10px 20px !important;
     border: 0;
     outline: 0;
-    border-radius: 5px;
-    background: #cc8b65;
-    color: #e3dcd2;
+    border-radius: 20px;
+    color: #013328;
     font-size: 2rem;
     line-height: 3.6rem;
     letter-spacing: 0.0625rem;
-    box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.25);
-    text-shadow: 0 -2px 0 rgba(0, 0, 0, 0.25), 0 1px 0 rgba(255, 255, 255, 0.2);
+    /* box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.25); */
+    /* text-shadow: 0 -2px 0 rgba(0, 0, 0, 0.25), 0 1px 0 rgba(255, 255, 255, 0.2); */
+}
+.btn{
+    background-color: #e3dcd2;  
+    border: 2px solid #013328;position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -300%);
+    display: block;
+    width: 10vw;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.4, 0.25, 0.8, 0.3);
 }
 input:focus, .btn:focus {
     opacity: 1;
@@ -119,7 +134,7 @@ input:focus + label .nav-dot:before {
     width: 20vw;
     border-radius: 50px;
     background: transparent;
-    border: 2px solid white;
+    border: 2px solid #20473f;  
     padding: 5px 5px;
     line-height: 3.6rem;
     text-transform: uppercase;
@@ -140,7 +155,7 @@ input:focus + label .nav-dot:before {
     width: 70vw;
     padding: 3.125rem 0 1.5rem;
     text-transform: uppercase;
-    color: #fff;
+    color: #013328;
     opacity: 0;
     font-size: 1rem;
     font-weight: 300;
@@ -157,7 +172,7 @@ input:focus + label .nav-dot:before {
     width: 70vw;
     padding: 3.125rem 0 1.5rem;
     text-transform: uppercase;
-    color: #fff;
+    color: #111;
     opacity: 0;
     font-size: 1rem;
     font-weight: 300;
@@ -192,7 +207,7 @@ input:focus + label .nav-dot:before {
     height: 0.625rem;
     margin-top: -0.125rem;
     margin-left: -0.125rem;
-    background-color: #e3dcd2;
+    background-color: #013328;
 }
 label[for="input-1"] .nav-dot {
     margin-top: -125px;

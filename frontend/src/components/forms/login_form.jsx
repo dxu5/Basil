@@ -19,7 +19,6 @@ class LoginForm extends React.Component {
 
 
   componentWillReceiveProps(nextProps) {
-    // debugger
     if (nextProps.currentUser === true) {
       this.props.history.push('/home');
     }
@@ -49,7 +48,6 @@ class LoginForm extends React.Component {
     if(prevProps.errors !== this.props.errors){
       if(this.state.errors["username"]){  
         this.username.current.focus();
-        // this.username.current.blur();
       }else{
         if(this.state.errors["password"]){
           this.password.current.focus();
@@ -93,7 +91,7 @@ class LoginForm extends React.Component {
           </label>
 
 
-          <button className="btn" type="submit">Sign in</button>
+          <button className="btn" type="submit">Log in</button>
           <p className="tip">Press Tab</p>
           <div className="signup-button">Log in</div>
         </form>
