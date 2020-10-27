@@ -30,6 +30,7 @@ router.patch(
     const query = { _id: req.user.id };
     User.findOneAndUpdate(query, {
       currentMealplan: req.body.mealplan,
+      currentMealplanStartTime: Date.now(),
     }).then((user) => {
       User.findOne({ _id: user.id }).then((user) => res.json(user));
     });
