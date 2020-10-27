@@ -1,0 +1,13 @@
+.home{
+    /* padding-top: 80px; */
+    width: 100vw;
+}
+
+.progress, .user-info{
+    height: 15vh;
+}
+
+.calendar{
+    height: 70vh;
+}
+

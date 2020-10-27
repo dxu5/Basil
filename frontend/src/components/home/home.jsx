@@ -1,4 +1,5 @@
 import React from 'react';
+import './home.css'
 
 class Home extends React.Component{
     constructor(props){
@@ -7,8 +8,10 @@ class Home extends React.Component{
 
     render(){
         return(
-            <div>
-                <h1>HomePage</h1>
+            <div className="home">
+                <section className="progress">Progress</section>
+                <section className="calendar">Calendar</section>
+                <section className="user-infor">User Info</section>
             </div>
         )
     }
