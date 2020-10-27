@@ -5,6 +5,7 @@ import configureStore from "./store/store";
 import jwt_decode from "jwt-decode";
 import { setAuthToken } from "./util/session_api_util";
 import { logout } from "./actions/session_actions";
+import { getMealPlans } from "./actions/mealplan_actions";
 
 // discuss whether to delete
 // import './index.css';
