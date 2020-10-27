@@ -5,6 +5,7 @@ import configureStore from "./store/store";
 import jwt_decode from "jwt-decode";
 import { setAuthToken } from "./util/session_api_util";
 import { logout } from "./actions/session_actions";
+import { getMealPlans } from "./actions/mealplan_actions";
 import { getMealInfo } from "./actions/meal_actions";
 
 // discuss whether to delete
@@ -34,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   const root = document.getElementById("root");
 
+  window.getMealPlans = getMealPlans;
   window.getMealInfo = getMealInfo;
   window.dispatch = store.dispatch;
 
