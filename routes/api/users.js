@@ -23,6 +23,16 @@ router.get(
   }
 );
 
+router.post(
+  "/mealplan",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    let user = User.findOne({ id: req.user.id });
+    user.currentMeal = req.body.mealplan;
+    user.save().then((user) => res.json(req.body.mealplan));
+  }
+);
+
 router.post("/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
 
