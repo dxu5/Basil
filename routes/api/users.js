@@ -23,13 +23,14 @@ router.get(
   }
 );
 
-router.post(
+router.patch(
   "/mealplan",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    let user = User.findOne({ id: req.user.id });
-    user.currentMeal = req.body.mealplan;
-    user.save().then((user) => res.json(req.body.mealplan));
+    const query = { id: req.user.id };
+    User.findOneAndUpdate(query, {
+      currentMealplan: req.body.mealplan,
+    }).then((user) => res.json(req.body.mealplan));
   }
 );
 

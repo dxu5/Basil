@@ -12,7 +12,8 @@ const UserSchema = new Schema(
       required: true,
     },
     currentMealplan: {
-      type: Object,
+      type: String,
+      required: false,
     },
   },
   {
