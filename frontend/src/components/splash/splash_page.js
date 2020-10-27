@@ -1,11 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
+import '../../stylesheets/colors.css'
 import './splash.css'
 
 class SplashPage extends React.Component {
 
     render() {
         return (
-          <div>
+          <div class="splash">
             <div className="pimg1">
               <div className="ptext">
                 {/* <div className="border-top"> */}
@@ -44,7 +46,9 @@ class SplashPage extends React.Component {
 
             <div className="pimg3">
               <div className="ptext">
-                <span className="border trans">Sign Up</span>
+                <Link to="/signup" className="border trans">
+                  Sign Up
+                </Link>
               </div>
             </div>
 
@@ -56,28 +60,49 @@ class SplashPage extends React.Component {
               </p>
             </section>
 
-            <div className="pimg1">
+            <div className="pimg4">
               <div className="ptext">
-                <span className="border">About Us</span>
+                <span className="border trans">About Us</span>
               </div>
-              <div className="profiles">
+            </div>
+
+            <div className="profiles">
+              <a
+                href="https://www.linkedin.com/in/derek-jinxiao-xu/"
+                target="_blank"
+              >
                 <div className="profile">
-                  <img src="/logoDark.png" className="dev-img"></img>
+                  <img src="/images/Derek.png" className="dev-img"></img>
                   <span className="prof-name">Derek</span>
                 </div>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/lisa-lam-64607743/"
+                target="_blank"
+              >
                 <div className="profile">
-                  <img src="/logoDark.png" className="dev-img"></img>
+                  <img src="/images/Lisa.jpeg" className="dev-img"></img>
                   <span className="prof-name">Lisa</span>
                 </div>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/nathan-oh-cpa-8062075a/"
+                target="_blank"
+              >
                 <div className="profile">
-                  <img src="/logoDark.png" className="dev-img"></img>
+                  <img src="/images/Nate.jpg" className="dev-img"></img>
                   <span className="prof-name">Nate</span>
                 </div>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/zhang-zhang-0911/"
+                target="_blank"
+              >
                 <div className="profile">
-                  <img src="/logoDark.png" className="dev-img"></img>
+                  <img src="/images/Zhang.jpg" className="dev-img"></img>
                   <span className="prof-name">Zhang</span>
                 </div>
-              </div>
+              </a>
             </div>
             {/* <footer>Copyright &copy; 2020 Basil</footer> */}
           </div>

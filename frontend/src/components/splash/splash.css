@@ -1,11 +1,11 @@
-:root{
+/* :root{
     --black: #100C0D;
     --dark-green: #013328;
     --green: #0e6c57;
 
     --oatmeal: #e3dcd2;
     --salmon: #cc8b65;
-}
+} */
 
 body, html{
   height:100%;
@@ -17,7 +17,12 @@ body, html{
   color:#666;
 }
 
-.pimg1, .pimg2, .pimg3{
+.splash{
+  position: relative;
+}
+
+
+.pimg1, .pimg2, .pimg3, .pimg4{
   position:relative;
   opacity:0.70;
   background-position:center;
@@ -44,6 +49,11 @@ body, html{
 .pimg3{
   background-image:url('../../images/splash5.jpg');
   min-height:400px;
+}
+
+.pimg4{
+  background-image:url('../../images/splash6.jpg');
+  min-height:1270px;
 }
 
 .section{
@@ -82,12 +92,16 @@ body, html{
   background-color:transparent;
 }
 
+.ptext a{
+  text-decoration: none;
+}
+
 .profiles{
   display: flex;
   justify-content: space-around;
   width: 100%;
   position: absolute;
-  top: 60%;
+  bottom: 300px;
 }
 
 .profile{
@@ -102,10 +116,13 @@ body, html{
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 20px;
+  border: solid 1px var(--oatmeal);
 }
 
 .prof-name, .dev-img{
   border: solid 1px var(--oatmeal);
+  background-color:#282e34;
+  color:var(--oatmeal);
 }
 
 @media(max-width:568px){
