@@ -10,6 +10,8 @@ class CalendarItem extends React.Component {
             completed: false
         }
         this.handleClick = this.handleClick.bind(this);
+        this.displayIcon = this.displayIcon.bind(this);
+        this.displayCompleteButton = this.displayCompleteButton.bind(this);
     }
 
     handleClick(e) {
@@ -18,19 +20,30 @@ class CalendarItem extends React.Component {
         this.setState({completed: !bool})
     }
 
+    displayIcon() {
+        return this.state.completed ? <div className='check-icon'><FontAwesomeIcon icon={faCheck} /></div> : null
+    }
+
+    displayCompleteButton() {
+        if (this.props.futureDays.includes(this.props.day)) {
+            return null;
+        } else if (this.state.completed) {
+            return <button id='complete-btn' onClick={this.handleClick}>Undo</button>;
+        } else {
+            return <button id='complete-btn' onClick={this.handleClick}>Complete?</button>;
+        }
+    }
+
     render() {
-        // debugger
-        let completeIcon = this.state.completed ? <div className='check-icon'><FontAwesomeIcon icon={faCheck} /></div> : null;
-        let uncompleteBtn = this.state.completed ? <button id='complete-btn' onClick={this.handleClick}>Undo</button> : <button id='complete-btn' onClick={this.handleClick}>Complete?</button>;
         return(
             <div className={`meal-${this.props.mealNum}`}>
                 <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/${this.props.id}-636x393.${this.props.imageType}`}/></div>
                 <div className='meal-description'>
-                    {completeIcon}
+                    {this.displayIcon()}
                     <p className='meal-title'>{this.props.title}</p>
                     <p className='meal-time'>{this.props.readyInMinutes} minutes</p>
                 </div>
-                {uncompleteBtn}
+                {this.displayCompleteButton()}
             </div>
         )
     }
