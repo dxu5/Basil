@@ -1,6 +1,7 @@
 .home{
     /* padding-top: 100px; */
     width: 100vw;
+    background-color: var(--oatmeal);
 }
 
 .progress, .user-info{
@@ -8,12 +9,13 @@
 }
 
 .progress{
-    background-color: white;
-    height: 300px;
+    background-color: var(--oatmeal);
+    /* background-color: white; */
+    height: 100%;
 }
 
 .user-info{
-    background-color: var(--oatmeal);
+    /* background-color: var(--oatmeal); */
     /* height:20vh; */
     width: 100%;
     padding: 20px 0;
