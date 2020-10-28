@@ -106,6 +106,7 @@
     border: 1px solid var(--dark-green);
     color: var(--dark-green);
     background: white;
+    width: 75%;
 }
 
 .create-meal-btn {
