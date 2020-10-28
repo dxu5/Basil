@@ -25,7 +25,7 @@ class SplashPage extends React.Component {
             friendly recipes, get access to thousands of appetizing meals made
             by certified chefs. Our app accommodates all dietary restrictions.
             Take the anxiety out of deciding what to eat. Whatever your goals, let
-            Basil make the process as easy as possible.
+            Basil make the process as simple as possible.
           </p>
         </section>
 
