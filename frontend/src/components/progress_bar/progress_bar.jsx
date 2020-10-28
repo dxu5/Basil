@@ -10,9 +10,9 @@ class ProgressBar extends React.Component {
     };
   }
 
-  componentDidUpdate(prevProps){
-    if(prevProps.completedMeals !== this.props.completedMeals){
-      this.setState({ completed: this.props.completedMeals })
+  componentDidUpdate(prevProps) {
+    if (prevProps.completedMeals !== this.props.completedMeals) {
+      this.setState({ completed: this.props.completedMeals });
     }
   }
 
@@ -27,6 +27,11 @@ class ProgressBar extends React.Component {
     return (
       <div className="progress-bar-div">
         <div className="progress-bar-head">
+          <div className="ptext-home-page">
+            <span className="border">
+              <img src="/images/splashLogo2.png" />
+            </span>
+          </div>
           <h2>Welcome back, {this.props.user.username}</h2>
           <h3>Cook meals to grow your basils</h3>
         </div>

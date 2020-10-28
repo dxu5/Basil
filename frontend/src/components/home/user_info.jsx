@@ -1,7 +1,15 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faMedal, faUtensils, faCheck, faFire, faHandHoldingHeart } from "@fortawesome/free-solid-svg-icons";
-import CountUp from 'react-countup';
+import {
+  faUser,
+  faMedal,
+  faUtensils,
+  faCheck,
+  faFire,
+  faHandHoldingHeart,
+} from "@fortawesome/free-solid-svg-icons";
+import CountUp from "react-countup";
+import VisibilitySensor from "react-visibility-sensor";
 // import "./user_info.css";
 
 class UserInfo extends React.Component {
@@ -9,8 +17,10 @@ class UserInfo extends React.Component {
     super(props);
     this.state = {
       //placeholder for user info
+      viewPortEntered: false,
       completed: 123,
     };
+    this.myCountUp = React.createRef();
   }
 
   render() {
@@ -31,11 +41,19 @@ class UserInfo extends React.Component {
             <h5>I am level</h5>
             <h4>
               <CountUp
-                start={0}
                 end={Math.floor(this.state.completed / 10)}
                 duration={3}
                 delay={1}
-              />
+                ref={this.myCountUp}
+                redraw={true}
+                start={this.state.viewPortEntered ? null : 0}
+              >
+                {({ countUpRef, start }) => (
+                  <VisibilitySensor onChange={start} delayedCall>
+                    <span ref={countUpRef} />
+                  </VisibilitySensor>
+                )}
+              </CountUp>
             </h4>
           </div>
           <div className="user-stat">
@@ -47,7 +65,14 @@ class UserInfo extends React.Component {
                 end={this.state.completed}
                 duration={3}
                 delay={1}
-              />
+                redraw={true}
+              >
+                {({ countUpRef, start }) => (
+                  <VisibilitySensor onChange={start} delayedCall>
+                    <span ref={countUpRef} />
+                  </VisibilitySensor>
+                )}
+              </CountUp>
             </h4>
             <h5>meals</h5>
           </div>
@@ -60,7 +85,14 @@ class UserInfo extends React.Component {
                 end={this.state.completed}
                 duration={3}
                 delay={1}
-              />
+                redraw={true}
+              >
+                {({ countUpRef, start }) => (
+                  <VisibilitySensor onChange={start} delayedCall>
+                    <span ref={countUpRef} />
+                  </VisibilitySensor>
+                )}
+              </CountUp>
               %
             </h4>
             <h5>of my meals</h5>
@@ -74,11 +106,19 @@ class UserInfo extends React.Component {
                 end={this.state.completed}
                 duration={3}
                 delay={1}
-              />
+                redraw={true}
+              >
+                {({ countUpRef, start }) => (
+                  <VisibilitySensor onChange={start} delayedCall>
+                    <span ref={countUpRef} />
+                  </VisibilitySensor>
+                )}
+              </CountUp>
             </h4>
             <h5>cal/meal</h5>
           </div>
         </div>
+        <h3 className="calendar-intro">Check Out Your Meals For The Week</h3>
       </div>
     );
   }
