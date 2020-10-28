@@ -7,14 +7,14 @@ import SplashPage from "./splash/splash_page";
 import LoginFormContainer from "./forms/login_form_container";
 import SignupFormContainer from "./forms/signup_form_container";
 import HomeContainer from "./home/home_container"
-import MealPlan from "./forms/mealplan_form"
+import MealPlanContainer from "./forms/mealplan_container"
 
 const App = () => (
   <div>
     <NavBarContainer />
     <Switch>
       <ProtectedRoute path="/home" component={HomeContainer} />
-      <ProtectedRoute path="/mealplan" component={MealPlan} />
+      <ProtectedRoute path="/mealplan" component={MealPlanContainer} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <Route exact path="/" component={SplashPage} />
