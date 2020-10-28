@@ -11,6 +11,14 @@ const UserSchema = new Schema(
       type: String,
       required: true,
     },
+    currentMealplan: {
+      type: String,
+      required: false,
+    },
+    currentMealplanStartTime: {
+      type: Date,
+      required: false,
+    },
   },
   {
     timestamps: true,
