@@ -1,8 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import "./mealplan.css"
-// import { Slider } from '@material-ui/core';
-// import Button from '@material-ui/core/Button';
 
 class MealPlan extends React.Component{
     constructor(props){
@@ -45,14 +43,24 @@ class MealPlan extends React.Component{
 
     }
     
+    handleSlder(field){
+        var slider = document.getElementById("slider");
+        var selector = document.getElementById("selector")
+        // this.update(field)
+        // return e=>(
+        //     slider.style.left = this.state.targetCalories
+        // )
+        
+        
+    }
     showCal(){
         return(
             <div className="range-div"> 
-                <input id="slider" type="range" min="1000" max="4000"/>
+                <input id="slider" type="range" min="1000" max="4000" onChange={this.handleSlder("targetCalories")}/>
                 <div id="selector">
+                    {this.state.targetCalories}
                     <div className="select-btn"></div>
                 </div>
-                {/* <Button/> */}
             </div>
 
         )
