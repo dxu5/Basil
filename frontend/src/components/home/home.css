@@ -1,13 +1,23 @@
 .home{
-    /* padding-top: 80px; */
+    /* padding-top: 100px; */
     width: 100vw;
 }
 
 .progress, .user-info{
-    height: 15vh;
+    justify-content: center;
+    height: 500px;
+}
+
+.progress{
+    background-color: white;
+    height: 300px;
+}
+
+.user-info{
+    background-color: var(--oatmeal);
 }
 
 .calendar{
-    height: 70vh;
+    height: 80vh;
 }
 

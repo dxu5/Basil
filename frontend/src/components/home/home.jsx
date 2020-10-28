@@ -1,4 +1,5 @@
 import React from 'react';
+import ProgressBarContainer from '../progress_bar/progress_bar_container'
 import './home.css'
 
 class Home extends React.Component{
@@ -9,7 +10,9 @@ class Home extends React.Component{
     render(){
         return(
             <div className="home">
-                <section className="progress">Progress</section>
+                <section className="progress">
+                    <ProgressBarContainer />
+                </section>
                 <section className="calendar">Calendar</section>
                 <section className="user-infor">User Info</section>
             </div>
