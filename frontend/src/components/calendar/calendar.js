@@ -50,6 +50,11 @@ class Calendar extends React.Component {
                 <div>{this.displayMeal('Friday')}</div>
                 <div>{this.displayMeal('Saturday')}</div>
                 <div>{this.displayMeal('Sunday')}</div> */}
+                <div className='meal-label'>
+                    <p>Morning</p>
+                    <p>Afternoon</p>
+                    <p>Evening</p>
+                </div>
                 <div className='table-responsive'>
                     <table className='table'>
 
