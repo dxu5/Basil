@@ -86,10 +86,6 @@
     color: white;
 }
 
-.day-container .past {
+.day-container .past, .past ~ .meal-0, .past ~ .meal-1, .past ~ .meal-2 {
     opacity: 50%;
-}
-
-.past .meal-0 {
-    opacity: 50%
 }
