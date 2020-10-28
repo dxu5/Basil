@@ -19,6 +19,7 @@ const SessionReducer = (state = initialState, action) => {
           iat: action.currentUser.iat,
           id: action.currentUser.id,
           username: action.currentUser.username,
+          completedMeals: action.currentUser.completedMeals
         },
       };
     case RECEIVE_USER_LOGOUT:

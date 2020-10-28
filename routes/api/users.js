@@ -63,6 +63,7 @@ router.post("/register", (req, res) => {
                 username: user.username,
                 currentMealplan: undefined,
                 currentMealplanStartTime: undefined,
+                completedMeals: 0,
               };
 
               jwt.sign(
