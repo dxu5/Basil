@@ -10,6 +10,13 @@ export const receiveMealPlan = (mealplan) => {
   };
 };
 
+export const receiveNewMealplan = (mealplan) => {
+  return {
+    type: RECEIVE_NEW_MEAL_PLAN,
+    mealplan,
+  };
+};
+
 export const getMealPlans = (details) => (dispatch) => {
   return MealplanAPIUtil.getWeeklyMealPlan(details).then((res) => {
     dispatch(receiveMealPlan(res.data));
@@ -18,6 +25,7 @@ export const getMealPlans = (details) => (dispatch) => {
 
 export const addMealPlan = (mealplan) => (dispatch) => {
   return MealplanAPIUtil.saveMealplan(mealplan).then((res) => {
-    dispatch(receiveMealPlan(res.data));
+    debugger;
+    dispatch(receiveNewMealplan(res.data));
   });
 };

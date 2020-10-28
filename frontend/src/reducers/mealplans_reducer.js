@@ -33,14 +33,12 @@ const mealplansReducer = (state = _nullState, action) => {
       }
       return newState;
     case RECEIVE_NEW_MEAL_PLAN:
-      if (action.currentUser.currentMealplan) {
-        newState.currentMealplan = JSON.parse(
-          action.currentUser.currentMealplan
-        );
+      if (action.mealplan.currentMealplan) {
+        newState.currentMealplan = JSON.parse(action.mealplan.currentMealplan);
       }
-      if (action.currentUser.currentMealplanStartTime) {
+      if (action.mealplan.currentMealplanStartTime) {
         newState.currentMealplanStartTime =
-          action.currentUser.currentMealplanStartTime;
+          action.mealplan.currentMealplanStartTime;
       }
       return newState;
     case RECEIVE_USER_LOGOUT:
