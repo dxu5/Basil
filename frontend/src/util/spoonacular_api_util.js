@@ -27,3 +27,14 @@ export const getMealInfo = (mealId) => {
     },
   });
 };
+
+export const saveMealplan = (mealplan) => {
+  const strMealplan = JSON.stringify(mealplan);
+  return axios({
+    method: "PATCH",
+    url: "/api/users/mealplan",
+    data: {
+      mealplan: strMealplan,
+    },
+  });
+};
