@@ -9,3 +9,5 @@ export const updateCompletedMeals = (completedMeals) => {
         }
     })
 }
+
+// replace entire completedMeals object in database with object string input

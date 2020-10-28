@@ -108,6 +108,7 @@ router.post("/login", (req, res) => {
           username: user.username,
           currentMealplan: user.currentMealplan,
           currentMealplanStartTime: user.currentMealplanStartTime,
+          completedMeals: user.completedMeals,
         };
 
         jwt.sign(
