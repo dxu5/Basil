@@ -21,7 +21,7 @@ const mealplansReducer = (state = _nullState, action) => {
     case RECEIVE_CURRENT_USER:
       if (action.currentUser.currentMealplan) {
         newState.currentMealplan = JSON.parse(
-          JSON.parse(action.currentUser.currentMealplan)
+          action.currentUser.currentMealplan
         );
       }
       if (action.currentUser.currentMealplanStartTime) {
