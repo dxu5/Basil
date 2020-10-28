@@ -5,7 +5,6 @@
 
 .progress, .user-info{
     justify-content: center;
-    height: 500px;
 }
 
 .progress{
@@ -15,9 +14,21 @@
 
 .user-info{
     background-color: var(--oatmeal);
+    /* height:20vh; */
+    width: 100%;
+    padding: 20px 0;
+    text-transform: uppercase;
 }
 
 .calendar{
     height: 80vh;
 }
 
+.user-info-div{
+    display: flex;
+    justify-content: space-around;
+}
+
+.user-stat{
+    text-align: center;
+}
