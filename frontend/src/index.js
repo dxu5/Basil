@@ -9,6 +9,8 @@ import { getMealPlans, addMealPlan } from "./actions/mealplan_actions";
 import { getMealInfo } from "./actions/meal_actions";
 import { saveMealplan } from "./util/spoonacular_api_util";
 import { getUserInfo } from "./actions/session_actions";
+import { updateCompletedMeals } from "./util/user_api_util";
+import { receiveCompletedMeal } from "./actions/user_actions";
 // discuss whether to delete
 // import './index.css';
 // import App from './App';
@@ -24,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       iat: decodedUser.iat,
       id: decodedUser.id,
       username: decodedUser.username,
+      completedMeals: decodedUser.completedMeals,
     };
     const preloadedState = {
       entities: {
@@ -58,6 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
   window.saveMealplan = saveMealplan;
   window.addMealPlan = addMealPlan;
   window.getUserInfo = getUserInfo;
+  window.updateCompletedMeals = updateCompletedMeals;
+  window.receiveCompletedMeal = receiveCompletedMeal;
 
   ReactDOM.render(<Root store={store} />, root);
 });

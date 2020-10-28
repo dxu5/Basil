@@ -6,9 +6,14 @@ class ProgressBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      //placeholder for user info
-      completed: 123,
+      completed: this.props.completedMeals,
     };
+  }
+
+  componentDidUpdate(prevProps){
+    if(prevProps.completedMeals !== this.props.completedMeals){
+      this.setState({ completed: this.props.completedMeals })
+    }
   }
 
   render() {

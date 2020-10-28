@@ -63,6 +63,7 @@ router.post("/register", (req, res) => {
                 username: user.username,
                 currentMealplan: undefined,
                 currentMealplanStartTime: undefined,
+                completedMeals: 0,
               };
 
               jwt.sign(
@@ -107,6 +108,7 @@ router.post("/login", (req, res) => {
           username: user.username,
           currentMealplan: user.currentMealplan,
           currentMealplanStartTime: user.currentMealplanStartTime,
+          completedMeals: user.completedMeals,
         };
 
         jwt.sign(
@@ -127,5 +129,19 @@ router.post("/login", (req, res) => {
     });
   });
 });
+
+router.patch(
+  "/completedMeals",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    const query = { _id: req.user.id };
+    User.findOneAndUpdate(query, {
+      completedMeals: req.body.updatedCompletedMeals
+    }).then((user) => {
+      User.findOne({ _id: user.id }).then((user) => res.json(user));
+    });
+  }
+);
+
 
 module.exports = router;
