@@ -49,3 +49,24 @@
 .progress-bar-head {
   text-align: center;
 }
+
+.ptext-home-page {
+  /* position: absolute; */
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+  font-size: 27px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+}
+
+.ptext-home-page .border {
+  background-color: #111;
+  color: #fff;
+  padding: 20px;
+}
+
+.ptext-home-page .border.trans {
+  background-color: transparent;
+}
