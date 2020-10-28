@@ -80,3 +80,16 @@
 
     /* border: 1px solid green; */
 }
+
+.day-container .current {
+    background: var(--dark-green);
+    color: white;
+}
+
+.day-container .past {
+    opacity: 50%;
+}
+
+.past .meal-0 {
+    opacity: 50%
+}

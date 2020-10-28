@@ -20,8 +20,7 @@ class Calendar extends React.Component {
     }
 
     showMealPlan(e) {
-        e.preventDefault();
-        
+        e.preventDefault();    
     }
 
     displayMeal(field) {
@@ -38,37 +37,57 @@ class Calendar extends React.Component {
         })
     }
 
-    render() {
-
+    componentDidMount() {
         const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
         const weekday = new Date();
         const currentDay = days[weekday.getDay()];
+        const pastDays = days.slice(0, weekday.getDay())
 
-        // $('.currentDay').addClass(currentDay)
+        pastDays.forEach (day => {
+            if (document.getElementById(day)) {
+                document.getElementById(day).classList.add('past')
+            }
+        })
+        debugger
+        if (document.getElementById(currentDay)) {
+            document.getElementById(currentDay).classList.add('current')
+        }
+    }
+
+    render() {
+
+        // const days = ['#Sunday', '#Monday', 'Tuesday', '#Wednesday', '#Thursday', '#Friday', '#Saturday']
+        // const weekday = new Date();
+        // const currentDay = days[weekday.getDay()];
+        debugger
+        // if (document.getElementById(currentDay)) {
+        //     document.getElementById(currentDay).classList.add('current')
+        // }
+        // $(currentDay).addClass('current')
 
         return (
             <div className='calendar-container'>
                 {/* <div className='day-container'>
-                    <p className='day'>Monday</p>
+                    <p id='Sunday'>Sunday</p>
+                    {this.displayMeal('Sunday')}</div>
+                <div className='day-container'>
+                    <p id='Monday'>Monday</p>
                     {this.displayMeal('Monday')}</div>
                 <div className='day-container'>
-                    <p className='day'>Tuesday</p>
+                    <p id='Tuesday'>Tuesday</p>
                     {this.displayMeal('Tuesday')}</div>
                 <div className='day-container'>
-                    <p className='day'>Wednesday</p>
+                    <p id='Wednesday'>Wednesday</p>
                     {this.displayMeal('Wednesday')}</div>
                 <div className='day-container'>
-                    <p className='day'>Thursday</p>
+                    <p id='Thursday'>Thursday</p>
                     {this.displayMeal('Thursday')}</div>
                 <div className='day-container'>
-                    <p className='day'>Friday</p>
+                    <p id='Friday'>Friday</p>
                     {this.displayMeal('Friday')}</div>
                 <div className='day-container'>
-                    <p className='day'>Saturday</p>
+                    <p id='Saturday'>Saturday</p>
                     {this.displayMeal('Saturday')}</div>
-                <div className='day-container'>
-                    <p className='day'>Sunday</p>
-                    {this.displayMeal('Sunday')}</div>
                 <div className='day-container' className='meal-label'>
                     <p>Morning</p>
                     <p>Afternoon</p>
@@ -79,7 +98,7 @@ class Calendar extends React.Component {
                     <table className='table'>
 
                         <div className='day-container'>
-                            <p className='monday'>Monday</p>
+                            <p id='Sunday'>Sunday</p>
                             <div className='meal-0'>
                                 <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/720583-636x393.jpg`}/></div>
                                 <div className='meal-description'>
@@ -103,7 +122,7 @@ class Calendar extends React.Component {
                             </div>
                         </div>
                         <div className='day-container'>
-                            <p>Monday</p>
+                            <p id='Monday'>Monday</p>
                             <div className='meal-0'>
                                 <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/720583-636x393.jpg`}/></div>
                                 <div className='meal-description'>
@@ -127,7 +146,7 @@ class Calendar extends React.Component {
                             </div>
                         </div>
                         <div className='day-container'>
-                            <p>Monday</p>
+                            <p id='Tuesday'>Tuesday</p>
                             <div className='meal-0'>
                                 <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/720583-636x393.jpg`}/></div>
                                 <div className='meal-description'>
@@ -151,7 +170,7 @@ class Calendar extends React.Component {
                             </div>
                         </div>
                         <div className='day-container'>
-                            <p>Monday</p>
+                            <p id='Wednesday'>Wednesday</p>
                             <div className='meal-0'>
                                 <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/720583-636x393.jpg`}/></div>
                                 <div className='meal-description'>
@@ -175,7 +194,7 @@ class Calendar extends React.Component {
                             </div>
                         </div>
                         <div className='day-container'>
-                            <p>Monday</p>
+                            <p id='Thursday'>Thursday</p>
                             <div className='meal-0'>
                                 <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/720583-636x393.jpg`}/></div>
                                 <div className='meal-description'>
@@ -199,7 +218,7 @@ class Calendar extends React.Component {
                             </div>
                         </div>
                         <div className='day-container'>
-                            <p>Monday</p>
+                            <p id='Friday'>Friday</p>
                             <div className='meal-0'>
                                 <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/720583-636x393.jpg`}/></div>
                                 <div className='meal-description'>
@@ -223,7 +242,7 @@ class Calendar extends React.Component {
                             </div>
                         </div>
                         <div className='day-container'>
-                            <p>Monday</p>
+                            <p id='Saturday'>Saturday</p>
                             <div className='meal-0'>
                                 <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/720583-636x393.jpg`}/></div>
                                 <div className='meal-description'>
@@ -246,6 +265,7 @@ class Calendar extends React.Component {
                                 </div>
                             </div>
                         </div>
+                        
                         
                     </table>
                 </div>
