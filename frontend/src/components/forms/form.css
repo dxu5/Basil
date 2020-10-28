@@ -12,7 +12,7 @@ form {
 }
 
 /* btn */
-input {
+.auth-input {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -23,7 +23,7 @@ input {
     pointer-events: none;
     transition: all 0.5s cubic-bezier(0.4, 0.25, 0.8, 0.3);
 }
-input {
+.auth-input {
     padding: 0.25rem 0;
     border: 0;
     border-bottom: 8px solid #013328;
@@ -35,7 +35,7 @@ input {
     letter-spacing: 0.125rem;
     transition: all 0.5s cubic-bezier(0.4, 0.25, 0.8, 0.3);
 }
-input::selection {
+.auth-input::selection {
     background: rgba(187, 21, 21, 0.25);
 }
 
@@ -68,7 +68,7 @@ input::selection {
     pointer-events: none;
     transition: all 0.5s cubic-bezier(0.4, 0.25, 0.8, 0.3);
 }
-input:focus, .btn:focus {
+.auth-input:focus, .btn:focus {
     opacity: 1;
     transform: translate(-50%, -100%);
     pointer-events: auto;
@@ -76,38 +76,38 @@ input:focus, .btn:focus {
     z-index: 10;
     
 }
-input:focus ~ input, input:focus ~ .btn {
+.auth-input:focus ~ .auth-input, .auth-input:focus ~ .btn {
     transform: translate(-50%, 500%);
     transition: all 0.5s ease-in;
 }
-input:focus ~ label .label-text {
+.auth-input:focus ~ label .label-text {
     transform: translate(-50%, 300%);
     transition: all 0.5s ease-in;
 }
 
-input:focus ~ label .error-text {
+.auth-input:focus ~ label .error-text {
     transform: translate(-50%, 300%);
     transition: all 0.5s ease-in;
 }
-input:focus ~ .tip {
+.auth-input:focus ~ .tip {
     opacity: 1;
 }
-input:focus ~ .signup-button, .btn:focus ~ .signup-button {
+.auth-input:focus ~ .signup-button, .btn:focus ~ .signup-button {
     opacity: 0;
 }
-input:focus + label .label-text {
+.auth-input:focus + label .label-text {
     opacity: 1;
     transform: translate(-50%, -100%);
     transition: all 0.3s cubic-bezier(0.1, 0.45, 0.1, 0.85) 0.4s;
 }
 
-input:focus + label .error-text {
+.auth-input:focus + label .error-text {
     opacity: 1;
     transform: translate(-50%, -100%);
     transition: all 0.3s cubic-bezier(0.1, 0.45, 0.1, 0.85) 0.4s;
 }
 
-input:focus + label .nav-dot:before {
+.auth-input:focus + label .nav-dot:before {
     background: #e3dcd2;
     box-shadow: 0 0 0 0.15rem #111, 0 0 0.05rem 0.26rem #e3dcd2;
 }
@@ -131,7 +131,7 @@ input:focus + label .nav-dot:before {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -100%);
-    width: 20vw;
+    /* width: 20vw; */
     border-radius: 50px;
     background: transparent;
     border: 2px solid #20473f;  
