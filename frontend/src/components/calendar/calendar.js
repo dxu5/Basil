@@ -7,13 +7,13 @@ class Calendar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            Monday: this.props.mealPlan.week.monday,
-            Tuesday: this.props.mealPlan.week.tuesday,
-            Wednesday: this.props.mealPlan.week.wednesday,
-            Thursday: this.props.mealPlan.week.thursday,
-            Friday: this.props.mealPlan.week.friday,
-            Saturday: this.props.mealPlan.week.saturday,
-            Sunday: this.props.mealPlan.week.sunday,
+            Monday: null,
+            Tuesday: null,
+            Wednesday: null,
+            Thursday: null,
+            Friday: null,
+            Saturday: null,
+            Sunday: null,
         }
         this.showMealPlan = this.showMealPlan.bind(this);
         // this.displayMeal = this.displayMeal.bind(this);
@@ -40,6 +40,18 @@ class Calendar extends React.Component {
     // }
 
     componentDidMount() {
+        if (this.props.mealPlan) {
+            this.setState({
+                Monday: this.props.mealPlan.week.monday,
+                Tuesday: this.props.mealPlan.week.tuesday,
+                Wednesday: this.props.mealPlan.week.wednesday,
+                Thursday: this.props.mealPlan.week.thursday,
+                Friday: this.props.mealPlan.week.friday,
+                Saturday: this.props.mealPlan.week.saturday,
+                Sunday: this.props.mealPlan.week.sunday,
+            })
+        }
+
         const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
         const weekday = new Date();
         const currentDay = days[weekday.getDay()];
@@ -69,7 +81,6 @@ class Calendar extends React.Component {
             />)
         })
 
-        debugger    
         return (
             <div className='calendar-container'>
                 {/* <div className='day-container' className='meal-label'>
