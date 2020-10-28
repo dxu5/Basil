@@ -48,7 +48,7 @@ class Calendar extends React.Component {
                 document.getElementById(day).classList.add('past')
             }
         })
-        debugger
+
         if (document.getElementById(currentDay)) {
             document.getElementById(currentDay).classList.add('current')
         }
@@ -56,38 +56,30 @@ class Calendar extends React.Component {
 
     render() {
 
-        // const days = ['#Sunday', '#Monday', 'Tuesday', '#Wednesday', '#Thursday', '#Friday', '#Saturday']
-        // const weekday = new Date();
-        // const currentDay = days[weekday.getDay()];
-        debugger
-        // if (document.getElementById(currentDay)) {
-        //     document.getElementById(currentDay).classList.add('current')
-        // }
-        // $(currentDay).addClass('current')
 
         return (
             <div className='calendar-container'>
                 {/* <div className='day-container'>
                     <p id='Sunday'>Sunday</p>
-                    {this.displayMeal('Sunday')}</div>
+                    {this.displayMeal('sunday')}</div>
                 <div className='day-container'>
                     <p id='Monday'>Monday</p>
-                    {this.displayMeal('Monday')}</div>
+                    {this.displayMeal('monday')}</div>
                 <div className='day-container'>
                     <p id='Tuesday'>Tuesday</p>
-                    {this.displayMeal('Tuesday')}</div>
+                    {this.displayMeal('tuesday')}</div>
                 <div className='day-container'>
                     <p id='Wednesday'>Wednesday</p>
-                    {this.displayMeal('Wednesday')}</div>
+                    {this.displayMeal('wednesday')}</div>
                 <div className='day-container'>
                     <p id='Thursday'>Thursday</p>
-                    {this.displayMeal('Thursday')}</div>
+                    {this.displayMeal('thursday')}</div>
                 <div className='day-container'>
                     <p id='Friday'>Friday</p>
-                    {this.displayMeal('Friday')}</div>
+                    {this.displayMeal('friday')}</div>
                 <div className='day-container'>
                     <p id='Saturday'>Saturday</p>
-                    {this.displayMeal('Saturday')}</div>
+                    {this.displayMeal('saturday')}</div>
                 <div className='day-container' className='meal-label'>
                     <p>Morning</p>
                     <p>Afternoon</p>
