@@ -2,10 +2,11 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    padding-top:100px;
 }
 
 .progress-bar{
-    width: 90vh;
+    width: 90vw;
     background: transparent;
     color: var(--dark-green);
 }
@@ -14,4 +15,15 @@
     color: var(--dark-green);
     margin-top: 15px;
     text-transform: uppercase;
+    font-weight: 500;
+}
+
+.grow-basil{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.grow-basil img{
+    height: 100px;
 }

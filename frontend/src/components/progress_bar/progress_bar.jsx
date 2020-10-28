@@ -6,18 +6,21 @@ class ProgressBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {  //placeholder for user info
-        completed: 20,
-        level: 1
+        completed: 21,
     }
   }
 
   render() {
-    const levelUp = 25;
+    const levelUp = 20;
+    const basilLevel = Math.floor(this.state.completed/5) % 5
     return (
     <div className="progress-bar-div">
+        <div className="grow-basil">
+            <img src={`/images/basilLevel${basilLevel}.jpg`}/>
+        </div>
         <div className="progress-bar">
             <Line
-            percent={(this.state.completed / levelUp) * 100}
+            percent={((this.state.completed%levelUp) / levelUp) * 100}
             strokeWidth="1"
             strokeColor="#013328"
             trailWidth="1"
@@ -27,8 +30,8 @@ class ProgressBar extends React.Component {
         </div>
         <div className="progress-bar-info">
             {/* {`${Math.floor((1-(this.state.completed/levelUp))*100)}% until level ${this.state.level + 1}`} */}
-            <span>{`${levelUp - this.state.completed} more meals until level 
-                ${this.state.level + 1}`}</span>
+            <span>{`${levelUp - this.state.completed%levelUp} more meals until level 
+                ${Math.floor(this.state.completed/levelUp) + 1}`}</span>
         </div>
     </div>
     );
