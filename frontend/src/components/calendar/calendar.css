@@ -1,3 +1,7 @@
+.table-responsive {
+    width: 85%
+}
+
 .table {
     display: flex;
     margin: 0;
