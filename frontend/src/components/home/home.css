@@ -20,6 +20,8 @@
     width: 100%;
     padding: 30px 0;
     text-transform: uppercase;
+    display: flex;
+    justify-content: center;
 }
 
 .calendar{
@@ -28,7 +30,9 @@
 
 .user-info-div{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 85%;
+    margin: 5% 0;
 }
 
 .user-stat{

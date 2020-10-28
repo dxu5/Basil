@@ -28,17 +28,20 @@ class UserInfo extends React.Component {
         <div className="user-stat">
           <FontAwesomeIcon icon={faUtensils} />
           <h5>I have made</h5>
-          <h5>{`${this.state.completed} meals`}</h5>
+          <h5>{this.state.completed}</h5>
+          <h5>meals</h5>
         </div>
         <div className="user-stat">
           <FontAwesomeIcon icon={faCheck} />
           <h5>I completed</h5>
-          <h5>{`${this.state.completed} % of my meals`}</h5>
+          <h5>{`${this.state.completed} %`}</h5>
+          <h5>of my meals</h5>
         </div>
         <div className="user-stat">
           <FontAwesomeIcon icon={faHandHoldingHeart} />
           <h5>I averaged</h5>
-          <h5>{`${this.state.completed} cal/meal`}</h5>
+          <h5>{`${this.state.completed}`}</h5>
+          <h5>cal/meal</h5>
         </div>
       </div>
     );
