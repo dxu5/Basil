@@ -29,6 +29,8 @@
 
 .calendar{
     height: 80vh;
+    display: flex;
+    justify-content: center;
 }
 
 .user-stat-container{
