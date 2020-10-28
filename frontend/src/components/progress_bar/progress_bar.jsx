@@ -12,13 +12,13 @@ class ProgressBar extends React.Component {
   }
 
   render() {
-    const levelUp = 20;
+    const levelUp = 10;
     const level = Math.floor(this.state.completed / levelUp);
     let basils = [...Array(level).keys()].map((lvl) => {
-      return <img src={`/images/basilLevel4.png`} />;
+      return <img key={lvl} src={`/images/basilLevel4.png`} />;
     });
     const basilLevel =
-      Math.ceil((this.state.completed - level * levelUp) / 5) % 5;
+      Math.ceil((this.state.completed - level * levelUp) / (levelUp / 4)) % 5;
     return (
       <div className="progress-bar-div">
         <div className="grow-basil">
@@ -31,9 +31,9 @@ class ProgressBar extends React.Component {
               percent={((this.state.completed % levelUp) / levelUp) * 100}
               strokeWidth="1"
               strokeColor="#013328"
+              strokeLinecap="round"
               trailWidth="1"
               trailColor="#ffffff"
-              strokeLinecap="square"
             />
           </div>
           <div className="progress-bar-info">
