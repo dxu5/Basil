@@ -1,6 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import "./mealplan.css"
+// import { Slider } from '@material-ui/core';
+// import Button from '@material-ui/core/Button';
 
 class MealPlan extends React.Component{
     constructor(props){
@@ -45,76 +47,81 @@ class MealPlan extends React.Component{
     
     showCal(){
         return(
-            <div>
-                <input className="cal-range-bar" type="range" min="1000" max="4000"/>
+            <div className="range-div"> 
+                <input id="slider" type="range" min="1000" max="4000"/>
+                <div id="selector">
+                    <div className="select-btn"></div>
+                </div>
+                {/* <Button/> */}
             </div>
+
         )
     }
 
     showDiet(){
         return(
             <div>
-                <label className="toggle">Gluten Free
+                <label className="toggle">Gluten Free: <br></br>
+                    <label>avoiding wheat, barley, rye, and other gluten-containing grains and foods</label>
                     <input className="toggle-input" name="diet" type="radio" value="Gluten Free" onChange={this.update("diet")}/>
                     <div className="toggle-fill"></div>
-                    <label>avoiding wheat, barley, rye, and other gluten-containing grains and foods</label>
                 </label>
 
-                <label className="toggle" >Ketogenic
+                <label className="toggle" >Ketogenic: <br></br>
+                    <label>avoiding high fat, protein-rich foods and high carbohydrate foods</label>
                     <input className="toggle-input" name="diet" type="radio" value="Ketogenic" onChange={this.update("diet")}/>
                     <div className="toggle-fill"></div>
-                    <label>avoiding high fat, protein-rich foods and high carbohydrate foods</label>
                 </label>
 
-                <label className="toggle">Vegetarian
+                <label className="toggle">Vegetarian: <br></br>
+                    <label>avoiding meat or meat by-products, such as bones or gelatin</label>                
                     <input className="toggle-input" type="radio" name="diet" value="Vegetarian" onChange={this.update("diet")}/>
                     <div className="toggle-fill"></div>
-                    <label>avoiding meat or meat by-products, such as bones or gelatin</label>                
                 </label>
 
-                <label className="toggle">Lacto-Vegetarian
+                <label className="toggle">Lacto-Vegetarian: <br></br>
+                    <label for="input-4">All ingredients must be vegetarian and none of the ingredients can be or contain egg.</label>
                     <input className="toggle-input" type="radio" name="diet" value="Lacto-Vegetarian" onChange={this.update("diet")}/>
                     <div className="toggle-fill"></div>
-                    <label for="input-4">All ingredients must be vegetarian and none of the ingredients can be or contain egg.</label>
                 </label>
 
-                <label className="toggle">Ovo-Vegetarian
+                <label className="toggle">Ovo-Vegetarian: <br></br>
+                    <label for="input-5">All ingredients must be vegetarian and none of the ingredients can be or contain dairy.</label>
                     <input className="toggle-input" type="radio" name="diet" value="Ovo-Vegetarian" onChange={this.update("diet")}/>
                     <div className="toggle-fill"></div>
-                    <label for="input-5">All ingredients must be vegetarian and none of the ingredients can be or contain dairy.</label>
                 </label>
 
-                <label className="toggle">Vegan
+                <label className="toggle">Vegan: <br></br>
+                    <label for="input-6">No ingredients may contain meat or meat by-products, such as bones or gelatin, nor may they contain eggs, dairy, or honey.</label>
                     <input className="toggle-input" type="radio" name="diet" value="Vegan" onChange={this.update("diet")}/>
                     <div className="toggle-fill"></div>
-                    <label for="input-6">No ingredients may contain meat or meat by-products, such as bones or gelatin, nor may they contain eggs, dairy, or honey.</label>
                 </label>
 
-                <label className="toggle">Pescetarian
+                <label className="toggle">Pescetarian: <br></br>
+                    <label for="input-7">Everything is allowed except meat and meat by-products - some pescetarians eat eggs and dairy, some do not.</label>
                     <input className="toggle-input" type="radio" name="diet" value="Pescetarian" onChange={this.update("diet")}/>
                     <div className="toggle-fill"></div>
-                    <label for="input-7">Everything is allowed except meat and meat by-products - some pescetarians eat eggs and dairy, some do not.</label>
                 
                 </label>
 
-                <label className="toggle">Paleo
+                <label className="toggle">Paleo: <br></br>
+                    <label for="input-8">Ingredients not allowed include legumes (e.g. beans and lentils), grains, dairy, refined sugar, and processed foods.</label>
                     <input className="toggle-input" type="radio" name="diet" value="Paleo" onChange={this.update("diet")}/>
                     <div className="toggle-fill"></div>
-                    <label for="input-8">Ingredients not allowed include legumes (e.g. beans and lentils), grains, dairy, refined sugar, and processed foods.</label>
                 </label>
 
-                <label className="toggle">Primal
+                <label className="toggle">Primal: <br></br>
+                    <label for="input-9">It stresses that people eat raw, minimally processed foods, such as fruits, vegetables, certain oils, and dairy products.</label>
                     <input className="toggle-input" type="radio" name="diet" value="Primal" onChange={this.update("diet")}/>
                     <div className="toggle-fill"></div>
-                    <label for="input-9">It stresses that people eat raw, minimally processed foods, such as fruits, vegetables, certain oils, and dairy products.</label>
                 
                 </label>
 
 
-                <label className="toggle">Whole30
+                <label className="toggle">Whole30: <br></br>
+                    <label for="input-10">Ingredients not allowed include added sweeteners,alcohol, grains, legumes, and food additives, such as carrageenan, MSG, and sulfites.</label>
                     <input className="toggle-input" type="radio" name="diet" value="Whole30" onChange={this.update("diet")}/>
                     <div className="toggle-fill"></div>
-                    <label for="input-10">Ingredients not allowed include added sweeteners,alcohol, grains, legumes, and food additives, such as carrageenan, MSG, and sulfites.</label>
                 </label>
             </div>
         )
