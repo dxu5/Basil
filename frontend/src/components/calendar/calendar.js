@@ -15,11 +15,13 @@ class Calendar extends React.Component {
             Saturday: null,
             Sunday: null,
         }
-        this.showMealPlan = this.showMealPlan.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
-    showMealPlan(e) {
-        e.preventDefault();    
+    //need to handle click link to meal plan form
+    handleClick(e) {
+        e.preventDefault();
+        
     }
 
     componentDidUpdate(prevProps) {
@@ -52,9 +54,6 @@ class Calendar extends React.Component {
     }
 
     componentDidMount() {
-
-        // debugger
-
         if (this.props.mealPlan) {
             this.setState({
                 Monday: this.props.mealPlan.week.monday,
@@ -81,15 +80,17 @@ class Calendar extends React.Component {
                 }
             })
         }
-
-        
     }
 
     render() {
         
 
         if (this.state['Monday'] === null) {
-            return null
+            return (
+                <button className='create-meal-btn' style={{outline: 'none'}}
+                    onClick={this.handleClick}
+                >Create a mealplan!</button>
+            )
         } else {
 
             const displayMeal = (field) => this.state[field].meals.map((meal, idx) => {
@@ -105,10 +106,8 @@ class Calendar extends React.Component {
     
             return (
                 <div className='calendar-container'>
-    
                     <div className='table-responsive'>
                         <table className='table'>
-                            
                             <div className='day-container'>
                                 <p id='Sunday'>Sunday</p>
                                 {displayMeal('Sunday')}</div>
@@ -130,10 +129,8 @@ class Calendar extends React.Component {
                             <div className='day-container'>
                                 <p id='Saturday'>Saturday</p>
                                 {displayMeal('Saturday')}</div>
-                            
                         </table>
                     </div>
-    
                 </div>
             );
         }
