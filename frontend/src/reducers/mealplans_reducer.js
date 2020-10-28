@@ -1,4 +1,7 @@
-import { RECEIVE_MEAL_PLAN } from "../actions/mealplan_actions";
+import {
+  RECEIVE_MEAL_PLAN,
+  RECEIVE_NEW_MEAL_PLAN,
+} from "../actions/mealplan_actions";
 import {
   RECEIVE_CURRENT_USER,
   RECEIVE_USER_LOGOUT,
@@ -27,6 +30,15 @@ const mealplansReducer = (state = _nullState, action) => {
       if (action.currentUser.currentMealplanStartTime) {
         newState.currentMealplanStartTime =
           action.currentUser.currentMealplanStartTime;
+      }
+      return newState;
+    case RECEIVE_NEW_MEAL_PLAN:
+      if (action.mealplan.currentMealplan) {
+        newState.currentMealplan = JSON.parse(action.mealplan.currentMealplan);
+      }
+      if (action.mealplan.currentMealplanStartTime) {
+        newState.currentMealplanStartTime =
+          action.mealplan.currentMealplanStartTime;
       }
       return newState;
     case RECEIVE_USER_LOGOUT:
