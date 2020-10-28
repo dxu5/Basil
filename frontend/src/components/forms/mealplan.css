@@ -1,0 +1,351 @@
+.meal-plan-form-div{
+    margin-top: 10%;
+    margin-left: 20%;
+    width: 60%;
+    height: 100%;
+    border: 1px solid red;
+}
+
+form {
+    width: 100%;
+    height: 100%;
+    /* overflow: hidden; */
+    /* border: 1px solid red; */
+
+}
+
+input{
+    color:red;
+}
+
+
+
+.toggle{
+    --width: 50px;
+    --height: calc(var(--width) / 2);
+    --border-radius: calc(var(--height) / 2);
+    display: inline-block;
+    cursor: pointer;
+
+}
+
+.toggle-input{
+    display: none;
+}
+
+.toggle-fill{
+    position: relative;
+    width: var(--width);
+    height: var(--height);
+    border-radius: var(--border-radius);
+    background-color: #dddddd;
+    transition: background 0.2s;
+}
+
+.toggle-input:checked ~ .toggle-fill{
+    background: #4d774e;
+}
+
+.toggle-fill::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: var(--height);
+    width: var(--height);
+    background: BLACK;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    border-radius: var(--border-radius);
+    transition: transform 0.2s;
+}
+
+.toggle-input:checked ~ .toggle-fill::after {
+    transform: translateX(var(--height));
+}
+
+.radio-btn{
+    display: none;
+}
+
+/* range bar */
+.range-div{
+    width: 60%;
+    margin: 24% auto;
+    position: relative;
+}
+#slider{
+    -webkit-appearance: none;
+    background-color: red;
+    width: 100%;
+    height: 7px;
+    outline: none;
+    border-radius: 3px;
+}
+
+#slider::-webkit-slider-thumb{
+    /* -webkit-appearance: none; */
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    z-index: 3;
+    position: relative;
+}
+
+#selector{
+    height: 104px;
+    width: 48px;
+    position: absolute;
+    bottom: -20px;
+    left:50%;
+    transition: translateX(-50%);
+    z-index:2
+}
+.select-btn{
+    height: 48px;
+    width: 48px;
+    background: url('./test-slider.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+}
+
+.cal-tips{
+    width: 400px;
+    height: 100px;
+    display: flex;
+    position: relative;
+    margin-top: 80px;
+    margin-left: -50px;
+}
+
+
+
+/* exclude input field */
+
+
+
+/* form starting stylings ------------------------------- */
+.group{ 
+  position:relative; 
+  margin-bottom:45px; 
+}
+.exclude-input {
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:300px;
+  border:none;
+  border-bottom:1px solid #757575;
+}
+.exclude-input:focus{ 
+    outline:none; 
+    border: none;
+}
+
+/* LABEL ======================================= */
+.exclude-label{
+  color:#999; 
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+.exclude-input:focus ~ .exclude-label, .exclude-input:valid ~ .exclude-label 		{
+  top:-20px;
+  font-size:14px;
+  color:#5264AE;
+  /* border: none; */
+}
+
+/* BOTTOM BARS ================================= */
+.bar{ 
+    position:relative; 
+    display:block; width:300px; 
+}
+.bar:before, .bar:after{
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#5264AE; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%; 
+}
+
+/* active state */
+.exclude-input:focus ~ .bar:before, .exclude-input:focus ~ .bar:after {
+  width:50%;
+  border: none;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%; 
+  width:100px; 
+  top:25%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+.exclude-input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+  border: none;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+
+
+
+
+/* new input */
+
+.exclude-form{
+    border: none;
+}
+
+input:focus {
+    outline: 0;
+}
+  /* Question */
+  
+.question {
+    font-size: 48px;
+    font-weight: 300;
+    border-radius: 2px;
+    margin: 0;
+    border: none;
+    width: 80%;
+    background: rgba(0, 0, 0, 0);
+    transition: padding-top 0.2s ease, margin-top 0.2s ease;
+    overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
+    color: #4d774e;
+}
+/* Underline and Placeholder */
+
+.question + .question-label{
+    border: none;
+    display: block;
+    position: relative;
+    white-space: nowrap;
+    padding: 0;
+    margin: 0;
+    width: 10%;
+    border-top: 1px solid #4d774e;
+    -webkit-transition: width 0.4s ease;
+    transition: width 0.4s ease;
+    height: 0px;
+  }
+  
+  .question:focus + .question-label{
+    width: 80%;
+  }
+  
+  .question:focus,.question:valid {
+    padding-top: 35px;
+  }
+  
+  
+  .question:focus + .question-label > span,
+  .question:valid + .question-label > span {
+    top: -100px;
+    font-size: 22px;
+    color: #333;
+  }
+  
+
+  .question:valid + .question-label{
+    border-color: green;
+  }
+  
+  .question:invalid{
+    box-shadow: none;
+  }
+  
+  .question + .question-label > span{
+    font-weight: 300;
+    margin: 0;
+    position: absolute;
+    color: #8F8F8F;
+    font-size: 48px;
+    top: -66px;
+    left: 0px;
+    z-index: -1;
+    -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+    transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+  }
+  .question-label{
+      position: relative;
+  }
+  input[type="submit"] {
+    -webkit-transition: opacity 0.2s ease, background 0.2s ease;
+    transition: opacity 0.2s ease, background 0.2s ease;
+    display: block;
+    opacity: 0;
+    margin: 10px 0 0 0;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background: #EEE;
+  }
+  
+  input[type="submit"]:active {
+    background: #999;
+  }
+  
+  .question:valid ~ input[type="submit"] {
+    -webkit-animation: appear 1s forwards;
+    animation: appear 1s forwards;
+  }
+  
+  .question:invalid ~ input[type="submit"]{
+    display: none;
+  }
+  
+  @-webkit-keyframes appear {
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes appear {
+    100% {
+      opacity: 1;
+    }
+  }
+  
