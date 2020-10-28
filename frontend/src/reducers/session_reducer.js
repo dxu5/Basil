@@ -2,6 +2,9 @@ import {
   RECEIVE_CURRENT_USER,
   RECEIVE_USER_LOGOUT,
 } from "../actions/session_actions";
+import { 
+  RECEIVE_COMPLETED_MEAL
+} from "../actions/user_actions";
 
 const initialState = {
   isAuthenticated: false,
@@ -9,6 +12,8 @@ const initialState = {
 };
 
 const SessionReducer = (state = initialState, action) => {
+  Object.freeze(state);
+  let nextState = Object.assign({}, state)
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
       return {
@@ -27,6 +32,9 @@ const SessionReducer = (state = initialState, action) => {
         isAuthenticated: false,
         user: undefined,
       };
+    case RECEIVE_COMPLETED_MEAL:
+      nextState.user.completedMeals = action.completedMeals
+      return nextState;
     default:
       return state;
   }

@@ -10,6 +10,7 @@ import { getMealInfo } from "./actions/meal_actions";
 import { saveMealplan } from "./util/spoonacular_api_util";
 import { getUserInfo } from "./actions/session_actions";
 import { updateCompletedMeals } from "./util/user_api_util";
+import { receiveCompletedMeal } from "./actions/user_actions";
 // discuss whether to delete
 // import './index.css';
 // import App from './App';
@@ -61,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addMealPlan = addMealPlan;
   window.getUserInfo = getUserInfo;
   window.updateCompletedMeals = updateCompletedMeals;
+  window.receiveCompledteMeal = receiveCompletedMeal;
 
   ReactDOM.render(<Root store={store} />, root);
 });

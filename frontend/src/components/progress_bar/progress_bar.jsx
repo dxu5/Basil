@@ -10,6 +10,12 @@ class ProgressBar extends React.Component {
     };
   }
 
+  componentDidUpdate(prevProps){
+    if(prevProps.user.completedMeals !== this.props.user.completedMeals){
+      this.setState({ completed: this.props.user.completedMeals })
+    }
+  }
+
   render() {
     const levelUp = 10;
     const level = Math.floor(this.state.completed / levelUp);
