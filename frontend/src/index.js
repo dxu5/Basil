@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
       id: decodedUser.id,
       username: decodedUser.username,
     };
-    debugger;
     const preloadedState = {
       entities: {
         mealplans: {
