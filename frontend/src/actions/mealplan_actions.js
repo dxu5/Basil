@@ -25,7 +25,6 @@ export const getMealPlans = (details) => (dispatch) => {
 
 export const addMealPlan = (mealplan) => (dispatch) => {
   return MealplanAPIUtil.saveMealplan(mealplan).then((res) => {
-    debugger;
     dispatch(receiveNewMealplan(res.data));
   });
 };
