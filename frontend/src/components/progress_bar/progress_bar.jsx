@@ -19,6 +19,10 @@ class ProgressBar extends React.Component {
     const basilLevel = Math.ceil((this.state.completed-level*levelUp)/(levelUp/4)) % 5;
     return (
       <div className="progress-bar-div">
+        <div className="progress-bar-head">
+          <h2>Welcome back, {this.props.user.username}</h2>
+          <h3>Cook meals to grow your basils</h3>
+        </div>
         <div className="grow-basil">
           {basils}
           <img src={`/images/basilLevel${basilLevel}.png`} />
