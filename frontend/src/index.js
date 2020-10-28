@@ -7,6 +7,7 @@ import { setAuthToken } from "./util/session_api_util";
 import { logout } from "./actions/session_actions";
 import { getMealPlans } from "./actions/mealplan_actions";
 import { getMealInfo } from "./actions/meal_actions";
+import { saveMealplan } from "./util/spoonacular_api_util";
 
 // discuss whether to delete
 // import './index.css';
@@ -54,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.getMealInfo = getMealInfo;
   window.dispatch = store.dispatch;
   window.getState = store.getState;
+  window.saveMealplan = saveMealplan;
 
   ReactDOM.render(<Root store={store} />, root);
 });
