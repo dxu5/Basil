@@ -79,6 +79,7 @@
     font-weight: bold;
     margin: 3% 0 5% 0;
     min-height: 75px;
+    position: relative
 }
 
 .meal-description p {
@@ -111,4 +112,12 @@
     font-size: 2rem;
     height: 75px;
     width: 20vw;
+}
+
+.check-icon {
+    position: absolute;
+    font-size: 50px;
+    color: green;
+    top: 3%;
+    left: 33%;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import CalendarItem from './calendar_item';
-import './calendar.css'
+import './calendar.css';
 
 
 class Calendar extends React.Component { 
