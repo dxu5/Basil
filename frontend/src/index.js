@@ -5,11 +5,10 @@ import configureStore from "./store/store";
 import jwt_decode from "jwt-decode";
 import { setAuthToken } from "./util/session_api_util";
 import { logout } from "./actions/session_actions";
-import { getMealPlans } from "./actions/mealplan_actions";
+import { getMealPlans, addMealPlan } from "./actions/mealplan_actions";
 import { getMealInfo } from "./actions/meal_actions";
 import { saveMealplan } from "./util/spoonacular_api_util";
-import { addMealPlan } from "./actions/mealplan_actions";
-
+import { getUserInfo } from "./actions/session_actions";
 // discuss whether to delete
 // import './index.css';
 // import App from './App';
@@ -58,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.getState = store.getState;
   window.saveMealplan = saveMealplan;
   window.addMealPlan = addMealPlan;
+  window.getUserInfo = getUserInfo;
 
   ReactDOM.render(<Root store={store} />, root);
 });
