@@ -30,8 +30,10 @@ export const getMealInfo = (mealId) => {
 
 export const saveMealplan = (mealplan) => {
   const strMealplan = JSON.stringify(mealplan);
-  return axios.patch("/api/users/mealplan", {
-    body: {
+  return axios({
+    method: "PATCH",
+    url: "/api/users/mealplan",
+    data: {
       mealplan: strMealplan,
     },
   });
