@@ -5,21 +5,21 @@ import "./progress_bar.css";
 class ProgressBar extends React.Component {
   constructor(props) {
     super(props);
-    debugger
+    debugger;
     this.state = {
       completed: this.props.completedMeals,
     };
   }
 
-  componentDidUpdate(prevProps){
-    debugger
-    if(prevProps.completedMeals !== this.props.completedMeals){
-      this.setState({ completed: this.props.completedMeals })
+  componentDidUpdate(prevProps) {
+    debugger;
+    if (prevProps.completedMeals !== this.props.completedMeals) {
+      this.setState({ completed: this.props.completedMeals });
     }
   }
 
   render() {
-    debugger
+    debugger;
     const levelUp = 10;
     const level = Math.floor(this.state.completed / levelUp);
     let basils = [...Array(level).keys()].map((lvl) => {
