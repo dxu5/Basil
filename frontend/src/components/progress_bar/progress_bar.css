@@ -1,15 +1,19 @@
-.progress-bar-div{
+.progress-bar-div, 
+.progress-bar-container,
+.progress-bar-head{
     display: flex;
     flex-direction: column;
+    text-transform: uppercase;
+}
+
+.progress-bar-div{
     align-items: center;
     padding-top:10%;
     padding-bottom: 20px;
-    width: 100%;
+    width: 85%;
 }
 
 .progress-bar-container{
-    display: flex;
-    flex-direction: column;
     align-items: flex-end;
 }
 
@@ -19,10 +23,14 @@
     color: var(--dark-green);
 }
 
+.progress-bar-head{
+    width: 100%;
+    padding-bottom: 50px;
+}
+
 .progress-bar-info{
     color: var(--dark-green);
     margin-top: 15px;
-    text-transform: uppercase;
     font-weight: 500;
 }
 
@@ -31,7 +39,7 @@
     justify-content: flex-start;
     flex-wrap: wrap;
     align-items: baseline;
-    width: 85%;
+    width: 100%;
 }
 
 .grow-basil img{
