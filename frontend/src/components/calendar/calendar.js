@@ -30,6 +30,9 @@ class Calendar extends React.Component {
     }
 
     componentDidMount() {
+
+        // debugger
+
         if (this.props.mealPlan) {
             this.setState({
                 Monday: this.props.mealPlan.week.monday,
@@ -39,29 +42,34 @@ class Calendar extends React.Component {
                 Friday: this.props.mealPlan.week.friday,
                 Saturday: this.props.mealPlan.week.saturday,
                 Sunday: this.props.mealPlan.week.sunday,
+            }, () => {
+                const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+                const weekday = new Date();
+                const currentDay = days[weekday.getDay()];
+                const pastDays = days.slice(0, weekday.getDay())
+
+                pastDays.forEach (day => {
+                    if (document.getElementById(day)) {
+                        document.getElementById(day).classList.add('past')
+                    }
+                })
+                
+                if (document.getElementById(currentDay)) {
+                    document.getElementById(currentDay).classList.add('current')
+                }
             })
         }
 
-        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-        const weekday = new Date();
-        const currentDay = days[weekday.getDay()];
-        const pastDays = days.slice(0, weekday.getDay())
-
-        pastDays.forEach (day => {
-            if (document.getElementById(day)) {
-                document.getElementById(day).classList.add('past')
-            }
-        })
-
-        if (document.getElementById(currentDay)) {
-            document.getElementById(currentDay).classList.add('current')
-        }
+        
     }
 
     render() {
+        
+
         if (this.state['Monday'] === null) {
             return null
         } else {
+
 
             const displayMeal = (field) => this.state[field].meals.map((meal, idx) => {
                 return (<CalendarItem key={meal.id}
