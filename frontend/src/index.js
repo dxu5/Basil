@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addMealPlan = addMealPlan;
   window.getUserInfo = getUserInfo;
   window.updateCompletedMeals = updateCompletedMeals;
-  window.receiveCompledteMeal = receiveCompletedMeal;
+  window.receiveCompletedMeal = receiveCompletedMeal;
 
   ReactDOM.render(<Root store={store} />, root);
 });
