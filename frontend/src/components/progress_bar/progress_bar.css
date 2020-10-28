@@ -3,6 +3,7 @@
 .progress-bar-head{
     display: flex;
     flex-direction: column;
+    text-transform: uppercase;
 }
 
 .progress-bar-div{
@@ -30,7 +31,6 @@
 .progress-bar-info{
     color: var(--dark-green);
     margin-top: 15px;
-    text-transform: uppercase;
     font-weight: 500;
 }
 
