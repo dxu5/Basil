@@ -18,8 +18,23 @@ document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.jwtToken) {
     setAuthToken(localStorage.jwtToken);
     const decodedUser = jwt_decode(localStorage.jwtToken);
+    const user = {
+      exp: decodedUser.exp,
+      iat: decodedUser.iat,
+      id: decodedUser.id,
+      username: decodedUser.username,
+    };
     const preloadedState = {
-      session: { isAuthenticated: true, user: decodedUser },
+      entities: {
+        mealplans: {
+          currentMealplan: decodedUser.currentMealplan
+            ? JSON.parse(decodedUser.currentMealplan)
+            : undefined,
+          currentMealplanStartTime:
+            decodedUser.currentMealplanStartTime || undefined,
+        },
+      },
+      session: { isAuthenticated: true, user },
     };
 
     store = configureStore(preloadedState);
@@ -38,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.getMealPlans = getMealPlans;
   window.getMealInfo = getMealInfo;
   window.dispatch = store.dispatch;
+  window.getState = store.getState;
 
   ReactDOM.render(<Root store={store} />, root);
 });
