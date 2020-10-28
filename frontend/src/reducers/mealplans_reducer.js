@@ -5,6 +5,7 @@ import {
 import {
   RECEIVE_CURRENT_USER,
   RECEIVE_USER_LOGOUT,
+  RECEIVE_USER_INFO_HOME,
 } from "../actions/session_actions";
 
 const _nullState = {
@@ -39,6 +40,15 @@ const mealplansReducer = (state = _nullState, action) => {
       if (action.mealplan.currentMealplanStartTime) {
         newState.currentMealplanStartTime =
           action.mealplan.currentMealplanStartTime;
+      }
+      return newState;
+    case RECEIVE_USER_INFO_HOME:
+      if (action.user.currentMealplan) {
+        newState.currentMealplan = JSON.parse(action.user.currentMealplan);
+      }
+      if (action.user.currentMealplanStartTime) {
+        newState.currentMealplanStartTime =
+          action.user.currentMealplanStartTime;
       }
       return newState;
     case RECEIVE_USER_LOGOUT:
