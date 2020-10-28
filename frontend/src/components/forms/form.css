@@ -131,7 +131,7 @@ form {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -100%);
-    width: 20vw;
+    /* width: 20vw; */
     border-radius: 50px;
     background: transparent;
     border: 2px solid #20473f;  

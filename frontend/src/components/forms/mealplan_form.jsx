@@ -12,32 +12,36 @@ class MealPlan extends React.Component{
             statusCal: false,
             statusDiet: false,
             statusExclude: false
-            
         }
         this.update = this.update.bind(this);
         this.showCal = this.showCal.bind(this);
         this.showDiet = this.showDiet.bind(this);
         this.showExclude = this.showExclude.bind(this);
-        // this.handleStatus = this.handleStatus.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     update(field) {
         return e => this.setState({
           [field]: e.currentTarget.value
         });
-        
     }
-    // handleStatus(field){
-    //     if(this.state[field]){
-    //         return this.setState({
-    //             [field]:false
-    //         });
-    //     }else{
-    //         return this.setState({
-    //             [field]:true
-    //         })
-    //     }
-    // }
+    
+    handleChange(field) {
+        if(field === "statusDiet"){
+            return e=> this.setState({
+              [field]: !this.state.statusDiet
+            })
+        }else if(field === "statusCal"){
+            return e=> this.setState({
+                [field]: !this.state.statusCal
+            })
+        }else if(field === "statusExclude"){
+            return e=> this.setState({
+                [field]: !this.state.statusExclude
+            })
+        }
+
+    }
     
     showCal(){
         return(
@@ -98,7 +102,7 @@ class MealPlan extends React.Component{
     showExclude(){
         return(
             <div>
-                
+                Is it working?
             </div>
         )
     }
@@ -107,17 +111,17 @@ class MealPlan extends React.Component{
         let cal_div;
         let diet_div;
         let exclude_div;
-        if(this.state.statusCal === "y"){
+        if(this.state.statusCal){
             cal_div = this.showCal();
         }else{
             cal_div = null;
         }
-        if(this.state.statusDiet === "y"){
+        if(this.state.statusDiet){
             diet_div = this.showDiet();
         }else{
             diet_div = null;
         }
-        if(this.state.statusExclude === "y"){
+        if(this.state.statusExclude){
             exclude_div = this.showExclude();
         }else{
             exclude_div = null;
@@ -126,23 +130,27 @@ class MealPlan extends React.Component{
         return <div className="meal-plan-form-div">
             <form>
                 <div>
-                    <label>Calories:</label>
-                    <input type="radio" id="yes" className="radio-btn" value="y" name="cal" onClick={this.update("statusCal")}/>
-                    <input className="radio-btn" type="radio" value="n" name="cal" onClick={this.update("statusCal")}/>
+                    <label className="toggle" for="myToggle1">Calories:
+                        <input type="checkbox" className="toggle-input" id="myToggle1" onClick={this.handleChange("statusCal")}/>
+                        <div className="toggle-fill"></div>
+                    </label>
                     {cal_div}
                 </div>
                 <div>
-                    <label>Diet:</label>
-                    <input className="radio-btn" type="radio" value="y" name="d" onClick={this.update("statusDiet")}/>
-                    <input className="radio-btn" type="radio" value="n" name="d" onClick={this.update("statusCal")}/>
+                    <label className="toggle" for="myToggle2">Diet:
+                        <input className="toggle-input" type="checkbox" id="myToggle2"onClick={this.handleChange("statusDiet")}/>
+                        <div className="toggle-fill"></div>
+                    </label>
                     {diet_div}
                 </div>
                 <div>
-                    <label>Foods you don't like:</label>
-                    <input className="radio-btn" type="radio" value="y" name="exclude" onClick={this.update("statusExclude")}/>
-                    <input className="radio-btn" type="radio" value="n" name="exclude" onClick={this.update("statusCal")}/>
+                    <label className="toggle" for="myToggle3">Foods you don't like:
+                        <input type="checkbox" id="myToggle3" className="toggle-input" onClick={this.handleChange("statusExclude")}/>
+                        <div className="toggle-fill"></div>
+                    </label>
                     {exclude_div}
                 </div>
+                <button type="submit"> </button>
             </form>
         </div>
     }
