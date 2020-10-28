@@ -1,14 +1,17 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import "./mealplan.css"
+import Slider from 'react-rangeslider'
+import 'react-rangeslider/lib/index.css'
+import ExcludeList from "./excludeList"
 
 class MealPlan extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            targetCalories:"",
+            targetCalories:2500,
             diet:"",
-            exclude:[],
+            exclude:{},
             statusCal: false,
             statusDiet: false,
             statusExclude: false
@@ -18,6 +21,9 @@ class MealPlan extends React.Component{
         this.showDiet = this.showDiet.bind(this);
         this.showExclude = this.showExclude.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleChangeSlider = this.handleChangeSlider.bind(this);
+        this.handleSubmitExclude = this.handleSubmitExclude.bind(this);
+        this.deleteItem = this.deleteItem.bind(this);
     }
 
     update(field) {
@@ -25,7 +31,23 @@ class MealPlan extends React.Component{
           [field]: e.currentTarget.value
         });
     }
-    
+    deleteItem(item){
+        return()=>{
+            let newCopy = Object.assign({},this.state.exclude)
+            delete newCopy[item]
+            this.setState({exclude:newCopy})
+        }
+    }
+
+
+    handleSubmitExclude(){
+        // return e=>{
+        //     this.setState({
+        //         exclude[e.]
+        //     })
+        // }
+    }
+
     handleChange(field) {
         if(field === "statusDiet"){
             return e=> this.setState({
@@ -41,26 +63,23 @@ class MealPlan extends React.Component{
             })
         }
 
+ 
     }
+    handleChangeSlider = value => {
+        this.setState({
+          targetCalories: value
+        })
     
-    handleSlder(field){
-        var slider = document.getElementById("slider");
-        var selector = document.getElementById("selector")
-        // this.update(field)
-        // return e=>(
-        //     slider.style.left = this.state.targetCalories
-        // )
-        
-        
-    }
+    };
+
+    
+    
     showCal(){
+
         return(
             <div className="range-div"> 
-                <input id="slider" type="range" min="1000" max="4000" onChange={this.handleSlder("targetCalories")}/>
-                <div id="selector">
-                    {this.state.targetCalories}
-                    <div className="select-btn"></div>
-                </div>
+                <Slider min={1000} max={4000} value={this.state.targetCalories} onChange={this.handleChangeSlider}/>
+                    <p className="cal-tips">Generally, the recommended daily calorie intake is 2,000 calories a day for women and 2,500 for men.</p>
             </div>
 
         )
@@ -137,8 +156,13 @@ class MealPlan extends React.Component{
 
     showExclude(){
         return(
-            <div>
-                Is it working?
+            <div class="group">      
+                    <form className="exclude-form" onSubmit={this.handleSubmitExclude}>
+                        <input type="text" name="exclude" className="question" id="nme" required autocomplete="on" />
+                        <label className="question-label" for="exclude"><span className="question-span">FOOD'S YOU DON'T LIKE</span></label>
+                        <input type="submit" value="ADD"/>
+                    </form>
+                    <ExcludeList exclude={Object.keys(this.state.exclude)} deleteItem={this.deleteItem}/>
             </div>
         )
     }
