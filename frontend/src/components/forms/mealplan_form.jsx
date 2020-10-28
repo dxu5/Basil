@@ -5,7 +5,7 @@ import Slider from 'react-rangeslider'
 import 'react-rangeslider/lib/index.css'
 import ExcludeList from "./excludeList"
 
-class MealPlan extends React.Component{
+class MealPlanForm extends React.Component{
     constructor(props){
         super(props)
         this.state = {
@@ -223,4 +223,4 @@ class MealPlan extends React.Component{
     }
 }
 
-export default withRouter(MealPlan);
+export default withRouter(MealPlanForm);
