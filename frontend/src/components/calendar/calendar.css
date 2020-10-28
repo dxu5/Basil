@@ -78,6 +78,8 @@
     font-size: 12px;
     font-weight: bold;
     margin: 3% 0 5% 0;
+    min-height: 75px;
+    position: relative
 }
 
 .meal-description p {
@@ -97,11 +99,26 @@
     opacity: 50%;
 }
 
-#complete-btn {
+#complete-btn, .create-meal-btn {
     border-radius: 50px;
     margin-bottom: 2%;
     outline: none;
     border: 1px solid var(--dark-green);
     color: var(--dark-green);
     background: white;
+    width: 75%;
+}
+
+.create-meal-btn {
+    font-size: 2rem;
+    height: 75px;
+    width: 20vw;
+}
+
+.check-icon {
+    position: absolute;
+    font-size: 50px;
+    color: green;
+    top: 3%;
+    left: 33%;
 }

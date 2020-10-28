@@ -19,6 +19,14 @@ const UserSchema = new Schema(
       type: Date,
       required: false,
     },
+    completedMealIds: {
+      type: String,
+      required: false,
+    },
+    completedMeals: {
+      type: Number,
+      default: 0,
+    },
   },
   {
     timestamps: true,

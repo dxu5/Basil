@@ -10,13 +10,16 @@
 
 .progress{
     background-color: var(--oatmeal);
-    /* background-color: white; */
     height: 100%;
 }
 
+.user-info-div{
+    display: flex;
+    flex-direction: column;
+    width: 85%
+}
+
 .user-info{
-    /* background-color: var(--oatmeal); */
-    /* height:20vh; */
     width: 100%;
     padding: 30px 0;
     text-transform: uppercase;
@@ -26,17 +29,20 @@
 
 .calendar{
     height: 80vh;
+    display: flex;
+    justify-content: center;
 }
 
-.user-info-div{
+.user-stat-container{
     display: flex;
     justify-content: space-between;
-    width: 85%;
+    width: 100%;
     margin: 5% 0;
 }
 
 .user-stat{
     text-align: center;
+    max-width: 15%;
 }
 
 .user-stat h4{

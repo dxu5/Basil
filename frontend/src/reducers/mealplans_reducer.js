@@ -5,11 +5,15 @@ import {
 import {
   RECEIVE_CURRENT_USER,
   RECEIVE_USER_LOGOUT,
+  RECEIVE_USER_INFO_HOME,
 } from "../actions/session_actions";
+import {
+  RECEIVE_COMPLETED_MEAL
+} from "../actions/user_actions"
 
 const _nullState = {
   currentMealplan: undefined,
-  prevMealplans: [],
+  completedMealplans: {},
   prospectiveMealplan: undefined,
   currentMealplanStartTime: undefined,
 };
@@ -39,6 +43,29 @@ const mealplansReducer = (state = _nullState, action) => {
       if (action.mealplan.currentMealplanStartTime) {
         newState.currentMealplanStartTime =
           action.mealplan.currentMealplanStartTime;
+      }
+      return newState;
+    case RECEIVE_USER_INFO_HOME:
+      if (action.user.currentMealplan) {
+        newState.currentMealplan = JSON.parse(action.user.currentMealplan);
+      }
+      if (action.user.currentMealplanStartTime) {
+        newState.currentMealplanStartTime =
+          action.user.currentMealplanStartTime;
+      }
+      return newState;
+    case RECEIVE_COMPLETED_MEAL:
+      debugger
+      const mealCompletedObj = JSON.parse(action.completedMealInfo)
+      const weekday = mealCompletedObj['weekday']
+      if(!newState.completedMealplans[weekday]){
+        newState.completedMealplans[weekday] = [];
+      }
+      if(mealCompletedObj['completed']){
+        newState.completedMealplans[weekday].push(mealCompletedObj['mealId']) ;
+      }
+      else{
+        newState.completedMealplans[weekday] = newState.completedMealplans[weekday].filter(id => id !== mealCompletedObj['mealId'])
       }
       return newState;
     case RECEIVE_USER_LOGOUT:

@@ -4,9 +4,12 @@ import { receiveMealPlan } from "../../actions/mealplan_actions";
 
 import Calendar from "./calendar";
 
-const mapStateToProps = (state) => ({
-    mealPlan: state.entities.mealplans.currentMealplan
-});
+const mapStateToProps = (state) => {
+    return ({
+        mealPlan: state.entities.mealplans.currentMealplan,
+        currentMealPlanTime: state.entities.mealplans.currentMealplanStartTime
+    })
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {

@@ -24,12 +24,14 @@ class SplashPage extends React.Component {
             From clean eating to calorie-balanced nutritious meals to kid
             friendly recipes, get access to thousands of appetizing meals made
             by certified chefs. Our app accommodates all dietary restrictions.
+            Take the anxiety out of deciding what to eat. Whatever your goals, let
+            Basil make the process as simple as possible.
           </p>
         </section>
 
         <div className="pimg2">
           <div className="ptext">
-            <span className="border trans">Best in class meal plan app</span>
+            <span className="border trans">Eating smart has never been easier</span>
           </div>
         </div>
 
@@ -51,10 +53,10 @@ class SplashPage extends React.Component {
         </div>
 
         <section className="section section-dark">
-          <h2>Get Rewarded</h2>
+          <h2>Make eating fun</h2>
           <p>
-            Track your progress each day. Feel good with a little praise from
-            us.
+            Track your progress each day. Up-to-date stats to help you stay smart and on
+            track to meet your goals. Watch your basil grow as you complete more meals.
           </p>
         </section>
 

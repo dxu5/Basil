@@ -1,14 +1,11 @@
 import { connect } from "react-redux";
-
 import ProgressBar from "./progress_bar";
 
-const mapStateToProps = (state) => ({
-  user: state.session.user,
-});
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//   };
-// };
+const mapStateToProps = (state) => {
+  return ({
+    user: state.session.user,
+    completedMeals: state.session.user.completedMeals,
+  }) 
+};
 
 export default connect(mapStateToProps, null)(ProgressBar);

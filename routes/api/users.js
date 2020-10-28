@@ -16,10 +16,7 @@ router.get(
   "/current",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    res.json({
-      id: req.user.id,
-      username: req.user.username,
-    });
+    res.json(req.user);
   }
 );
 
@@ -66,6 +63,8 @@ router.post("/register", (req, res) => {
                 username: user.username,
                 currentMealplan: undefined,
                 currentMealplanStartTime: undefined,
+                completedMealIds: undefined,
+                completedMeals: 0,
               };
 
               jwt.sign(
@@ -110,6 +109,8 @@ router.post("/login", (req, res) => {
           username: user.username,
           currentMealplan: user.currentMealplan,
           currentMealplanStartTime: user.currentMealplanStartTime,
+          completedMealIds: user.completedMealIds,
+          completedMeals: user.completedMeals,
         };
 
         jwt.sign(
@@ -130,5 +131,20 @@ router.post("/login", (req, res) => {
     });
   });
 });
+
+router.patch(
+  "/completedMeals",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    const query = { _id: req.user.id };
+    User.findOneAndUpdate(query, {
+      completedMealIds: req.body.updatedCompletedMealIds,
+      completedMeals: req.body.updatedCompletedMeals
+    }).then((user) => {
+      User.findOne({ _id: user.id }).then((user) => res.json(user));
+    });
+  }
+);
+
 
 module.exports = router;
