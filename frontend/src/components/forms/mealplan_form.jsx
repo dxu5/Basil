@@ -14,7 +14,8 @@ class MealPlan extends React.Component{
             exclude:{},
             statusCal: false,
             statusDiet: false,
-            statusExclude: false
+            statusExclude: false,
+            inputExclude: ""
         }
         this.update = this.update.bind(this);
         this.showCal = this.showCal.bind(this);
@@ -24,6 +25,7 @@ class MealPlan extends React.Component{
         this.handleChangeSlider = this.handleChangeSlider.bind(this);
         this.handleSubmitExclude = this.handleSubmitExclude.bind(this);
         this.deleteItem = this.deleteItem.bind(this);
+        this.handleExcludeInputChange = this.handleExcludeInputChange.bind(this)
     }
 
     update(field) {
@@ -40,37 +42,42 @@ class MealPlan extends React.Component{
     }
 
 
-    handleSubmitExclude(){
-        // return e=>{
-        //     this.setState({
-        //         exclude[e.]
-        //     })
-        // }
+    handleSubmitExclude(e){
+        e.preventDefault();
+        let newState = Object.assign({},this.state.exclude)
+        newState[this.state.inputExclude] = true
+        this.setState({inputExclude: "", exclude: newState})
     }
 
     handleChange(field) {
         if(field === "statusDiet"){
             return e=> this.setState({
-              [field]: !this.state.statusDiet
+              [field]: !this.state.statusDiet,
+              targetCalories: 0
             })
         }else if(field === "statusCal"){
             return e=> this.setState({
-                [field]: !this.state.statusCal
+                [field]: !this.state.statusCal,
+                diet:""
             })
         }else if(field === "statusExclude"){
             return e=> this.setState({
-                [field]: !this.state.statusExclude
+                [field]: !this.state.statusExclude,
+                exclude: {}
             })
         }
-
- 
     }
+    
     handleChangeSlider = value => {
         this.setState({
           targetCalories: value
         })
     
     };
+
+    handleExcludeInputChange(e){
+        this.setState({inputExclude: e.currentTarget.value})
+    }
 
     
     
@@ -157,11 +164,11 @@ class MealPlan extends React.Component{
     showExclude(){
         return(
             <div class="group">      
-                    <form className="exclude-form" onSubmit={this.handleSubmitExclude}>
-                        <input type="text" name="exclude" className="question" id="nme" required autocomplete="on" />
+                    <div className="exclude-form" onSubmit={this.handleSubmitExclude}>
+                        <input type="text" name="exclude" className="question" id="nme" required autocomplete="on" value={this.state.inputExclude} onChange={this.handleExcludeInputChange}/>
                         <label className="question-label" for="exclude"><span className="question-span">FOOD'S YOU DON'T LIKE</span></label>
-                        <input type="submit" value="ADD"/>
-                    </form>
+                        <button onClick={this.handleSubmitExclude}>Add</button>
+                    </div>
                     <ExcludeList exclude={Object.keys(this.state.exclude)} deleteItem={this.deleteItem}/>
             </div>
         )
