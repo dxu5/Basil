@@ -5,6 +5,8 @@ export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const RECEIVE_USER_LOGOUT = "RECEIVE_USER_LOGOUT";
 export const RECEIVE_USER_SIGN_IN = "RECEIVE_USER_SIGN_IN";
+//USE THIS FOR RETRIEVING INFO ABOUT CURRENT USER AT HOME
+export const RECEIVE_USER_INFO_HOME = "RECEIVE_USER_INFO_HOME";
 
 export const receiveCurrentUser = (currentUser) => ({
   type: RECEIVE_CURRENT_USER,
@@ -19,6 +21,13 @@ export const receiveErrors = (errors) => ({
 export const logoutUser = () => ({
   type: RECEIVE_USER_LOGOUT,
 });
+
+export const receiveUserInfoHome = (user) => {
+  return {
+    type: RECEIVE_USER_INFO_HOME,
+    user,
+  };
+};
 
 export const signup = (user) => (dispatch) =>
   APIUtil.signup(user).then(
@@ -49,4 +58,12 @@ export const logout = () => (dispatch) => {
   localStorage.removeItem("jwtToken");
   APIUtil.setAuthToken(false);
   dispatch(logoutUser());
+};
+
+//USE THIS FOR RETRIEVING INFO ABOUT CURRENT USER AT HOME
+
+export const getUserInfo = () => (dispatch) => {
+  return APIUtil.getUserInfo().then((res) =>
+    dispatch(receiveUserInfoHome(res.data))
+  );
 };
