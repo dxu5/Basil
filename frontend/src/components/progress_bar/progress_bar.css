@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top:100px;
+    padding-top:10%;
     padding-bottom: 20px;
     width: 100%;
 }
@@ -14,7 +14,7 @@
 }
 
 .progress-bar{
-    width: 90vw;
+    width: 85vw;
     background: transparent;
     color: var(--dark-green);
 }
@@ -31,7 +31,7 @@
     justify-content: flex-start;
     flex-wrap: wrap;
     align-items: baseline;
-    width: 90%;
+    width: 85%;
 }
 
 .grow-basil img{
