@@ -1,7 +1,7 @@
 import React from 'react';
-import ProgressBarContainer from '../progress_bar/progress_bar_container'
-import './home.css'
-import CalendarContainer from '../calendar/calendar_container'
+import ProgressBarContainer from '../progress_bar/progress_bar_container';
+import UserInfo from './user_info';
+import './home.css';
 
 class Home extends React.Component{
     constructor(props){
@@ -15,9 +15,9 @@ class Home extends React.Component{
                     <ProgressBarContainer />
                 </section>
                 <section className="calendar">Calendar</section>
-                <CalendarContainer />
-                <section className="user-infor">User Info</section>
-
+                <section className="user-info">
+                    <UserInfo user={this.props.user}/>
+                </section>
             </div>
         )
     }
