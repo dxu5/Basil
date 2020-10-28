@@ -15,6 +15,7 @@ class CalendarItem extends React.Component {
                     <p className='meal-title'>{this.props.title}</p>
                     <p className='meal-time'>{this.props.readyInMinutes} minutes</p>
                 </div>
+                <button>Completed?</button>
             </div>
         )
     }
