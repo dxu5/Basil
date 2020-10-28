@@ -40,26 +40,46 @@ class Calendar extends React.Component {
 
     render() {
 
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+        const weekday = new Date();
+        const currentDay = days[weekday.getDay()];
+
+        // $('.currentDay').addClass(currentDay)
 
         return (
             <div className='calendar-container'>
-                {/* <div>{this.displayMeal('Monday')}</div>
-                <div>{this.displayMeal('Tuesday')}</div>
-                <div>{this.displayMeal('Wednesday')}</div>
-                <div>{this.displayMeal('Thursday')}</div>
-                <div>{this.displayMeal('Friday')}</div>
-                <div>{this.displayMeal('Saturday')}</div>
-                <div>{this.displayMeal('Sunday')}</div> */}
-                <div className='meal-label'>
+                {/* <div className='day-container'>
+                    <p className='day'>Monday</p>
+                    {this.displayMeal('Monday')}</div>
+                <div className='day-container'>
+                    <p className='day'>Tuesday</p>
+                    {this.displayMeal('Tuesday')}</div>
+                <div className='day-container'>
+                    <p className='day'>Wednesday</p>
+                    {this.displayMeal('Wednesday')}</div>
+                <div className='day-container'>
+                    <p className='day'>Thursday</p>
+                    {this.displayMeal('Thursday')}</div>
+                <div className='day-container'>
+                    <p className='day'>Friday</p>
+                    {this.displayMeal('Friday')}</div>
+                <div className='day-container'>
+                    <p className='day'>Saturday</p>
+                    {this.displayMeal('Saturday')}</div>
+                <div className='day-container'>
+                    <p className='day'>Sunday</p>
+                    {this.displayMeal('Sunday')}</div>
+                <div className='day-container' className='meal-label'>
                     <p>Morning</p>
                     <p>Afternoon</p>
                     <p>Evening</p>
-                </div>
+                </div> */}
+
                 <div className='table-responsive'>
                     <table className='table'>
 
                         <div className='day-container'>
-                            <p>Monday</p>
+                            <p className='monday'>Monday</p>
                             <div className='meal-0'>
                                 <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/720583-636x393.jpg`}/></div>
                                 <div className='meal-description'>
