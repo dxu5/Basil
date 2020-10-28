@@ -7,35 +7,37 @@ class Calendar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            // Monday: this.props.mealPlan.week.monday,
-            // Tuesday: this.props.mealPlan.week.tuesday,
-            // Wednesday: this.props.mealPlan.week.wednesday,
-            // Thursday: this.props.mealPlan.week.thursday,
-            // Friday: this.props.mealPlan.week.friday,
-            // Saturday: this.props.mealPlan.week.saturday,
-            // Sunday: this.props.mealPlan.week.sunday,
+            Monday: this.props.mealPlan.week.monday,
+            Tuesday: this.props.mealPlan.week.tuesday,
+            Wednesday: this.props.mealPlan.week.wednesday,
+            Thursday: this.props.mealPlan.week.thursday,
+            Friday: this.props.mealPlan.week.friday,
+            Saturday: this.props.mealPlan.week.saturday,
+            Sunday: this.props.mealPlan.week.sunday,
         }
         this.showMealPlan = this.showMealPlan.bind(this);
-        this.displayMeal = this.displayMeal.bind(this);
+        // this.displayMeal = this.displayMeal.bind(this);
     }
 
     showMealPlan(e) {
         e.preventDefault();    
     }
 
-    displayMeal(field) {
-        // let day = field;
-        this.state[field].meals.map((meal, idx) => {
-            <CalendarItem key={meal.id}
-                id={meal.id}
-                day={field}
-                imageType={meal.imageType}
-                title={meal.title}
-                readyInMinutes={meal.readyInMinutes}
-                mealNum={idx}
-            />
-        })
-    }
+    // displayMeal(field) {
+    //     // let day = field;
+    //     // e.preventDefault();
+    //     debugger
+    //     this.state[field].meals.map((meal, idx) => {
+    //         return (<CalendarItem key={meal.id}
+    //             id={meal.id}
+    //             day={field}
+    //             imageType={meal.imageType}
+    //             title={meal.title}
+    //             readyInMinutes={meal.readyInMinutes}
+    //             mealNum={idx}
+    //         />)
+    //     })
+    // }
 
     componentDidMount() {
         const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
@@ -56,31 +58,21 @@ class Calendar extends React.Component {
 
     render() {
 
+        const displayMeal = (field) => this.state[field].meals.map((meal, idx) => {
+            return (<CalendarItem key={meal.id}
+                id={meal.id}
+                day={field}
+                imageType={meal.imageType}
+                title={meal.title}
+                readyInMinutes={meal.readyInMinutes}
+                mealNum={idx}
+            />)
+        })
 
+        debugger    
         return (
             <div className='calendar-container'>
-                {/* <div className='day-container'>
-                    <p id='Sunday'>Sunday</p>
-                    {this.displayMeal('sunday')}</div>
-                <div className='day-container'>
-                    <p id='Monday'>Monday</p>
-                    {this.displayMeal('monday')}</div>
-                <div className='day-container'>
-                    <p id='Tuesday'>Tuesday</p>
-                    {this.displayMeal('tuesday')}</div>
-                <div className='day-container'>
-                    <p id='Wednesday'>Wednesday</p>
-                    {this.displayMeal('wednesday')}</div>
-                <div className='day-container'>
-                    <p id='Thursday'>Thursday</p>
-                    {this.displayMeal('thursday')}</div>
-                <div className='day-container'>
-                    <p id='Friday'>Friday</p>
-                    {this.displayMeal('friday')}</div>
-                <div className='day-container'>
-                    <p id='Saturday'>Saturday</p>
-                    {this.displayMeal('saturday')}</div>
-                <div className='day-container' className='meal-label'>
+                {/* <div className='day-container' className='meal-label'>
                     <p>Morning</p>
                     <p>Afternoon</p>
                     <p>Evening</p>
@@ -88,8 +80,30 @@ class Calendar extends React.Component {
 
                 <div className='table-responsive'>
                     <table className='table'>
-
+                        
                         <div className='day-container'>
+                            <p id='Sunday'>Sunday</p>
+                            {displayMeal('Sunday')}</div>
+                        <div className='day-container'>
+                            <p id='Monday'>Monday</p>
+                            {displayMeal('Monday')}</div>
+                        <div className='day-container'>
+                            <p id='Tuesday'>Tuesday</p>
+                            {displayMeal('Tuesday')}</div>
+                        <div className='day-container'>
+                            <p id='Wednesday'>Wednesday</p>
+                            {displayMeal('Wednesday')}</div>
+                        <div className='day-container'>
+                            <p id='Thursday'>Thursday</p>
+                            {displayMeal('Thursday')}</div>
+                        <div className='day-container'>
+                            <p id='Friday'>Friday</p>
+                            {displayMeal('Friday')}</div>
+                        <div className='day-container'>
+                            <p id='Saturday'>Saturday</p>
+                            {displayMeal('Saturday')}</div>
+
+                        {/* <div className='day-container'>
                             <p id='Sunday'>Sunday</p>
                             <div className='meal-0'>
                                 <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/720583-636x393.jpg`}/></div>
@@ -256,7 +270,7 @@ class Calendar extends React.Component {
                                     <p className='meal-time'>60 minutes</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                         
                         
                     </table>
