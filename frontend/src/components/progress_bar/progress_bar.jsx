@@ -6,17 +6,18 @@ class ProgressBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {  //placeholder for user info
-        completed: 21,
+        completed: 48,
     }
   }
 
   render() {
     const levelUp = 20;
+    // const growBasil = levelUp/5
     const level = Math.floor(this.state.completed/levelUp);
     let basils = [...Array(level).keys()].map((lvl)=> {
         return <img src={`/images/basilLevel4.jpg`}  />;
     })
-    const basilLevel = Math.ceil(this.state.completed/5) % 5;
+    const basilLevel = Math.ceil((this.state.completed-level*levelUp)/5) % 5;
     return (
     <div className="progress-bar-div">
         <div className="grow-basil">

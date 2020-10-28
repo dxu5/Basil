@@ -21,9 +21,10 @@
 .grow-basil{
     display: flex;
     justify-content: flex-start;
+    align-items: baseline;
     width: 100%;
 }
 
 .grow-basil img{
-    height: 100px;
+    width: 100px;
 }
