@@ -1,0 +1,29 @@
+.meal-plan-form-div{
+    /* display: fixed; */
+    /* top: 50%;
+    left: 50%; */
+    margin-top: 20%;
+    margin-left: 20%;
+    width: 500px;
+    height: 500px;
+    border: 1px solid red;
+}
+
+form {
+    width: 100%;
+    height: 100%;
+    /* overflow: hidden; */
+    border: 1px solid red;
+
+}
+
+input{
+    color:red;
+}
+
+.radio-btn{
+    /* width: 100px;
+    height: 100px; */
+    border: 1px solid red;
+
+}
