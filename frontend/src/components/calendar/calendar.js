@@ -1,6 +1,6 @@
 import React from 'react';
 import CalendarItem from './calendar_item';
-import './calendar.css'
+import './calendar.css';
 
 
 class Calendar extends React.Component { 
@@ -16,6 +16,7 @@ class Calendar extends React.Component {
             Sunday: null,
         }
         this.handleClick = this.handleClick.bind(this);
+        this.getFutureDays = this.getFutureDays.bind(this);
     }
 
     //need to handle click link to meal plan form
@@ -51,6 +52,12 @@ class Calendar extends React.Component {
                 }
             })
         }
+    }
+
+    getFutureDays() {
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+        const weekday = new Date();
+        return days.slice(weekday.getDay()+1)
     }
 
     componentDidMount() {
@@ -95,6 +102,7 @@ class Calendar extends React.Component {
 
             const displayMeal = (field) => this.state[field].meals.map((meal, idx) => {
                 return (<CalendarItem key={meal.id}
+                    futureDays={this.getFutureDays()}
                     id={meal.id}
                     day={field}
                     imageType={meal.imageType}
