@@ -24,11 +24,15 @@ document.addEventListener("DOMContentLoaded", () => {
       id: decodedUser.id,
       username: decodedUser.username,
     };
+    debugger;
     const preloadedState = {
       entities: {
         mealplans: {
-          currentMealplan: JSON.parse(JSON.parse(decodedUser.currentMealplan)),
-          currentMealplanStartTime: decodedUser.currentMealplanStartTime,
+          currentMealplan: decodedUser.currentMealplan
+            ? JSON.parse(decodedUser.currentMealplan)
+            : undefined,
+          currentMealplanStartTime:
+            decodedUser.currentMealplanStartTime || undefined,
         },
       },
       session: { isAuthenticated: true, user },
