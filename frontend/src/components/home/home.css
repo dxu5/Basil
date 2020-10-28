@@ -49,6 +49,7 @@
 
 .user-stat h4 {
   font-size: 50px;
+  overflow-wrap: break-word;
 }
 
 .user-stat > svg {
