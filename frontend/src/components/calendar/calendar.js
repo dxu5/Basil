@@ -14,19 +14,41 @@ class Calendar extends React.Component {
             Friday: null,
             Saturday: null,
             Sunday: null,
-            // Monday: this.props.mealPlan.week.monday,
-            // Tuesday: this.props.mealPlan.week.tuesday,
-            // Wednesday: this.props.mealPlan.week.wednesday,
-            // Thursday: this.props.mealPlan.week.thursday,
-            // Friday: this.props.mealPlan.week.friday,
-            // Saturday: this.props.mealPlan.week.saturday,
-            // Sunday: this.props.mealPlan.week.sunday,
         }
         this.showMealPlan = this.showMealPlan.bind(this);
     }
 
     showMealPlan(e) {
         e.preventDefault();    
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.currentMealPlanTime !== this.props.currentMealPlanTime) {
+            this.setState({
+                Monday: this.props.mealPlan.week.monday,
+                Tuesday: this.props.mealPlan.week.tuesday,
+                Wednesday: this.props.mealPlan.week.wednesday,
+                Thursday: this.props.mealPlan.week.thursday,
+                Friday: this.props.mealPlan.week.friday,
+                Saturday: this.props.mealPlan.week.saturday,
+                Sunday: this.props.mealPlan.week.sunday
+            }, () => {
+                const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+                const weekday = new Date();
+                const currentDay = days[weekday.getDay()];
+                const pastDays = days.slice(0, weekday.getDay())
+
+                pastDays.forEach (day => {
+                    if (document.getElementById(day)) {
+                        document.getElementById(day).classList.add('past')
+                    }
+                })
+                
+                if (document.getElementById(currentDay)) {
+                    document.getElementById(currentDay).classList.add('current')
+                }
+            })
+        }
     }
 
     componentDidMount() {
@@ -70,7 +92,6 @@ class Calendar extends React.Component {
             return null
         } else {
 
-
             const displayMeal = (field) => this.state[field].meals.map((meal, idx) => {
                 return (<CalendarItem key={meal.id}
                     id={meal.id}
@@ -84,11 +105,6 @@ class Calendar extends React.Component {
     
             return (
                 <div className='calendar-container'>
-                    {/* <div className='day-container' className='meal-label'>
-                        <p>Morning</p>
-                        <p>Afternoon</p>
-                        <p>Evening</p>
-                    </div> */}
     
                     <div className='table-responsive'>
                         <table className='table'>
