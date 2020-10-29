@@ -6,8 +6,8 @@ import NavBarContainer from "./navbar/navbar_container";
 import SplashPage from "./splash/splash_page";
 import LoginFormContainer from "./forms/login_form_container";
 import SignupFormContainer from "./forms/signup_form_container";
-import HomeContainer from "./home/home_container"
-import MealPlanContainer from "./forms/mealplan_container"
+import HomeContainer from "./home/home_container";
+import MealPlanContainer from "./forms/mealplan_container";
 
 const App = () => (
   <div>
@@ -17,7 +17,7 @@ const App = () => (
       <ProtectedRoute path="/mealplan" component={MealPlanContainer} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <Route exact path="/" component={SplashPage} />
+      <AuthRoute exact path="/" component={SplashPage} />
       <Redirect to="/" />
     </Switch>
   </div>
