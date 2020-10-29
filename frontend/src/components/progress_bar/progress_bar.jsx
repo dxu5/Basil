@@ -47,7 +47,7 @@ class ProgressBar extends React.Component {
               strokeColor="#013328"
               strokeLinecap="round"
               trailWidth="1"
-              trailColor="#ffffff"
+              trailColor="lightgray"
             />
           </div>
           <div className="progress-bar-info">
