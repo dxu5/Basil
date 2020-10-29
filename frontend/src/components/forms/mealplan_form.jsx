@@ -26,6 +26,7 @@ class MealPlanForm extends React.Component{
         this.handleSubmitExclude = this.handleSubmitExclude.bind(this);
         this.deleteItem = this.deleteItem.bind(this);
         this.handleExcludeInputChange = this.handleExcludeInputChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     update(field) {
@@ -33,6 +34,7 @@ class MealPlanForm extends React.Component{
           [field]: e.currentTarget.value
         });
     }
+
     deleteItem(item){
         return()=>{
             let newCopy = Object.assign({},this.state.exclude)
@@ -40,7 +42,6 @@ class MealPlanForm extends React.Component{
             this.setState({exclude:newCopy})
         }
     }
-
 
     handleSubmitExclude(e){
         e.preventDefault();
@@ -79,7 +80,22 @@ class MealPlanForm extends React.Component{
         this.setState({inputExclude: e.currentTarget.value})
     }
 
-    
+    handleSubmit(e){
+        e.preventDefault()
+        let newCopy = {}
+        
+        if(this.state.statusCal){
+            newCopy.targetCalories = this.state.targetCalories
+        }
+        if(this.state.statusDiet){
+            newCopy.diet = this.state.diet
+        }
+        if(this.state.statusExclude){
+            newCopy.exclude = Object.keys(this.state.exclude).join(",")
+        }
+        
+        this.props.getMealPlans(newCopy)
+    }
     
     showCal(){
 
@@ -165,7 +181,7 @@ class MealPlanForm extends React.Component{
         return(
             <div class="group">      
                     <div className="exclude-form" onSubmit={this.handleSubmitExclude}>
-                        <input type="text" name="exclude" className="question" id="nme" required autocomplete="on" value={this.state.inputExclude} onChange={this.handleExcludeInputChange}/>
+                        <input type="text" name="exclude" className="question" id="nme" autocomplete="on" value={this.state.inputExclude} onChange={this.handleExcludeInputChange}/>
                         <label className="question-label" for="exclude"><span className="question-span">FOOD'S YOU DON'T LIKE</span></label>
                         <button onClick={this.handleSubmitExclude}>Add</button>
                     </div>
@@ -195,7 +211,7 @@ class MealPlanForm extends React.Component{
         }
 
         return <div className="meal-plan-form-div">
-            <form>
+            <form onSubmit={this.handleSubmit}>
                 <div>
                     <label className="toggle" for="myToggle1">Calories:
                         <input type="checkbox" className="toggle-input" id="myToggle1" onClick={this.handleChange("statusCal")}/>
@@ -217,7 +233,7 @@ class MealPlanForm extends React.Component{
                     </label>
                     {exclude_div}
                 </div>
-                <button type="submit">??</button>
+                <button type="submit">Create Mealplan</button>
             </form>
         </div>
     }
