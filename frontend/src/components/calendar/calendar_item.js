@@ -9,15 +9,27 @@ class CalendarItem extends React.Component {
         this.state = {
             completed: false
         }
-        this.handleClick = this.handleClick.bind(this);
+        this.handleComplete = this.handleComplete.bind(this);
+        this.handleUndo = this.handleUndo.bind(this);
         this.displayIcon = this.displayIcon.bind(this);
         this.displayCompleteButton = this.displayCompleteButton.bind(this);
     }
 
-    handleClick(e) {
+    handleUndo(e) {
         e.preventDefault();
-        let bool = this.state.completed
-        this.setState({completed: !bool})
+        let completedMeal = `{"weekday": "${this.props.day}", "mealId": ${this.props.id}, "completed": ${false}}`;
+
+        this.setState({completed: false})
+        this.props.receiveCompletedMeal(this.props.completedMealCount - 1, completedMeal);
+    }
+
+    handleComplete(e) {
+        e.preventDefault();
+        
+        let completedMeal = `{"weekday": "${this.props.day}", "mealId": ${this.props.id}, "completed": ${true}}`;
+
+        this.setState({completed: true})
+        this.props.receiveCompletedMeal(this.props.completedMealCount + 1, completedMeal);
     }
 
     displayIcon() {
@@ -28,9 +40,9 @@ class CalendarItem extends React.Component {
         if (this.props.futureDays.includes(this.props.day)) {
             return null;
         } else if (this.state.completed) {
-            return <button id='complete-btn' onClick={this.handleClick}>Undo</button>;
+            return <button id='complete-btn' onClick={this.handleUndo}>Undo</button>;
         } else {
-            return <button id='complete-btn' onClick={this.handleClick}>Complete?</button>;
+            return <button id='complete-btn' onClick={this.handleComplete}>Complete?</button>;
         }
     }
 

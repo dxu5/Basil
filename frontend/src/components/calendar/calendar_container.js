@@ -9,7 +9,8 @@ const mapStateToProps = (state) => {
     return ({
         mealPlan: state.entities.mealplans.currentMealplan,
         currentMealPlanTime: state.entities.mealplans.currentMealplanStartTime,
-        completedMealCount: state.session.user.completedMeals
+        completedMealCount: state.session.user.completedMeals,
+        
     })
 };
 
