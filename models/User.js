@@ -19,7 +19,7 @@ const UserSchema = new Schema(
       type: Date,
       required: false,
     },
-    completedMealIds: {
+    completedMealplans: {
       type: String,
       required: false,
     },

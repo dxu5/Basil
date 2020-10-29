@@ -1,5 +1,6 @@
 import {
   RECEIVE_CURRENT_USER,
+  RECEIVE_USER_INFO_HOME,
   RECEIVE_USER_LOGOUT,
 } from "../actions/session_actions";
 import { 
@@ -27,6 +28,9 @@ const SessionReducer = (state = initialState, action) => {
           completedMeals: action.currentUser.completedMeals
         },
       };
+    case RECEIVE_USER_INFO_HOME:
+      nextState.user.completedMeals = action.user.completedMeals;
+      return nextState;
     case RECEIVE_USER_LOGOUT:
       return {
         isAuthenticated: false,

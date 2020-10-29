@@ -10,9 +10,9 @@ class ProgressBar extends React.Component {
     };
   }
 
-  componentDidUpdate(prevProps){
-    if(prevProps.completedMeals !== this.props.completedMeals){
-      this.setState({ completed: this.props.completedMeals })
+  componentDidUpdate(prevProps) {
+    if (prevProps.completedMeals !== this.props.completedMeals) {
+      this.setState({ completed: this.props.completedMeals });
     }
   }
 
@@ -27,8 +27,7 @@ class ProgressBar extends React.Component {
     return (
       <div className="progress-bar-div">
         <div className="progress-bar-head">
-          <h2>Welcome back, {this.props.user.username}</h2>
-          <h3>Cook meals to grow your basils</h3>
+          <h3>Complete meals and watch your garden grow!</h3>
         </div>
         <div className="grow-basil">
           {basils}
@@ -42,7 +41,7 @@ class ProgressBar extends React.Component {
               strokeColor="#013328"
               strokeLinecap="round"
               trailWidth="1"
-              trailColor="#ffffff"
+              trailColor="lightgray"
             />
           </div>
           <div className="progress-bar-info">

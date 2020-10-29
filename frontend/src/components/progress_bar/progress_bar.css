@@ -1,47 +1,53 @@
-.progress-bar-div, 
+.progress-bar-div,
 .progress-bar-container,
-.progress-bar-head{
-    display: flex;
-    flex-direction: column;
-    text-transform: uppercase;
+.progress-bar-head {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
 }
 
-.progress-bar-div{
-    align-items: center;
-    padding-top:10%;
-    padding-bottom: 20px;
-    width: 85%;
+.progress-bar-div {
+  align-items: center;
+  padding-top: 10%;
+  padding-bottom: 20px;
+  width: 85%;
 }
 
-.progress-bar-container{
-    align-items: flex-end;
+.progress-bar-container {
+  align-items: flex-end;
 }
 
-.progress-bar{
-    width: 85vw;
-    background: transparent;
-    color: var(--dark-green);
+.progress-bar {
+  width: 85vw;
+  background: transparent;
+  color: var(--dark-green);
 }
 
-.progress-bar-head{
-    width: 100%;
-    padding-bottom: 50px;
+.progress-bar-head {
+  width: 100%;
+  padding-bottom: 50px;
 }
 
-.progress-bar-info{
-    color: var(--dark-green);
-    margin-top: 15px;
-    font-weight: 500;
+.progress-bar-info {
+  color: var(--dark-green);
+  margin-top: 15px;
+  font-weight: 500;
 }
 
-.grow-basil{
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    align-items: baseline;
-    width: 100%;
+.grow-basil {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: baseline;
+  width: 100%;
 }
 
-.grow-basil img{
-    width: 100px;
+.grow-basil img {
+  width: 100px;
 }
+
+.progress-bar-head {
+  text-align: center;
+}
+
+

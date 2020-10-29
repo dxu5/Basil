@@ -1,23 +1,94 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
-
+import * as UserAPIUtil from '../../util/user_api_util'
+import { connect } from 'react-redux';
 
 class CalendarItem extends React.Component {
     constructor(props) {
         super(props);
+        // let bool = false;
+        
+        // if (this.props.completedMeals[this.props.day]) {
+        //     bool = this.props.completedMeals[this.props.day].includes(this.props.id) ? true : false;
+        // }
+        // debugger
         this.state = {
             completed: false
         }
-        this.handleClick = this.handleClick.bind(this);
+
+        this.handleComplete = this.handleComplete.bind(this);
+        this.handleUndo = this.handleUndo.bind(this);
         this.displayIcon = this.displayIcon.bind(this);
         this.displayCompleteButton = this.displayCompleteButton.bind(this);
     }
 
-    handleClick(e) {
+    componentDidUpdate(prevProps, prevState) {
+        let bool;
+        if (Object.keys(prevProps.completedMeals).length === 0 && Object.keys(this.props.completedMeals).length !== 0) {
+            if (this.props.completedMeals[this.props.day]) {
+                bool = this.props.completedMeals[this.props.day].includes(this.props.id) ? true : false;
+                this.setState({completed: bool})
+            }
+        }
+    }
+
+    componentDidMount() {
+        let bool;
+        if (this.props.completedMeals[this.props.day]) {
+                bool = this.props.completedMeals[this.props.day].includes(this.props.id) ? true : false;
+                this.setState({completed: bool})
+        }
+    }
+
+    handleUndo(e) {
         e.preventDefault();
-        let bool = this.state.completed
-        this.setState({completed: !bool})
+
+        let completedMeal = `{"weekday": "${this.props.day}", "mealId": ${this.props.id}, "completed": ${false}}`;
+        let parsedMeal = JSON.parse(completedMeal);
+        const weekday = parsedMeal['weekday']
+
+        let modifiedCompletedMeals = JSON.parse(JSON.stringify(this.props.completedMeals));
+
+        if(!modifiedCompletedMeals[weekday]){
+            modifiedCompletedMeals[weekday] = [];
+        }
+
+        if(parsedMeal['completed']){
+            modifiedCompletedMeals[weekday].push(parsedMeal['mealId']) ;
+        }
+        else{
+            modifiedCompletedMeals[weekday] = modifiedCompletedMeals[weekday].filter(id => id !== parsedMeal['mealId'])
+        }
+        
+
+        this.setState({completed: false})
+        UserAPIUtil.updateCompletedMeals(modifiedCompletedMeals, this.props.completedMealCount - 1)
+        this.props.receiveCompletedMeal(this.props.completedMealCount - 1, completedMeal)
+    }
+
+    handleComplete(e) {
+        e.preventDefault();
+        
+        let completedMeal = `{"weekday": "${this.props.day}", "mealId": ${this.props.id}, "completed": ${true}}`;
+        let parsedMeal = JSON.parse(completedMeal);
+        const weekday = parsedMeal['weekday']
+
+        let modifiedCompletedMeals = JSON.parse(JSON.stringify(this.props.completedMeals));
+        if(!modifiedCompletedMeals[weekday]){
+            modifiedCompletedMeals[weekday] = [];
+        }
+        
+        if(parsedMeal['completed']){
+            modifiedCompletedMeals[weekday].push(parsedMeal['mealId']) ;
+        }
+        else{
+            modifiedCompletedMeals[weekday] = modifiedCompletedMeals[weekday].filter(id => id !== parsedMeal['mealId'])
+        }
+        
+        this.setState({completed: true})
+        UserAPIUtil.updateCompletedMeals(modifiedCompletedMeals, this.props.completedMealCount + 1)
+        this.props.receiveCompletedMeal(this.props.completedMealCount + 1, completedMeal)
     }
 
     displayIcon() {
@@ -28,9 +99,9 @@ class CalendarItem extends React.Component {
         if (this.props.futureDays.includes(this.props.day)) {
             return null;
         } else if (this.state.completed) {
-            return <button id='complete-btn' onClick={this.handleClick}>Undo</button>;
+            return <button id='complete-btn' onClick={this.handleUndo}>Undo</button>;
         } else {
-            return <button id='complete-btn' onClick={this.handleClick}>Complete?</button>;
+            return <button id='complete-btn' onClick={this.handleComplete}>Complete?</button>;
         }
     }
 
@@ -49,4 +120,12 @@ class CalendarItem extends React.Component {
     }
 }
 
-export default CalendarItem
+
+const mSTP = (state) => {
+    return {
+        completedMeals: state.entities.mealplans.completedMealplans,
+        completedMealCount: state.session.user.completedMeals,
+    }
+}
+
+export default connect(mSTP, null)(CalendarItem)

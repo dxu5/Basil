@@ -36,6 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
             : undefined,
           currentMealplanStartTime:
             decodedUser.currentMealplanStartTime || undefined,
+          completedMealplans: decodedUser.completedMealplans
+            ? JSON.parse(decodedUser.completedMealplans)
+            : {},
         },
       },
       session: { isAuthenticated: true, user },
