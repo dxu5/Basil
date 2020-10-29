@@ -53,9 +53,11 @@ const mealplansReducer = (state = _nullState, action) => {
         newState.currentMealplanStartTime =
           action.user.currentMealplanStartTime;
       }
+      if (action.user.completedMealplans) {
+        newState.completedMealplans = action.user.completedMealplans;
+      }
       return newState;
     case RECEIVE_COMPLETED_MEAL:
-      debugger
       const mealCompletedObj = JSON.parse(action.completedMealInfo)
       const weekday = mealCompletedObj['weekday']
       if(!newState.completedMealplans[weekday]){
