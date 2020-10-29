@@ -2,12 +2,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin-top: 10%;
-    margin-left: 20%;
-    width: 60%;
+    margin-left: 10%;
+    width: 80%;
     height: 100%;
     /* border: 1px solid red; */
-    font-family: inherit;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 .meal-plan-form{
     width: 100%;
@@ -94,7 +95,6 @@ form {
     height: var(--height);
     width: var(--height);
     background: #1F2D20;
-    opacity: 0.1;
     opacity: 0.8;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     border-radius: var(--border-radius);
@@ -121,7 +121,7 @@ form {
 }
 
 .max-span{
-    margin-left: 72%;
+    margin-left: 67%;
     position: absolute;
 }
 
@@ -135,6 +135,7 @@ form {
 .rangeslider-horizontal{
     width:100%;
 }
+
 
 .category{
     /* position: relative; */
@@ -162,6 +163,7 @@ form {
     margin-right: 2em;
     align-items:center;
     justify-content: center;
+    margin-top: 2%;
 }
 
 .item-div{
@@ -175,13 +177,21 @@ form {
 }
 
 .item-span{
-    margin-left: 0.5em;
+    margin-left: 0.8em;
 }
 
 .diet-options{
     font-weight: bold;
+    font-size: 1.1em;
+    text-decoration: underline;
+
 }
 
 .mealoptions{
-    
+    font-size: 1.5em;
+    color:#1a0000;
+    /* text-decoration: underline; */
 }
+
+
+
