@@ -18,7 +18,7 @@ class UserInfo extends React.Component {
     this.state = {
       //placeholder for user info
       viewPortEntered: false,
-      completed: 123,
+      completed: this.props.user.completedMeals,
     };
     this.myCountUp = React.createRef();
   }
