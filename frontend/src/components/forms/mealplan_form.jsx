@@ -16,7 +16,6 @@ import {
 import PreviewCalendarContainer from "../preview_calendar/preview_calendar_container.js";
 
 class MealPlanForm extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -41,8 +40,8 @@ class MealPlanForm extends React.Component {
     this.formref = React.createRef();
   }
 
-  componentDidMount(){
-      this.formref.current.focus();
+  componentDidMount() {
+    this.formref.current.focus();
   }
   update(field) {
     return (e) =>
@@ -418,7 +417,9 @@ class MealPlanForm extends React.Component {
       <div ref={this.formref} className="meal-plan-form-div">
         <form className="meal-plan-form" onSubmit={this.handleSubmit}>
           <div className="category">
-            <label className="mealoptions">What is the caloric target for one day?</label>
+            <label className="mealoptions">
+              What is the caloric target for one day?
+            </label>
             <label className="toggle" for="myToggle1">
               <input
                 type="checkbox"
@@ -431,7 +432,9 @@ class MealPlanForm extends React.Component {
             {cal_div}
           </div>
           <div className="category">
-            <label className="mealoptions">Enter a diet for your meal plan</label>
+            <label className="mealoptions">
+              Enter a diet for your meal plan
+            </label>
             <label className="toggle" for="myToggle2">
               <input
                 className="toggle-input"
@@ -455,10 +458,10 @@ class MealPlanForm extends React.Component {
               <div className="toggle-fill"></div>
             </label>
             {exclude_div}
-            {Object.keys(this.props.previewMealplan).length > 0 ? (
-            <PreviewCalendarContainer />
-            ) : null}
           </div>
+          {Object.keys(this.props.previewMealplan).length > 0 ? (
+            <PreviewCalendarContainer />
+          ) : null}
           <button type="submit" className="sub-btn">
             Create Mealplan
           </button>
