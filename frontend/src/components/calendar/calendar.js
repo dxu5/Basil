@@ -141,6 +141,8 @@ class Calendar extends React.Component {
               title={meal.title}
               readyInMinutes={meal.readyInMinutes}
               mealNum={idx}
+              // completedMealCount={this.props.completedMealCount}
+              receiveCompletedMeal={this.props.receiveCompletedMeal}
             />
           );
         });
