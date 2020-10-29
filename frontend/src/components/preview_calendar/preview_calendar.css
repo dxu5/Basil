@@ -101,7 +101,7 @@
 .past ~ .meal-0,
 .past ~ .meal-1,
 .past ~ .meal-2 {
-  opacity: 50%;
+  opacity: 0.5;
 }
 
 #complete-btn,
