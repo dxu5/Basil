@@ -8,9 +8,11 @@ class ExcludeList extends React.Component{
 
     render(){
         return (
-            this.props.exclude.map((item,idx)=>(
-                <ExcludeItem key={idx} item={item} deleteItem={this.props.deleteItem}/>
-            ))
+            <div className="ex-list-div">
+                {this.props.exclude.map((item,idx)=>(
+                    <ExcludeItem key={idx} item={item} deleteItem={this.props.deleteItem}/>
+                ))}
+            </div>
         )
     }
 }
