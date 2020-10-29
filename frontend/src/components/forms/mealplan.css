@@ -183,5 +183,7 @@ form {
 }
 
 .mealoptions{
-    
+    font-size: 1.5em;
+    color:black;
+    text-decoration: underline;
 }
