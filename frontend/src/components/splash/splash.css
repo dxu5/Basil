@@ -71,7 +71,7 @@ html {
 
 .section-dark {
   background-color: #282e34;
-  color: var(--oatmeal);
+  color: var(--white);
 }
 
 .ptext {
@@ -120,12 +120,18 @@ html {
   padding: 20px;
 }
 
+.about-us-links{
+  width: 100%;
+  position: absolute;
+  bottom: 15vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .profiles {
   display: flex;
   justify-content: space-around;
-  width: 100%;
-  position: absolute;
-  bottom: 30vh;
+  margin-bottom: 15vh;
 }
 
 .profile {
@@ -140,14 +146,21 @@ html {
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 20px;
-  border: solid 1px var(--oatmeal);
+  border: solid 1px var(--white);
 }
 
 .prof-name,
 .dev-img {
-  border: solid 1px var(--oatmeal);
+  border: solid 1px var(--white);
   background-color: #282e34;
-  color: var(--oatmeal);
+  color: var(--white);
+}
+
+.github{
+  display: flex;
+  justify-content: center;
+  font-size: 100px;
+  color: #111;
 }
 
 @media (max-width: 568px) {

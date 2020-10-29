@@ -8,6 +8,7 @@ import LoginFormContainer from "./forms/login_form_container";
 import SignupFormContainer from "./forms/signup_form_container";
 import HomeContainer from "./home/home_container";
 import MealPlanContainer from "./forms/mealplan_container";
+import ShowContainer from "./show/show_container";
 
 const App = () => (
   <div>
@@ -15,6 +16,7 @@ const App = () => (
     <Switch>
       <ProtectedRoute path="/home" component={HomeContainer} />
       <ProtectedRoute path="/mealplan" component={MealPlanContainer} />
+      <ProtectedRoute path="/meal/:mealId" component={ShowContainer} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <AuthRoute exact path="/" component={SplashPage} />
