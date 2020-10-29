@@ -4,7 +4,7 @@ import PreviewCalendar from "./preview_calendar.jsx";
 
 const mapStateToProps = (state) => {
   return {
-    previewMealplan: state.entities.mealplans.prospectiveMealplan,
+    previewMealplan: state.entities.mealplans.prospectiveMealplan || {},
   };
 };
 
