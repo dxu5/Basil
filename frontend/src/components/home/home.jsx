@@ -23,7 +23,6 @@ class Home extends React.Component {
           <UserInfo user={this.props.user} />
         </section>
         <section className="calendar">
-          <h3 className="calendar-intro">Check Out Your Meals For The Week</h3>
           <CalendarContainer />
         </section>
       </div>

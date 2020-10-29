@@ -58,44 +58,47 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="form-container">
-        <form onSubmit={this.handleSubmit}>
-          <input className="auth-input" id="input-1" type="text"
-            value={this.state.username}
-            onChange={this.update('username')}
-            placeholder="Username"
-            ref={this.username}
-          />
-          <label for="input-1">
-            <span className="label-text">Username</span>
-            <span className="nav-dot"></span>
-            <div className="signup-button-trigger">Log in</div>
-            {this.state.errors["username"] ? <div className="error-text">
-              {this.state.errors["username"]}
-          </div> : null}
-          </label>
+      <div>
+        <div className='signup-background'></div>
+        <div className="form-container">
+          <form onSubmit={this.handleSubmit}>
+            <input className="auth-input" id="input-1" type="text"
+              value={this.state.username}
+              onChange={this.update('username')}
+              placeholder="Username"
+              ref={this.username}
+            />
+            <label for="input-1">
+              <span className="label-text">Username</span>
+              <span className="nav-dot"></span>
+              <div className="signup-button-trigger">Log in</div>
+              {this.state.errors["username"] ? <div className="error-text">
+                {this.state.errors["username"]}
+            </div> : null}
+            </label>
 
-          <input className="auth-input"
-            id="input-2"
-            type="password"
-            value={this.state.password}
-            onChange={this.update('password')}
-            ref={this.password}
-            placeholder="Password"
-          />
-          <label for="input-2">
-            <span className="label-text">Password</span>
-            <span className="nav-dot"></span>
-            {this.state.errors["password"] ? <div className="error-text">
-              {this.state.errors["password"]}
-          </div> : null}
-          </label>
+            <input className="auth-input"
+              id="input-2"
+              type="password"
+              value={this.state.password}
+              onChange={this.update('password')}
+              ref={this.password}
+              placeholder="Password"
+            />
+            <label for="input-2">
+              <span className="label-text">Password</span>
+              <span className="nav-dot"></span>
+              {this.state.errors["password"] ? <div className="error-text">
+                {this.state.errors["password"]}
+            </div> : null}
+            </label>
 
 
-          <button className="btn" type="submit">Login</button>
-          <p className="tip">Press Tab</p>
-          <div className="signup-button">Welcome back</div>
-        </form>
+            <button className="btn" type="submit">Login</button>
+            <p className="tip">Press Tab</p>
+            <div className="signup-button">Welcome back</div>
+          </form>
+        </div>
       </div>
     );
   }
