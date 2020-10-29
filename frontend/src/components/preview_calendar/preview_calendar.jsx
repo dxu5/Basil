@@ -53,38 +53,51 @@ export default class PreviewCalendar extends Component {
         );
       });
     return (
-      <div className="preview">
-        <div className="calendar-container">
-          <table className="table">
-            <div className="day-container">
-              <p id="Sunday">Sunday</p>
-              {displayMeal("Sunday")}
-            </div>
-            <div className="day-container">
-              <p id="Monday">Monday</p>
-              {displayMeal("Monday")}
-            </div>
-            <div className="day-container">
-              <p id="Tuesday">Tuesday</p>
-              {displayMeal("Tuesday")}
-            </div>
-            <div className="day-container">
-              <p id="Wednesday">Wednesday</p>
-              {displayMeal("Wednesday")}
-            </div>
-            <div className="day-container">
-              <p id="Thursday">Thursday</p>
-              {displayMeal("Thursday")}
-            </div>
-            <div className="day-container">
-              <p id="Friday">Friday</p>
-              {displayMeal("Friday")}
-            </div>
-            <div className="day-container">
-              <p id="Saturday">Saturday</p>
-              {displayMeal("Saturday")}
-            </div>
-          </table>
+      <div style={{ marginTop: "2em" }}>
+        <div
+          className="checkout-text"
+          style={{
+            textAlign: "center",
+            fontSize: "24px",
+            color: "black",
+            fontWeight: "700",
+          }}
+        >
+          Checkout Your Mealplan Preview!
+        </div>
+        <div className="preview-calendar">
+          <div className="calendar-container">
+            <table className="table">
+              <div className="day-container">
+                <p id="Sunday">Sunday</p>
+                {displayMeal("Sunday")}
+              </div>
+              <div className="day-container">
+                <p id="Monday">Monday</p>
+                {displayMeal("Monday")}
+              </div>
+              <div className="day-container">
+                <p id="Tuesday">Tuesday</p>
+                {displayMeal("Tuesday")}
+              </div>
+              <div className="day-container">
+                <p id="Wednesday">Wednesday</p>
+                {displayMeal("Wednesday")}
+              </div>
+              <div className="day-container">
+                <p id="Thursday">Thursday</p>
+                {displayMeal("Thursday")}
+              </div>
+              <div className="day-container">
+                <p id="Friday">Friday</p>
+                {displayMeal("Friday")}
+              </div>
+              <div className="day-container">
+                <p id="Saturday">Saturday</p>
+                {displayMeal("Saturday")}
+              </div>
+            </table>
+          </div>
         </div>
       </div>
     );

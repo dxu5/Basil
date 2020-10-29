@@ -4,6 +4,14 @@ export default class PreviewCalendarItem extends Component {
   constructor(props) {
     super(props);
   }
+  handleTitle() {
+    let title = this.props.title;
+    if (title.length > 30) {
+      return title.slice(0, 27).concat("...");
+    } else {
+      return title;
+    }
+  }
   render() {
     return (
       <div className={`meal-${this.props.mealNum}-preview`}>
@@ -13,7 +21,7 @@ export default class PreviewCalendarItem extends Component {
           />
         </div>
         <div className="meal-description">
-          <p className="meal-title">{this.props.title}</p>
+          <p className="meal-title">{this.handleTitle()}</p>
           <p className="meal-time">{this.props.readyInMinutes} minutes</p>
         </div>
       </div>
