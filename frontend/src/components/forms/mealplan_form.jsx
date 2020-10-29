@@ -276,7 +276,7 @@ class MealPlanForm extends React.Component{
                 {/* <div className="gropu-width"> */}
                     <div className="ex-div">
                         <TextField id="outlined-basic" label="Excluded foods" variant="outlined" value={this.state.inputExclude} onChange={this.handleExcludeInputChange} 
-                        style={{ borderColor: 'green'}}/>
+                        color={"palette.success.dark"}/>
                         <button onClick={this.handleSubmitExclude} className="add-btn">ADD</button>
                     </div>
                 {/* </div> */}
