@@ -21,6 +21,7 @@ class Calendar extends React.Component {
   //need to handle click link to meal plan form
   handleClick(e) {
     e.preventDefault();
+    this.props.history.push("/mealplan");
   }
 
   componentDidUpdate(prevProps) {
