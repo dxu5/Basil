@@ -21,6 +21,13 @@
   height: 25vh;
   opacity: .9;
   transform: scaleX(-1);
+  position: relative;
+}
+
+.pimg1-home > .quote {
+  transform: scaleX(-1);
+  top: 35%;
+  left: 10%;
 }
 
 .pimg2-home{
@@ -29,6 +36,15 @@
   background-position: center;
   height: 25vh;
   opacity: .9;
+  position: relative;
+}
+
+.pimg2-home > .quote {
+  top: 22%;
+  left: 3%;
+  background: none;
+  opacity: 100%;
+  width: 24%;
 }
 
 .pimg3-home{
@@ -37,6 +53,12 @@
   background-position-y: center;
   height: 50vh;
   opacity: .9;
+  position: relative;
+}
+
+.pimg3-home > .quote {
+  top: 30%;
+  left: 5%;
 }
 
 .ptext-home-page {
@@ -49,7 +71,16 @@
   letter-spacing: 8px;
   text-transform: uppercase;
 }
-
+.ptext-home-page ~ h2 {
+  position: absolute;
+  top: 85%;
+  left: 1%;
+  color: var(--black);
+  background: white;
+  border-radius: 3px;
+  padding: 7px;
+  opacity: 70%;
+}
 .ptext-home-page .border {
   background-color: #9e9c9c;
   color: #fff;
@@ -122,4 +153,19 @@
 
 .calendar-intro {
   text-align: center;
+}
+
+.quote {
+  position: absolute;
+  font-family: 'Vollkorn', serif;
+  display: flex;
+  flex-wrap: wrap;
+  width: 30%;
+  background: white;
+  opacity: 60%;
+  line-height: 1.5;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 3px;
+  color: var(--black)
 }
