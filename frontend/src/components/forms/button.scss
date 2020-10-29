@@ -137,11 +137,11 @@
 
 .group{
     display: flex;
-    width:100%;
+    width:90%;
     flex-direction: column;
     height: 100%;   
     .ex-div{
-        width: 88vh;
+        width: 100%;
         // border:1px solid red;
         display: flex;
         justify-content: space-between;

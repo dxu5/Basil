@@ -280,10 +280,7 @@ class MealPlanForm extends React.Component {
             <label style={{ fontWeight: "600" }}>Paleo</label>
             <label style={{ color: "#4f4846" }} className="diet-description">
               Ingredients not allowed include legumes (e.g. beans and lentils),
-              grains,
-            </label>
-            <label style={{ color: "#4f4846" }}>
-              dairy, refined sugar, and processed foods.
+              grains, dairy, refined sugar, and processed foods.
             </label>
           </div>
           <label className="toggle">
@@ -323,8 +320,6 @@ class MealPlanForm extends React.Component {
             <label style={{ fontWeight: "600" }}>Whole30</label>
             <label style={{ color: "#4f4846" }} className="diet-description">
               Ingredients not allowed include added sweeteners,alcohol, grains,
-            </label>
-            <label style={{ color: "#4f4846" }}>
               legumes, and food additives, such as carrageenan, MSG, and
               sulfites.
             </label>
@@ -366,14 +361,7 @@ class MealPlanForm extends React.Component {
         },
       },
     })(TextField);
-    const styles = (theme) => ({
-      notchedOutline: {},
-      focused: {
-        "& $notchedOutline": {
-          borderColor: "yellow",
-        },
-      },
-    });
+    //   const classes = useStyles();
     return (
       <div className="group">
         {/* <div className="gropu-width"> */}
@@ -384,7 +372,7 @@ class MealPlanForm extends React.Component {
             variant="outlined"
             value={this.state.inputExclude}
             onChange={this.handleExcludeInputChange}
-            color="third"
+            color={"palette.success.dark"}
           />
           <button onClick={this.handleSubmitExclude} className="add-btn">
             ADD
