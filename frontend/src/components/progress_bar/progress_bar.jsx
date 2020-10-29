@@ -26,6 +26,7 @@ class ProgressBar extends React.Component {
       Math.ceil((this.state.completed - level * levelUp) / (levelUp / 4)) % 5;
     return (
       <div className="progress-bar-div">
+        <div className='pimg1-progress'></div>
         <div className="progress-bar-head">
           <h3>Complete meals and watch your garden grow!</h3>
         </div>

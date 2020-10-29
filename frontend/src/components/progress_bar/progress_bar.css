@@ -67,3 +67,12 @@
     transform: rotate(-10deg);
   }
 }
+
+.pimg1-progress{
+  /* background-image: url('../../images/herbs.jpg'); */
+  background-size: cover;
+  background-position: center;
+  height: 25vh;
+  opacity: .9;
+  position: relative;
+}
