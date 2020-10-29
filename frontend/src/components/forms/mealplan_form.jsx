@@ -210,7 +210,8 @@ class MealPlanForm extends React.Component{
                 <div className="diet-item-div">
                     <div className="diet-infor-div">
                         <label style={{fontWeight:"600"}}>Paleo</label>
-                        <label style={{color:"#4f4846"}} className="diet-description">Ingredients not allowed include legumes (e.g. beans and lentils), grains, dairy, refined sugar, and processed foods.</label>
+                        <label style={{color:"#4f4846"}} className="diet-description">Ingredients not allowed include legumes (e.g. beans and lentils), grains,</label>
+                        <label style={{color:"#4f4846"}}>dairy, refined sugar, and processed foods.</label>
                     </div>
                     <label className="toggle">
                         <input className="toggle-input" type="radio" name="diet" value="Paleo" onChange={this.update("diet")}/>
@@ -234,7 +235,8 @@ class MealPlanForm extends React.Component{
                 <div className="diet-item-div">
                     <div className="diet-infor-div">
                         <label style={{fontWeight:"600"}}>Whole30</label>
-                        <div style={{color:"#4f4846"}} className="diet-description">Ingredients not allowed include added sweeteners,alcohol, grains, legumes, and food additives, such as carrageenan, MSG, and sulfites.</div>
+                        <label style={{color:"#4f4846"}} className="diet-description">Ingredients not allowed include added sweeteners,alcohol, grains,</label>
+                        <label style={{color:"#4f4846"}}>legumes, and food additives, such as carrageenan, MSG, and sulfites.</label>
                     </div>
                     <label className="toggle">
                         <input className="toggle-input" type="radio" name="diet" value="Whole30" onChange={this.update("diet")}/>
@@ -267,11 +269,19 @@ class MealPlanForm extends React.Component{
               },
             },
           })(TextField);
+          const styles = theme => ({
+            notchedOutline: {},
+            focused: {
+              "& $notchedOutline": {
+                borderColor: "yellow"
+              }
+            }
+          });
         return(
             <div className="group">      
                 {/* <div className="gropu-width"> */}
                     <div className="ex-div">
-                        <CssTextField id="outlined-basic" label="Excluded foods" variant="outlined" value={this.state.inputExclude} onChange={this.handleExcludeInputChange} color={"red"}/>
+                        <TextField id="outlined-basic" label="Excluded foods" variant="outlined" value={this.state.inputExclude} onChange={this.handleExcludeInputChange} color="third"/>
                         <button onClick={this.handleSubmitExclude} className="add-btn">ADD</button>
                     </div>
                 {/* </div> */}

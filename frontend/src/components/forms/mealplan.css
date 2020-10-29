@@ -82,7 +82,7 @@ form {
 }
 
 .toggle-input:checked ~ .toggle-fill{
-    background: #5EE86E;
+    background: #6a996b;
 }
 
 .toggle-fill::after{
@@ -92,7 +92,8 @@ form {
     left: 0;
     height: var(--height);
     width: var(--height);
-    background: #336699;
+    background: #1F2D20;
+    opacity: 0.1;
     opacity: 0.8;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     border-radius: var(--border-radius);
@@ -140,10 +141,13 @@ form {
     /* position: relative; */
     height: 100%;
     display: flex;
-    justify-content: space-between;
+    position: relative;
+    /* justify-content: space-between; */
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
+    width: 100%;
+    /* flex-wrap: nowrap;  */
     /* background-color: darkkhaki; */
 }
 
@@ -173,8 +177,4 @@ form {
 
 .item-span{
     margin-left: 0.5em;
-}
-
-.cal-slider{
-    color:red;
 }
