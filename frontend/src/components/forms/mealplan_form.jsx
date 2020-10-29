@@ -14,6 +14,9 @@ import {
   createMuiTheme,
 } from "@material-ui/core/styles";
 import PreviewCalendarContainer from "../preview_calendar/preview_calendar_container.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+// import { faGithub } from "@fortawesome/free-brands-svg-icons"
 
 class MealPlanForm extends React.Component {
   constructor(props) {
@@ -415,10 +418,11 @@ class MealPlanForm extends React.Component {
 
     return (
       <div ref={this.formref} className="meal-plan-form-div">
+        <div>Options are not mandatory</div>
         <form className="meal-plan-form" onSubmit={this.handleSubmit}>
           <div className="category">
             <label className="mealoptions">
-              What is the caloric target for one day?
+              What is the caloric target for one day
             </label>
             <label className="toggle" for="myToggle1">
               <input
@@ -447,7 +451,7 @@ class MealPlanForm extends React.Component {
             {diet_div}
           </div>
           <div className="category">
-            <label className="mealoptions">Foods you don't like:</label>
+            <label className="mealoptions">Foods you don't like</label>
             <label className="toggle" for="myToggle3">
               <input
                 type="checkbox"

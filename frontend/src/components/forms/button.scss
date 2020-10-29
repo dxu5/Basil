@@ -17,6 +17,7 @@
     font-size: 12px;
     font-weight: 500;
     letter-spacing: 0.7px;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
     &:hover {
       animation: rotate 0.7s ease-in-out both;
       span{
@@ -87,6 +88,7 @@
     margin-top: 2%;
     margin-bottom: 5%;
     line-height: 150%;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
     &:hover {
       animation: rotate 0.7s ease-in-out both;
       span{
@@ -284,3 +286,8 @@ background-color: #333;
 div.Mui-focused{
     
 }
+
+
+
+
+//alert
