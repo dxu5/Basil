@@ -17,9 +17,22 @@ export default class PreviewCalendar extends Component {
     }
   }
 
-  //   componentDidUpdate(prevProps){
-  //       if(prevProps.previewMealplan)
-  //   }
+  componentDidUpdate(prevProps) {
+    if (
+      prevProps.previewMealplan.week.monday.meals[0].id !==
+      this.props.previewMealplan.week.monday.meals[0].id
+    ) {
+      this.setState({
+        Monday: this.props.previewMealplan.week.monday,
+        Tuesday: this.props.previewMealplan.week.tuesday,
+        Wednesday: this.props.previewMealplan.week.wednesday,
+        Thursday: this.props.previewMealplan.week.thursday,
+        Friday: this.props.previewMealplan.week.friday,
+        Saturday: this.props.previewMealplan.week.saturday,
+        Sunday: this.props.previewMealplan.week.sunday,
+      });
+    }
+  }
 
   render() {
     if (Object.keys(this.props.previewMealplan).length === 0) {
