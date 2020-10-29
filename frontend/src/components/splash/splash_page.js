@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import "../../stylesheets/colors.css";
 import "./splash.css";
 
@@ -68,44 +70,50 @@ class SplashPage extends React.Component {
             <span className="about-us-span">About Us</span>
           </div>
         </div>
-
-        <div className="profiles">
-          <a
-            href="https://www.linkedin.com/in/derek-jinxiao-xu/"
-            target="_blank"
-          >
-            <div className="profile">
-              <img src="/images/Derek.png" className="dev-img"></img>
-              <span className="prof-name">Derek</span>
-            </div>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/lisa-lam-64607743/"
-            target="_blank"
-          >
-            <div className="profile">
-              <img src="/images/Lisa.jpeg" className="dev-img"></img>
-              <span className="prof-name">Lisa</span>
-            </div>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/nathan-oh-cpa-8062075a/"
-            target="_blank"
-          >
-            <div className="profile">
-              <img src="/images/Nate.jpg" className="dev-img"></img>
-              <span className="prof-name">Nate</span>
-            </div>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/zhang-zhang-0911/"
-            target="_blank"
-          >
-            <div className="profile">
-              <img src="/images/Zhang.jpg" className="dev-img"></img>
-              <span className="prof-name">Zhang</span>
-            </div>
-          </a>
+        <div className="about-us-links">
+          <div className="profiles">
+            <a
+              href="https://www.linkedin.com/in/derek-jinxiao-xu/"
+              target="_blank"
+            >
+              <div className="profile">
+                <img src="/images/Derek.png" className="dev-img"></img>
+                <span className="prof-name">Derek</span>
+              </div>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/lisa-lam-64607743/"
+              target="_blank"
+            >
+              <div className="profile">
+                <img src="/images/Lisa.jpeg" className="dev-img"></img>
+                <span className="prof-name">Lisa</span>
+              </div>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/nathan-oh-cpa-8062075a/"
+              target="_blank"
+            >
+              <div className="profile">
+                <img src="/images/Nate.jpg" className="dev-img"></img>
+                <span className="prof-name">Nate</span>
+              </div>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/zhang-zhang-0911/"
+              target="_blank"
+            >
+              <div className="profile">
+                <img src="/images/Zhang.jpg" className="dev-img"></img>
+                <span className="prof-name">Zhang</span>
+              </div>
+            </a>
+          </div>
+          <div className="github">
+            <a href="https://github.com/dxu5/Basil" target="_blank">
+              <FontAwesomeIcon icon={faGithub} />
+            </a>
+          </div>
         </div>
         {/* <footer>Copyright &copy; 2020 Basil</footer> */}
       </div>

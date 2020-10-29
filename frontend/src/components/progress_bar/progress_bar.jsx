@@ -31,7 +31,7 @@ class ProgressBar extends React.Component {
         </div>
         <div className="grow-basil">
           {basils}
-          <img src={`/images/basilLevel${basilLevel}.png`} />
+          <img src={`/images/basilLevel${basilLevel}.png`} className="grow-basil-small"/>
         </div>
         <div className="progress-bar-container">
           <div className="progress-bar">
