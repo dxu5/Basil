@@ -117,6 +117,7 @@ class MealPlanForm extends React.Component {
       <div className="range-div">
         <div>
           <span>Min: 1000</span>
+          <span className="max-span">Max: 4000</span>
           <Slider
             min={1000}
             max={4000}
@@ -124,7 +125,6 @@ class MealPlanForm extends React.Component {
             onChange={this.handleChangeSlider}
             className="cal-slider"
           />
-          <span className="max-span">Max: 4000</span>
           <p className="cal-tips">
             Generally, the recommended daily calorie intake is 2,000 calories a
             day for women and 2,500 for men.
