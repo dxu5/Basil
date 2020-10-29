@@ -80,7 +80,7 @@
     width: 180px;
     opacity: 1;
     background-color: #ffffff;
-    border: 1px solid #4d774e;
+    border: 1px solid #6a996b;
     color: #4d774e;
     font-size: 14px;
     font-weight: 500;
@@ -160,9 +160,8 @@
     display: flex;
     width: 100%;
     height: 100%;
-    justify-content: space-between;
     flex-wrap: wrap;
-    border:1px solid black;
+    // border:1px solid black;
 }
 
 
@@ -217,28 +216,73 @@
 
 
 .close {
-    position: absolute;
-    right: 32px;
-    top: 32px;
     width: 32px;
     height: 32px;
     opacity: 0.3;
-  }
-  .close:hover {
-    opacity: 1;
-  }
-  .close:before, .close:after {
-    position: absolute;
-    left: 15px;
-    content: ' ';
-    height: 33px;
-    width: 2px;
-    background-color: #333;
-  }
-  .close:before {
-    transform: rotate(45deg);
-  }
-  .close:after {
-    transform: rotate(-45deg);
+    margin-bottom: 0.2em;
+    color:#779988;
+}
+.close:hover {
+opacity: 1;
+}
+.close:before, .close:after {
+position: absolute;
+left: 15px;
+height: 33px;
+width: 2px;
+background-color: #333;
+}
+
+.close:active{
+    outline: none;
 }
   
+
+
+.rangeslider-horizontal {
+    height: 5px;
+}
+
+.rangeslider-horizontal .rangeslider__fill {
+    background-color: #6a996b;
+    height: 5px;
+}
+
+.rangeslider-horizontal .rangeslider__handle{
+    background-image: url("./test-slider.png");
+    outline: none;
+
+}
+.rangeslider-horizontal .rangeslider__handle:after {
+    content: ' ';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 6px;
+    left: 6px;
+    border-radius: 50%;
+    background-color: #6a996b;
+}
+
+.MuiInputBase-root {
+    height: 3.2em;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline{
+    // border-color: red;
+}
+
+.MuiInputBase-input {
+    height:1em;
+}
+
+#outlined-basic{
+    border: none;
+}
+
+.MuiInputBase-root.MuiOutlinedInput-root.Mui-focused.Mui-focused.MuiInputBase-formControl{
+    // border: 1px solid red;
+}
+div.Mui-focused{
+    
+}

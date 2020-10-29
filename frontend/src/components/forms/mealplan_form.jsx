@@ -6,6 +6,13 @@ import 'react-rangeslider/lib/index.css'
 import ExcludeList from "./excludeList"
 import TextField from '@material-ui/core/TextField';
 import "./button.scss"
+import {
+    fade,
+    ThemeProvider,
+    withStyles,
+    makeStyles,
+    createMuiTheme,
+  } from '@material-ui/core/styles';
 
 class MealPlanForm extends React.Component{
     constructor(props){
@@ -107,7 +114,7 @@ class MealPlanForm extends React.Component{
             <div className="range-div"> 
                 <div>
                     <span>Min: 1000</span>
-                    <Slider min={1000} max={4000} value={this.state.targetCalories} onChange={this.handleChangeSlider} style={{outline:"none"}}/>
+                    <Slider min={1000} max={4000} value={this.state.targetCalories} onChange={this.handleChangeSlider} className="cal-slider"/>
                     <span className="max-span">Max: 4000</span>
                     <p className="cal-tips">Generally, the recommended daily calorie intake is 2,000 calories a day for women and 2,500 for men.</p>
                 </div>
@@ -239,11 +246,32 @@ class MealPlanForm extends React.Component{
     }
 
     showExclude(){
+        const CssTextField = withStyles({
+            root: {
+              '& label.Mui-focused': {
+                color: '#6a996b',
+              },
+              '& .MuiInput-underline:after': {
+                borderBottomColor: 'green',
+              },
+              '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                //   borderColor: 'red',
+                },
+                '&:hover fieldset': {
+                //   borderColor: 'yellow',
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: 'green',
+                },
+              },
+            },
+          })(TextField);
         return(
             <div className="group">      
                 {/* <div className="gropu-width"> */}
                     <div className="ex-div">
-                        <TextField id="outlined-basic" label="Excluded foods" variant="outlined" value={this.state.inputExclude} onChange={this.handleExcludeInputChange}/>
+                        <CssTextField id="outlined-basic" label="Excluded foods" variant="outlined" value={this.state.inputExclude} onChange={this.handleExcludeInputChange} color={"red"}/>
                         <button onClick={this.handleSubmitExclude} className="add-btn">ADD</button>
                     </div>
                 {/* </div> */}

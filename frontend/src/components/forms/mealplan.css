@@ -82,7 +82,7 @@ form {
 }
 
 .toggle-input:checked ~ .toggle-fill{
-    background: #4d774e;
+    background: #5EE86E;
 }
 
 .toggle-fill::after{
@@ -92,7 +92,8 @@ form {
     left: 0;
     height: var(--height);
     width: var(--height);
-    background: BLACK;
+    background: #336699;
+    opacity: 0.8;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     border-radius: var(--border-radius);
     transition: transform 0.2s;
@@ -147,13 +148,17 @@ form {
 }
 
 .excludeitem-div{
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    background: #dddddd;
     border-radius: 30px;
     /* width: 100%; */
     /* display: inline-block; */
     display: flex;
     white-space: nowrap;
     width:fit-content;
+    margin-right: 2em;
+    align-items:center;
+    justify-content: center;
 }
 
 .item-div{
@@ -161,5 +166,15 @@ form {
     display: flex;
     /* width: 100%; */
     /* border: 1px solid blue; */
+    /* align-items:center; */
+    justify-content: center;
+
 }
 
+.item-span{
+    margin-left: 0.5em;
+}
+
+.cal-slider{
+    color:red;
+}
