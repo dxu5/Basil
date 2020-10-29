@@ -34,6 +34,7 @@ export const saveMealplan = (mealplan) => {
     method: "PATCH",
     url: "/api/users/mealplan",
     data: {
+      completedMealplans: "{}",
       mealplan: strMealplan,
     },
   });
