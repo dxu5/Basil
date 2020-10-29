@@ -3,7 +3,8 @@
     --dark-green: #013328;
     --green: #0e6c57;
 
-    --oatmeal: #f9f4ee;
+    --oatmeal: rgba(246, 241, 229, 0.1);
+    /* #f9f5f0; */
     --salmon: #cc8b65;
     --white: #FFFFFF;
 }

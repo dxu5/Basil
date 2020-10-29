@@ -1,7 +1,63 @@
 .home {
-  /* padding-top: 100px; */
   width: 100vw;
   background-color: var(--oatmeal);
+}
+
+.header{
+  padding-top: 100px;
+  /* background-color: lightsteelblue; */
+  background-image: url('../../images/pie.jpg');
+  opacity: 1;
+  background-size: cover;
+  background-position-y: -80px;
+  height: 60vh;
+  position: relative;
+}
+
+.pimg1-home{
+  background-image: url('../../images/bread.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 25vh;
+  opacity: .9;
+  transform: scaleX(-1);
+}
+
+.pimg2-home{
+  background-image: url('../../images/herbs.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 25vh;
+  opacity: .9;
+}
+
+.pimg3-home{
+  background-image: url('../../images/cheesypasta.jpg');
+  background-size: cover;
+  background-position-y: center;
+  height: 50vh;
+  opacity: .9;
+}
+
+.ptext-home-page {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+  font-size: 27px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+}
+
+.ptext-home-page .border {
+  background-color: #9e9c9c;
+  color: #fff;
+  padding: 20px;
+}
+
+.ptext-home-page .border.trans {
+  background-color: transparent;
 }
 
 .progress,
@@ -34,6 +90,7 @@
   padding-bottom: 5em;
   background: var(--oatmeal);
   flex-direction: column;
+  padding: 200px 0;
 }
 
 .user-stat-container {

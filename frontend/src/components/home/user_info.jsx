@@ -118,7 +118,7 @@ class UserInfo extends React.Component {
             <h5>cal/meal</h5>
           </div>
         </div>
-        <h3 className="calendar-intro">Check out your meals for the week.</h3>
+ 
       </div>
     );
   }

@@ -27,12 +27,6 @@ class ProgressBar extends React.Component {
     return (
       <div className="progress-bar-div">
         <div className="progress-bar-head">
-          <div className="ptext-home-page">
-            <span className="border">
-              <img src="/images/splashLogo2.png" />
-            </span>
-          </div>
-          <h2>Welcome back, {this.props.user.username}</h2>
           <h3>Complete meals and watch your garden grow!</h3>
         </div>
         <div className="grow-basil">
