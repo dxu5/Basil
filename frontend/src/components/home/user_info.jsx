@@ -27,8 +27,8 @@ class UserInfo extends React.Component {
     return (
       <div className="user-info-div">
         <div className="user-info-head">
-          <h2>A glance at your progress</h2>
-          <h3>Keep up these amazing records</h3>
+          <h2>By the numbers</h2>
+          <h3>Amazing job! Keep the momentum going.</h3>
         </div>
         <div className="user-stat-container">
           <div className="user-stat">
@@ -118,6 +118,7 @@ class UserInfo extends React.Component {
             <h5>cal/meal</h5>
           </div>
         </div>
+        <h3 className="calendar-intro">Check out your meals for the week.</h3>
       </div>
     );
   }

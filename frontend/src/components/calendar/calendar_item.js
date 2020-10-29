@@ -12,7 +12,7 @@ class CalendarItem extends React.Component {
         // if (this.props.completedMeals[this.props.day]) {
         //     bool = this.props.completedMeals[this.props.day].includes(this.props.id) ? true : false;
         // }
-        debugger
+        // debugger
         this.state = {
             completed: false
         }

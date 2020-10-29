@@ -66,59 +66,62 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className="form-container">
-        <form onSubmit={this.handleSubmit}>
-          <input className="auth-input" id="input-1" type="text"
-            value={this.state.username}
-            onChange={this.update('username')}
-            placeholder="Username"
-            ref={this.username}
-          />
+      <div>
+        <div className='signup-background'></div>
+        <div className="form-container">
+          <form onSubmit={this.handleSubmit}>
+            <input className="auth-input" id="input-1" type="text"
+              value={this.state.username}
+              onChange={this.update('username')}
+              placeholder="Username"
+              ref={this.username}
+            />
 
-          <label for="input-1">
-            <span className="label-text">Username</span>
-            <span className="nav-dot"></span>
-            <div className="signup-button-trigger">Sign up</div>
-            {this.state.errors["username"] ? <div className="error-text">
-              {this.state.errors["username"]}
-            </div> : null}
-          </label>
-        
-          <input className="auth-input" id="input-2"
-            type="password"
-            value={this.state.password}
-            onChange={this.update('password')}
-            ref={this.password}
-            placeholder="Password"
-          />
-          <label for="input-2">
-            <span className="label-text">Password</span>
-            <span className="nav-dot"></span>
-            {this.state.errors["password"] ? <div className="error-text">
-              {this.state.errors["password"]}
-            </div> : null}
-          </label>
-        
-          <input className="auth-input" id="input-3"
-            type="password"
-            value={this.state.password2}
-            onChange={this.update('password2')}
-            placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
-            ref={this.password2}
-          />
+            <label for="input-1">
+              <span className="label-text">Username</span>
+              <span className="nav-dot"></span>
+              <div className="signup-button-trigger">Sign up</div>
+              {this.state.errors["username"] ? <div className="error-text">
+                {this.state.errors["username"]}
+              </div> : null}
+            </label>
+          
+            <input className="auth-input" id="input-2"
+              type="password"
+              value={this.state.password}
+              onChange={this.update('password')}
+              ref={this.password}
+              placeholder="Password"
+            />
+            <label for="input-2">
+              <span className="label-text">Password</span>
+              <span className="nav-dot"></span>
+              {this.state.errors["password"] ? <div className="error-text">
+                {this.state.errors["password"]}
+              </div> : null}
+            </label>
+          
+            <input className="auth-input" id="input-3"
+              type="password"
+              value={this.state.password2}
+              onChange={this.update('password2')}
+              placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
+              ref={this.password2}
+            />
 
-          <label for="input-3">
-            <span className="label-text">Confirm Password</span>
-            <span className="nav-dot"></span>
-            {this.state.errors["password2"] ? <div className="error-text">
-              {this.state.errors["password2"]}
-            </div> : null}
-          </label>
-            
-          <button className="btn" type="submit">Signup</button>
-          <p className="tip">Press Tab</p>
-          <div className="signup-button">Get started</div>
-        </form>
+            <label for="input-3">
+              <span className="label-text">Confirm Password</span>
+              <span className="nav-dot"></span>
+              {this.state.errors["password2"] ? <div className="error-text">
+                {this.state.errors["password2"]}
+              </div> : null}
+            </label>
+              
+            <button className="btn" type="submit">Signup</button>
+            <p className="tip">Press Tab</p>
+            <div className="signup-button">Get started</div>
+          </form>
+        </div>
       </div>
     );
   }
