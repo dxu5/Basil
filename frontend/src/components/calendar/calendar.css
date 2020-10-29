@@ -120,6 +120,16 @@
   height: 75px;
   width: 20vw;
   margin: 2em auto;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+  background-color: var(--oatmeal);
+  color: var(--dark-green);
+}
+
+.create-meal-btn:hover {
+  background-color: var(--dark-green);
+  color: var(--white);
 }
 
 .check-icon {
