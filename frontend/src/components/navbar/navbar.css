@@ -4,7 +4,7 @@
 
 .navbar {
   background: rgba(220, 220, 220, 0.4);
-  border-bottom: 1px solid  rgba(220, 220, 220, 0.4);
+  border-bottom: 1px solid rgba(220, 220, 220, 0.4);
 }
 
 .nav-link {
@@ -36,6 +36,7 @@ a:hover {
   display: inline-block;
   position: relative;
   opacity: 0.75;
+  cursor: pointer;
 }
 
 .nav-link:hover {

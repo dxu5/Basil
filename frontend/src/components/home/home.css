@@ -3,10 +3,10 @@
   background-color: var(--oatmeal);
 }
 
-.header{
+.header {
   padding-top: 100px;
   /* background-color: lightsteelblue; */
-  background-image: url('../../images/pie.jpg');
+  background-image: url("../../images/pie.jpg");
   opacity: 1;
   background-size: cover;
   background-position-y: -80px;
@@ -14,12 +14,12 @@
   position: relative;
 }
 
-.pimg1-home{
-  background-image: url('../../images/bread.jpg');
+.pimg1-home {
+  background-image: url("../../images/bread.jpg");
   background-size: cover;
   background-position: center;
   height: 25vh;
-  opacity: .9;
+  opacity: 0.9;
   transform: scaleX(-1);
   position: relative;
 }
@@ -30,12 +30,12 @@
   left: 10%;
 }
 
-.pimg2-home{
-  background-image: url('../../images/herbs.jpg');
+.pimg2-home {
+  background-image: url("../../images/herbs.jpg");
   background-size: cover;
   background-position: center;
   height: 25vh;
-  opacity: .9;
+  opacity: 0.9;
   position: relative;
 }
 
@@ -47,12 +47,12 @@
   width: 24%;
 }
 
-.pimg3-home{
-  background-image: url('../../images/cheesypasta.jpg');
+.pimg3-home {
+  background-image: url("../../images/cheesypasta.jpg");
   background-size: cover;
   background-position-y: center;
   height: 50vh;
-  opacity: .9;
+  opacity: 0.9;
   position: relative;
 }
 
@@ -157,15 +157,15 @@
 
 .quote {
   position: absolute;
-  font-family: 'Vollkorn', serif;
+  font-family: "Vollkorn", serif;
   display: flex;
   flex-wrap: wrap;
   width: 30%;
   background: white;
-  opacity: 60%;
+  opacity: 70%;
   line-height: 1.5;
   font-size: 18px;
   padding: 5px;
   border-radius: 3px;
-  color: var(--black)
+  color: var(--black);
 }
