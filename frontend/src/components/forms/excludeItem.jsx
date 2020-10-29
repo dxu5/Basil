@@ -1,15 +1,19 @@
 import React from "react"
 import { withRouter } from 'react-router-dom';
-
+import "./button.scss"
 class ExcludeItem extends React.Component{
     constructor(props){
         super(props)
     }
     render(){
         return(
-            <div>
-                {this.props.item}
-                <button onClick={this.props.deleteItem(this.props.item)}></button>
+            <div className="excludeitem-div">
+                <div className="item-div"><span>{this.props.item}</span></div>
+                {/* <button onClick={this.props.deleteItem(this.props.item)}></button> */}
+                {/* <div className="button__holder"> */}
+                <div>
+                    <button className="close" onClick={this.props.deleteItem(this.props.item)}>X</button>
+                </div>
             </div>
         )
     }
