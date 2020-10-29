@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export const updateCompletedMeals = (completedMealplans, completedMeals) => {
+    debugger
     const strCompletedMealplans = JSON.stringify(completedMealplans)
     return axios({
         method: "PATCH",

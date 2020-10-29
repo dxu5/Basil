@@ -1,7 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
-
+import * as UserAPIUtil from '../../util/user_api_util'
+import { connect } from 'react-redux';
 
 class CalendarItem extends React.Component {
     constructor(props) {
@@ -17,19 +18,61 @@ class CalendarItem extends React.Component {
 
     handleUndo(e) {
         e.preventDefault();
+        // let completedMeal = `{"weekday": "${this.props.day}", "mealId": ${this.props.id}, "completed": ${false}}`;
+
+        // this.setState({completed: false})
+        // this.props.receiveCompletedMeal(this.props.completedMealCount - 1, completedMeal)
+
         let completedMeal = `{"weekday": "${this.props.day}", "mealId": ${this.props.id}, "completed": ${false}}`;
+        let parsedMeal = JSON.parse(completedMeal);
+        const weekday = parsedMeal['weekday']
+
+        let modifiedCompletedMeals = JSON.parse(JSON.stringify(this.props.completedMeals));
+
+        if(!modifiedCompletedMeals[weekday]){
+            modifiedCompletedMeals[weekday] = [];
+        }
+        if(parsedMeal['completed']){
+            modifiedCompletedMeals[weekday].push(parsedMeal['mealId']) ;
+        }
+        else{
+            modifiedCompletedMeals[weekday] = modifiedCompletedMeals[weekday].filter(id => id !== parsedMeal['mealId'])
+        }
+        
 
         this.setState({completed: false})
-        this.props.receiveCompletedMeal(this.props.completedMealCount - 1, completedMeal);
+
+        UserAPIUtil.updateCompletedMeals(modifiedCompletedMeals, this.props.completedMealCount - 1)
+        this.props.receiveCompletedMeal(this.props.completedMealCount - 1, completedMeal)
     }
 
     handleComplete(e) {
         e.preventDefault();
         
         let completedMeal = `{"weekday": "${this.props.day}", "mealId": ${this.props.id}, "completed": ${true}}`;
+        let parsedMeal = JSON.parse(completedMeal);
+        const weekday = parsedMeal['weekday']
+
+        debugger
+        let modifiedCompletedMeals = JSON.parse(JSON.stringify(this.props.completedMeals));
+        if(!modifiedCompletedMeals[weekday]){
+            modifiedCompletedMeals[weekday] = [];
+        }
+        debugger
+        
+        if(parsedMeal['completed']){
+            modifiedCompletedMeals[weekday].push(parsedMeal['mealId']) ;
+        }
+        else{
+            modifiedCompletedMeals[weekday] = modifiedCompletedMeals[weekday].filter(id => id !== parsedMeal['mealId'])
+        }
+        
+
+        debugger
+        UserAPIUtil.updateCompletedMeals(modifiedCompletedMeals, this.props.completedMealCount + 1)
+        this.props.receiveCompletedMeal(this.props.completedMealCount + 1, completedMeal)
 
         this.setState({completed: true})
-        this.props.receiveCompletedMeal(this.props.completedMealCount + 1, completedMeal);
     }
 
     displayIcon() {
@@ -61,4 +104,13 @@ class CalendarItem extends React.Component {
     }
 }
 
-export default CalendarItem
+
+const mSTP = (state) => {
+    debugger
+    return {
+        completedMeals: state.entities.mealplans.completedMealplans,
+        // completedMealCount: state.session.user.completedMeals,
+    }
+}
+
+export default connect(mSTP, null)(CalendarItem)
