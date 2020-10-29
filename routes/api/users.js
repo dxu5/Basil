@@ -63,7 +63,7 @@ router.post("/register", (req, res) => {
                 username: user.username,
                 currentMealplan: undefined,
                 currentMealplanStartTime: undefined,
-                completedMealIds: undefined,
+                completedMealplans: undefined,
                 completedMeals: 0,
               };
 
@@ -109,7 +109,7 @@ router.post("/login", (req, res) => {
           username: user.username,
           currentMealplan: user.currentMealplan,
           currentMealplanStartTime: user.currentMealplanStartTime,
-          completedMealIds: user.completedMealIds,
+          completedMealplans: user.completedMealplans,
           completedMeals: user.completedMeals,
         };
 
@@ -138,7 +138,7 @@ router.patch(
   (req, res) => {
     const query = { _id: req.user.id };
     User.findOneAndUpdate(query, {
-      completedMealIds: req.body.updatedCompletedMealIds,
+      completedMealplans: req.body.updatedCompletedMealplans,
       completedMeals: req.body.updatedCompletedMeals
     }).then((user) => {
       User.findOne({ _id: user.id }).then((user) => res.json(user));

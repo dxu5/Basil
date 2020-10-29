@@ -1,12 +1,12 @@
 import axios from "axios";
 
-export const updateCompletedMeals = (completedMealIds, completedMeals) => {
-    const strCompletedMealIds = JSON.stringify(completedMealIds)
+export const updateCompletedMeals = (completedMealplans, completedMeals) => {
+    const strCompletedMealplans = JSON.stringify(completedMealplans)
     return axios({
         method: "PATCH",
         url: "/api/users/completedMeals",
         data: {
-            updatedCompletedMealIds: strCompletedMealIds,
+            updatedCompletedMealplans: strCompletedMealplans,
             updatedCompletedMeals: completedMeals,
         }
     })
