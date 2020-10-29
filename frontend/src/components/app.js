@@ -8,11 +8,8 @@ import LoginFormContainer from "./forms/login_form_container";
 import SignupFormContainer from "./forms/signup_form_container";
 import HomeContainer from "./home/home_container";
 import MealPlanContainer from "./forms/mealplan_container";
-<<<<<<< HEAD
 import PreviewCalendarContainer from "./preview_calendar/preview_calendar";
-=======
 import ShowContainer from "./show/show_container";
->>>>>>> master
 
 const App = () => (
   <div>
