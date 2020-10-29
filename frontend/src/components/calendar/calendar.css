@@ -123,11 +123,13 @@
   -webkit-transition: all 0.4s;
   -moz-transition: all 0.4s;
   transition: all 0.4s;
+  background-color: var(--oatmeal);
+  color: var(--dark-green);
 }
 
 .create-meal-btn:hover {
-  background-color: lightgray;
-  color: #333333;
+  background-color: var(--dark-green);
+  color: var(--white);
 }
 
 .check-icon {
