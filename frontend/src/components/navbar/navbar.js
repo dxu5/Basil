@@ -30,15 +30,16 @@ class NavBar extends React.Component {
             <img src="/logoDark.png" />
           </a>
           <div className="navbar-links">
-            <a class="nav-link" href="#">
-              <Link to={"/home"}>Home</Link>
-            </a>
-            <a class="nav-link" href="#">
-              <Link to={"/profile"}>Profile</Link>
-            </a>
-            <a class="nav-link" href="#">
-              <div onClick={this.logoutUser}>Logout</div>
-            </a>
+            <Link class="nav-link" to={"/home"}>
+              Home
+            </Link>
+            <Link class="nav-link" to={"/profile"}>
+              Profile
+            </Link>
+
+            <div class="nav-link" onClick={this.logoutUser}>
+              Logout
+            </div>
           </div>
         </nav>
       );
@@ -49,15 +50,15 @@ class NavBar extends React.Component {
             <img src="/logoDark.png" />
           </a>
           <div className="navbar-links">
-            <a class="nav-link" href="#">
-              <div onClick={this.handleDemo}>Demo</div>
-            </a>
-            <a class="nav-link" href="#">
-              <Link to={"/signup"}>Signup</Link>
-            </a>
-            <a class="nav-link" href="#">
-              <Link to={"/login"}>Login</Link>
-            </a>
+            <div className="nav-link" onClick={this.handleDemo}>
+              Demo
+            </div>
+            <Link className="nav-link" to={"/signup"}>
+              Signup
+            </Link>
+            <Link className="nav-link" to={"/login"}>
+              Login
+            </Link>
           </div>
         </nav>
       );

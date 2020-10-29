@@ -6,7 +6,7 @@ export default class PreviewCalendarItem extends Component {
   }
   render() {
     return (
-      <div className={`meal-${this.props.mealNum}`}>
+      <div className={`meal-${this.props.mealNum}-preview`}>
         <div className="meal-img">
           <img
             src={`https://spoonacular.com/recipeImages/${this.props.id}-636x393.${this.props.imageType}`}

@@ -114,17 +114,15 @@ form {
 .range-div{
     display: flex;
     position: relative;
-    width: 80%;
+    width: 78%;
     margin: 6% auto;
     /* border:1px solid red; */
     /* position: relative; */
 }
 
 .max-span{
+    margin-left: 72%;
     position: absolute;
-    /* margin-left: 00px; */
-    left:84%;
-    top:-1%;
 }
 
 .cal-tips{
@@ -178,4 +176,12 @@ form {
 
 .item-span{
     margin-left: 0.5em;
+}
+
+.diet-options{
+    font-weight: bold;
+}
+
+.mealoptions{
+    
 }
