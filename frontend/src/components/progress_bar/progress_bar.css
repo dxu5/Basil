@@ -51,3 +51,19 @@
 }
 
 
+.grow-basil-small{
+  transform-origin: 45% 90%;
+  animation: move-leaf 3s infinite linear;
+}
+
+@keyframes move-leaf {
+  0%{
+    transform: rotate(-10deg);
+  }
+  50%{
+    transform: rotate(10deg);
+  }
+  100%{
+    transform: rotate(-10deg);
+  }
+}
