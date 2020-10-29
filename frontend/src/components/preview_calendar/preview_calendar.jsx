@@ -17,6 +17,10 @@ export default class PreviewCalendar extends Component {
     }
   }
 
+  //   componentDidUpdate(prevProps){
+  //       if(prevProps.previewMealplan)
+  //   }
+
   render() {
     if (Object.keys(this.props.previewMealplan).length === 0) {
       return null;
