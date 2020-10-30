@@ -42,6 +42,10 @@ class MealPlanForm extends React.Component {
     this.handleSave = this.handleSave.bind(this);
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   componentWillUnmount() {
     this.props.clearMealPlan();
   }
