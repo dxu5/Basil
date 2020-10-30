@@ -1,4 +1,6 @@
-# Basil
+# Background
+
+![splashLogo2](https://user-images.githubusercontent.com/60491357/97758682-a89d7f80-1abc-11eb-992c-179e86f6a65a.png)
 
 Basil aims to provide a clean, interactive, and streamlined environment for users who need quick meal suggestions for the week with personalization in mind. Not only can users select their food preferences but also track their dietary progress through interaction in the app. Basil's design keeps two core principles in mind:
 
