@@ -40,7 +40,7 @@ class UserInfo extends React.Component {
         <div className="user-stat-container">
           <div className="user-stat">
             <FontAwesomeIcon icon={faUser} />
-            <h5>I am</h5>
+            {/* <h5>I am</h5> */}
             <h4>{this.props.user.username}</h4>
           </div>
           <div className="user-stat">
