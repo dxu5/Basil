@@ -43,7 +43,7 @@ class MealPlanForm extends React.Component {
   }
 
   componentDidMount() {
-    window.scrollTo(0, 0);
+    document.querySelector(".meal-plan-form-div").scrollIntoView();
   }
 
   componentWillUnmount() {
