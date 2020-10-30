@@ -138,7 +138,7 @@
 }
 
 .group{
-    display: flex;
+  display: flex;
     width:90%;
     flex-direction: column;
     height: 100%;   
@@ -212,6 +212,7 @@
         // 0 0 1px 45px rgba(#8A3B58, 0.1);
     }
 }
+
 
 
 
@@ -291,4 +292,14 @@ div.Mui-focused{
 
 
 
-//alert
+.mealplan-btn-div{
+  display: flex;
+  justify-content: space-around;
+  width:60%;
+}
+
+.btn-infor{
+  display: flex;
+  justify-content: space-around;
+  width:60%;
+}

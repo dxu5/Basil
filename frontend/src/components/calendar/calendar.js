@@ -81,7 +81,7 @@ class Calendar extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.mealPlan) {
+    if (this.props.mealPlan && Object.keys(this.props.mealPlan).length > 0) {
       this.setState(
         {
           Monday: this.props.mealPlan.week.monday,
@@ -106,7 +106,7 @@ class Calendar extends React.Component {
           const startDay = new Date(this.props.currentMealPlanTime).getDay();
           const currentDay = days[weekday.getDay()];
           const pastDays = days.slice(startDay, weekday.getDay());
-          
+
           pastDays.forEach((day) => {
             if (document.getElementById(day)) {
               document.getElementById(day).classList.add("past");
