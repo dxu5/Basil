@@ -8,8 +8,6 @@ import {
   faFire,
   faHandHoldingHeart,
 } from "@fortawesome/free-solid-svg-icons";
-import CountUp from "react-countup";
-import VisibilitySensor from "react-visibility-sensor";
 import { connect } from "react-redux";
 // import "./user_info.css";
 
@@ -19,9 +17,14 @@ class UserInfo extends React.Component {
     this.state = {
       //placeholder for user info
       viewPortEntered: false,
-      completed: this.props.user.completedMeals,
+      completed: this.props.completedMeals,
     };
     this.myCountUp = React.createRef();
+  }
+  componentDidUpdate(prevProps) {
+    if (prevProps.completedMeals !== this.props.completedMeals) {
+      this.setState({ completed: this.props.completedMeals });
+    }
   }
 
   render() {
@@ -34,88 +37,31 @@ class UserInfo extends React.Component {
         <div className="user-stat-container">
           <div className="user-stat">
             <FontAwesomeIcon icon={faUser} />
-            <h5>I am</h5>
+            {/* <h5>I am</h5> */}
             <h4>{this.props.user.username}</h4>
           </div>
           <div className="user-stat">
             <FontAwesomeIcon icon={faMedal} />
             <h5>I am level</h5>
-            <h4>
-              <CountUp
-                end={Math.floor(this.state.completed / 10)}
-                duration={3}
-                delay={1}
-                ref={this.myCountUp}
-                redraw={true}
-                start={this.state.viewPortEntered ? null : 0}
-              >
-                {({ countUpRef, start }) => (
-                  <VisibilitySensor onChange={start} delayedCall>
-                    <span ref={countUpRef} />
-                  </VisibilitySensor>
-                )}
-              </CountUp>
-            </h4>
+
+            <h4>{Math.floor(this.state.completed / 10)}</h4>
           </div>
           <div className="user-stat">
             <FontAwesomeIcon icon={faUtensils} />
             <h5>I have made</h5>
-            <h4>
-              <CountUp
-                start={0}
-                end={this.state.completed}
-                duration={3}
-                delay={1}
-                redraw={true}
-              >
-                {({ countUpRef, start }) => (
-                  <VisibilitySensor onChange={start} delayedCall>
-                    <span ref={countUpRef} />
-                  </VisibilitySensor>
-                )}
-              </CountUp>
-            </h4>
+            <h4>{this.props.completedMeals}</h4>
             <h5>meals</h5>
           </div>
           <div className="user-stat">
             <FontAwesomeIcon icon={faCheck} />
             <h5>I completed</h5>
-            <h4>
-              <CountUp
-                start={0}
-                end={this.state.completed}
-                duration={3}
-                delay={1}
-                redraw={true}
-              >
-                {({ countUpRef, start }) => (
-                  <VisibilitySensor onChange={start} delayedCall>
-                    <span ref={countUpRef} />
-                  </VisibilitySensor>
-                )}
-              </CountUp>
-              %
-            </h4>
-            <h5>of my meals</h5>
+            <h4>{this.props.completedThisWeek} / 21</h4>
+            <h5>of my meals this week</h5>
           </div>
           <div className="user-stat">
             <FontAwesomeIcon icon={faHandHoldingHeart} />
             <h5>I averaged</h5>
-            <h4>
-              <CountUp
-                start={0}
-                end={this.state.completed}
-                duration={3}
-                delay={1}
-                redraw={true}
-              >
-                {({ countUpRef, start }) => (
-                  <VisibilitySensor onChange={start} delayedCall>
-                    <span ref={countUpRef} />
-                  </VisibilitySensor>
-                )}
-              </CountUp>
-            </h4>
+            <h4>{this.props.completedMeals}</h4>
             <h5>cal/meal</h5>
           </div>
         </div>
@@ -127,7 +73,19 @@ class UserInfo extends React.Component {
 const mapStateToProps = (state) => {
   return {
     user: state.session.user,
+    completedMeals: state.session.user.completedMeals,
+    completedThisWeek: countCompleted(
+      state.entities.mealplans.completedMealplans
+    ),
   };
+};
+
+const countCompleted = (week) => {
+  let final = 0;
+  for (const day in week) {
+    final += week[day].length;
+  }
+  return final;
 };
 
 export default connect(mapStateToProps, null)(UserInfo);
