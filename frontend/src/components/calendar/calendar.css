@@ -139,3 +139,12 @@
   top: 3%;
   left: 33%;
 }
+
+.meal-0-preview {
+  margin-top: 0.6em;
+}
+
+.preview-day {
+  background: var(--dark-green) !important;
+  color: white;
+}

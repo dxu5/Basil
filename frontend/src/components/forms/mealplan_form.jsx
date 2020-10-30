@@ -419,7 +419,7 @@ class MealPlanForm extends React.Component {
     return (
       <div ref={this.formref} className="meal-plan-form-div">
         <div>Options are not mandatory</div>
-        <form className="meal-plan-form" onSubmit={this.handleSubmit}>
+        <form className="meal-plan-form">
           <div className="category">
             <label className="mealoptions">
               What is the caloric target for one day
@@ -463,13 +463,15 @@ class MealPlanForm extends React.Component {
             </label>
             {exclude_div}
           </div>
+
           {Object.keys(this.props.previewMealplan).length > 0 ? (
             <PreviewCalendarContainer />
           ) : null}
-          <button type="submit" className="sub-btn">
+
+        </form>
+          <button onClick={this.handleSubmit} className="sub-btn">
             Create Mealplan
           </button>
-        </form>
       </div>
     );
   }

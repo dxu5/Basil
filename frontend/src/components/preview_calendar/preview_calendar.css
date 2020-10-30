@@ -140,6 +140,10 @@
   left: 33%;
 }
 
-.preview {
+.preview-calendar {
   margin-top: 5em;
+}
+
+.checkout-text {
+  text-align: center;
 }
