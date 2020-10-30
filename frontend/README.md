@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# Basil
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Basil aims to provide a clean, interactive, and streamlined environment for users who need quick meal suggestions for the week with personalization in mind. Not only can users select their food preferences but also track their dietary progress through interaction in the app. Basil's design keeps two core principles in mind:
 
-## Available Scripts
+Personalization: Users are receiving personal meal recommendations, can view their own calendar of meals, and track their progress.
+Intuitive: Users can expect a responsive application that is simple, practical, and intuitive to use.
 
-In the project directory, you can run:
+Basil is primarily built with the MERN stack, a combination of the following four technologies: MongoDB, Express, React/Redux, and Node.js.
 
-### `yarn start`
+# MVP
+### 1. New account creation, login, and guest/demo login (1 Day)
+  + Users can sign up, login, log out
+  + Users can use a demo login to try the site
+  + Users can't use certain features without logging in (creating and viewing meal plans)
+### 2. Home Page (2 Days)
+  + Displays Calendar with User's current meal plan
+  + Users can see a progress bar as well as create meal plans if the old one has expired
+  + Users can create custom meals plans, see past meal plans, and analyze statistics
+  + Users can check off meals that they completed via the calendar
+### 3. Meal Plan (2 Days)
+  + Users can generate a meal plan based on a pre-filled form
+  + Users can decide whether or not to save the meal plan for the week and regenerate meal plans until they find one they like
+  + Users can see individual meals
+### 4. Individual Meal Show Page (2 Days)
+  + Meal Show Page will provide users with additional information about current meal
+  + Users can see ingredients, nutritional facts, and instructions for the meal
+  + Users can create custom meals plans, see past meal plans, and analyze statistics
+### BONUS User Profile Page (1.5 Days)
+  + Users will have a profile page that provides their history of subscribed meal plans, current meal plan, and additional statistics
+  + It will display username, password, session_token, health metrics (age, weight, dietary restrictions, dietary goals, calorie intake), meals
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Technologies and Technical Challenges
+  ### Technologies:
+ - Node.js
+ - React 
+ - Redux
+ - Javascript
+ - Mongo DB database
+ - Axios 
+ - Mongoose Models
+ - Passport-jwt
+ - AWS
+ - Spoonacular API
+ - Calendar API
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Technical Challenges:
+- Different API calls
+- Display the progress tracker to showcase completion of the week's meal plan
+- Display an interactive calendar displaying every meal and having a link to the meal's show page
+- Interactive form
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Group Members and Work Breakdown
+### Team Members 
+**Nate Oh**, **Derek Xu**, **Zhang Zhang**, **Lisa Lam**
+### October 26 - 27
+* Built skeleton - **Derek**
+* Build backend user auth - **Zhang / Derek**
+* Build frontend user auth - **Lisa / Nate**
+* Build splash page - **Lisa**
+* Build signup / login pages - **Zhang**
+* Begin setting up API with Spoonacular - **Derek**
+* Research calendar API - **Nate**
+### October 27 - 28
+* CRUDS for generating meal plans - **Derek**
+* Design meal plan form - **Zhang**
+* Design home page - **Lisa / Nate**
+* Implement calendar feature - **Nate**
+### October 28 - 29
+* Create show page for individual meals - **Zhang**
+* Finish calendar and meal plan feature - **Derek / Nate / Lisa**
+### October 30
+* Finish testing and debugging - **All**
