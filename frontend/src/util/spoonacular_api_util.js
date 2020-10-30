@@ -6,9 +6,11 @@ export const apiBaseURL = "https://api.spoonacular.com";
 //target calories (api will get as close to this value DAILY)
 //diet (there is a list on spoonacular)
 //exclude (comma separated list of lowercase ingredients)
+axios.get("http://example.com");
 
 export const getWeeklyMealPlan = (details) => {
   return axios.get(`${apiBaseURL}/mealplanner/generate`, {
+    headers: { Authorization: "" },
     params: {
       ...details,
       timeFrame: "week",
@@ -22,6 +24,7 @@ export const getWeeklyMealPlan = (details) => {
 
 export const getMealInfo = (mealId) => {
   return axios.get(`${apiBaseURL}/recipes/${mealId}/information`, {
+    headers: { Authorization: "" },
     params: {
       apiKey: "9b2746dcbbd44a4485d1cb4138c48307",
     },
