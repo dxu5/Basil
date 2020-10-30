@@ -162,7 +162,7 @@ class MealPlanForm extends React.Component {
           className="cal-slider"
         />
         <p className="cal-tips">
-          Generally, the recommended daily calorie intake is 2,000 calories a
+          The recommended daily caloric intake is 2,000 calories a
           day for women and 2,500 for men.
         </p>
         {/* </div> */}
@@ -177,7 +177,7 @@ class MealPlanForm extends React.Component {
           <div className="diet-infor-div">
             <label className="diet-options">Gluten Free</label>
             <div style={{ color: "#4f4846" }} className="diet-description">
-              Avoiding wheat, barley, rye, and other gluten-containing grains
+              Excludes wheat, barley, rye, and other gluten-containing grains
               and foods.{" "}
               <a
                 href="https://en.wikipedia.org/wiki/Gluten-free_diet"
@@ -204,7 +204,7 @@ class MealPlanForm extends React.Component {
           <div className="diet-infor-div">
             <label className="diet-options">Ketogenic</label>
             <label style={{ color: "#4f4846" }} className="diet-description">
-              Avoiding high fat, protein-rich foods and high carbohydrate foods.
+              Excludes high fat, protein-rich foods and high carbohydrate foods.
               <a
                 href="https://en.wikipedia.org/wiki/Ketogenic_diet"
                 target="_blank"
@@ -230,7 +230,7 @@ class MealPlanForm extends React.Component {
           <div className="diet-infor-div">
             <label className="diet-options">Vegetarian</label>
             <label style={{ color: "#4f4846" }} className="diet-description">
-              Avoiding meat or meat by-products, such as bones or gelatin.
+              Excludes meat or meat by-products, such as bones or gelatin.
               <a
                 href="https://en.wikipedia.org/wiki/Vegetarianism"
                 target="_blank"
@@ -256,8 +256,7 @@ class MealPlanForm extends React.Component {
           <div className="diet-infor-div">
             <label className="diet-options">Lacto-Vegetarian</label>
             <label style={{ color: "#4f4846" }} className="diet-description">
-              All ingredients must be vegetarian and none of the ingredients can
-              be or contain egg.
+              All ingredients are vegetarian and excludes egg.
               <a
                 href="https://en.wikipedia.org/wiki/Lacto_vegetarianism"
                 target="_blank"
@@ -283,8 +282,7 @@ class MealPlanForm extends React.Component {
           <div className="diet-infor-div">
             <label className="diet-options">Ovo-Vegetarian</label>
             <label style={{ color: "#4f4846" }} className="diet-description">
-              All ingredients must be vegetarian and none of the ingredients can
-              be or contain dairy.
+              All ingredients are vegetarian and excludes dairy.
               <a
                 href="https://en.wikipedia.org/wiki/Ovo_vegetarianism"
                 target="_blank"
@@ -310,8 +308,8 @@ class MealPlanForm extends React.Component {
           <div className="diet-infor-div">
             <label className="diet-options">Vegan</label>
             <label style={{ color: "#4f4846" }} className="diet-description">
-              No ingredients may contain meat or meat by-products, such as bones
-              or gelatin, nor may they contain eggs, dairy, or honey.
+              Excludes meat or meat by-products, such as bones
+              or gelatin, eggs, dairy, or honey.
               <a
                 href="https://en.wikipedia.org/wiki/Veganism"
                 target="_blank"
@@ -337,8 +335,7 @@ class MealPlanForm extends React.Component {
           <div className="diet-infor-div">
             <label className="diet-options">Pescetarian</label>
             <label style={{ color: "#4f4846" }} className="diet-description">
-              Everything is allowed except meat and meat by-products - some
-              pescetarians eat eggs and dairy, some do not.
+              No exclusions except meat and meat by-products.
               <a
                 href="https://en.wikipedia.org/wiki/Pescetarianism"
                 target="_blank"
@@ -364,7 +361,7 @@ class MealPlanForm extends React.Component {
           <div className="diet-infor-div">
             <label className="diet-options">Paleo</label>
             <label style={{ color: "#4f4846" }} className="diet-description">
-              Ingredients not allowed include legumes (e.g. beans and lentils),
+              Excludes legumes (e.g. beans and lentils),
               grains, dairy, refined sugar, and processed foods.
               <a
                 href="https://thepaleodiet.com/"
@@ -391,7 +388,7 @@ class MealPlanForm extends React.Component {
           <div className="diet-infor-div">
             <label className="diet-options">Primal</label>
             <label style={{ color: "#4f4846" }} className="diet-description">
-              It stresses that people eat raw, minimally processed foods, such
+              Raw, minimally processed foods, such
               as fruits, vegetables, certain oils, and dairy products.
               <a
                 href="https://www.medicalnewstoday.com/articles/320516"
@@ -418,7 +415,7 @@ class MealPlanForm extends React.Component {
           <div className="diet-infor-div">
             <label className="diet-options">Whole30</label>
             <label style={{ color: "#4f4846" }} className="diet-description">
-              Ingredients not allowed include added sweeteners,alcohol, grains,
+              Excludes added sweeteners,alcohol, grains,
               legumes, and food additives, such as carrageenan, MSG, and
               sulfites.
               <a
