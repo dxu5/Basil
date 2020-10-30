@@ -7,7 +7,7 @@ import "./splash.css";
 
 class SplashPage extends React.Component {
   componentDidMount() {
-    window.scrollTo(0, 0);
+    document.querySelector(".pimg1").scrollIntoView();
   }
   render() {
     return (
