@@ -10,6 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
+import { connect } from "react-redux";
 // import "./user_info.css";
 
 class UserInfo extends React.Component {
@@ -118,10 +119,15 @@ class UserInfo extends React.Component {
             <h5>cal/meal</h5>
           </div>
         </div>
- 
       </div>
     );
   }
 }
 
-export default UserInfo;
+const mapStateToProps = (state) => {
+  return {
+    user: state.session.user,
+  };
+};
+
+export default connect(mapStateToProps, null)(UserInfo);
