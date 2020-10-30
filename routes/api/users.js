@@ -28,6 +28,7 @@ router.patch(
     User.findOneAndUpdate(query, {
       currentMealplan: req.body.mealplan,
       currentMealplanStartTime: Date.now(),
+      completedMealplans: "{}",
     }).then((user) => {
       User.findOne({ _id: user.id }).then((user) => res.json(user));
     });
@@ -139,12 +140,11 @@ router.patch(
     const query = { _id: req.user.id };
     User.findOneAndUpdate(query, {
       completedMealplans: req.body.updatedCompletedMealplans,
-      completedMeals: req.body.updatedCompletedMeals
+      completedMeals: req.body.updatedCompletedMeals,
     }).then((user) => {
       User.findOne({ _id: user.id }).then((user) => res.json(user));
     });
   }
 );
-
 
 module.exports = router;
