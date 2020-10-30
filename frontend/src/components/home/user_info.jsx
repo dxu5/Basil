@@ -34,12 +34,12 @@ class UserInfo extends React.Component {
         <div className="user-stat-container">
           <div className="user-stat">
             <FontAwesomeIcon icon={faUser} />
-            <h5>I am</h5>
+            {/* <h5>I am</h5> */}
             <h4>{this.props.user.username}</h4>
           </div>
           <div className="user-stat">
             <FontAwesomeIcon icon={faMedal} />
-            <h5>I am level</h5>
+            <h5>Level</h5>
             <h4>
               <CountUp
                 end={Math.floor(this.state.completed / 10)}
@@ -59,7 +59,7 @@ class UserInfo extends React.Component {
           </div>
           <div className="user-stat">
             <FontAwesomeIcon icon={faUtensils} />
-            <h5>I have made</h5>
+            <h5>Made</h5>
             <h4>
               <CountUp
                 start={0}
@@ -79,7 +79,7 @@ class UserInfo extends React.Component {
           </div>
           <div className="user-stat">
             <FontAwesomeIcon icon={faCheck} />
-            <h5>I completed</h5>
+            <h5>Completed</h5>
             <h4>
               <CountUp
                 start={0}
@@ -96,11 +96,11 @@ class UserInfo extends React.Component {
               </CountUp>
               %
             </h4>
-            <h5>of my meals</h5>
+            <h5>of mealplans</h5>
           </div>
           <div className="user-stat">
             <FontAwesomeIcon icon={faHandHoldingHeart} />
-            <h5>I averaged</h5>
+            <h5>Averaged</h5>
             <h4>
               <CountUp
                 start={0}

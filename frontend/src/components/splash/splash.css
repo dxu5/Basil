@@ -138,6 +138,7 @@ html {
   display: flex;
   flex-direction: column;
   text-align: center;
+  position: relative
 }
 
 .dev-img {
@@ -170,4 +171,15 @@ html {
   .pimg3 {
     background-attachment: scroll;
   }
+}
+
+.linkedin {
+  display: flex;
+  justify-content: center;
+  color: #111;
+  margin-bottom: 50px;
+  position: absolute;
+  top: 0;
+  left: 110px;
+  font-size: 35px;
 }
