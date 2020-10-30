@@ -42,6 +42,10 @@ class MealPlanForm extends React.Component {
     this.handleSave = this.handleSave.bind(this);
   }
 
+  componentWillUnmount() {
+    this.props.clearMealPlan();
+  }
+
   update(field) {
     return (e) =>
       this.setState({
