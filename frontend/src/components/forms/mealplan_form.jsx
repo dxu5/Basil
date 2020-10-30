@@ -165,7 +165,7 @@ class MealPlanForm extends React.Component {
   showDiet() {
     return (
       <div className="diet-div">
-        <div className="diet-item-div">
+        <div className="diet-item-div-1">
           <div className="diet-infor-div">
             <label className="diet-options">Gluten Free</label>
             <div style={{ color: "#4f4846" }} className="diet-description">
@@ -441,7 +441,7 @@ class MealPlanForm extends React.Component {
     return (
         // ref={this.formref}
       <div className="meal-plan-form-div">
-          <p style={{textDecoration: "underline"}}>The following questions are optional, if you do not want to customize, just press Generate Mealplan!</p>
+          <p>The following questions are optional, if you do not want to customize, just press Generate Mealplan!</p>
         <form className="meal-plan-form">
           <div className="category">
             <label className="mealoptions">

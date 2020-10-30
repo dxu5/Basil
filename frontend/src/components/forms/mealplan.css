@@ -44,6 +44,13 @@ form {
   /* justify-content: top; */
 }
 
+.diet-item-div-1{
+  width: 100%;
+  display: flex;
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+}
+
 .diet-infor-div {
   display: flex;
   flex-direction: column;
