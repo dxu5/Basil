@@ -46,83 +46,25 @@ class UserInfo extends React.Component {
           <div className="user-stat">
             <FontAwesomeIcon icon={faMedal} />
             <h5>I am level</h5>
-            {this.state.completed}
-            <h4>
-              <CountUp
-                end={Math.floor(this.props.completedMeals / 10)}
-                duration={3}
-                delay={1}
-                ref={this.myCountUp}
-                redraw={true}
-                start={this.state.viewPortEntered ? null : 0}
-              >
-                {({ countUpRef, start }) => (
-                  <VisibilitySensor onChange={start} delayedCall>
-                    <span ref={countUpRef} />
-                  </VisibilitySensor>
-                )}
-              </CountUp>
-            </h4>
+
+            <h4>{Math.floor(this.state.completed / 10)}</h4>
           </div>
           <div className="user-stat">
             <FontAwesomeIcon icon={faUtensils} />
             <h5>I have made</h5>
-            <h4>
-              <CountUp
-                start={0}
-                end={this.props.completedMeals}
-                duration={3}
-                delay={1}
-                redraw={true}
-              >
-                {({ countUpRef, start }) => (
-                  <VisibilitySensor onChange={start} delayedCall>
-                    <span ref={countUpRef} />
-                  </VisibilitySensor>
-                )}
-              </CountUp>
-            </h4>
+            <h4>{this.props.completedMeals}</h4>
             <h5>meals</h5>
           </div>
           <div className="user-stat">
             <FontAwesomeIcon icon={faCheck} />
             <h5>I completed</h5>
-            <h4>
-              <CountUp
-                start={0}
-                end={this.props.completedMeals}
-                duration={3}
-                delay={1}
-                redraw={true}
-              >
-                {({ countUpRef, start }) => (
-                  <VisibilitySensor onChange={start} delayedCall>
-                    <span ref={countUpRef} />
-                  </VisibilitySensor>
-                )}
-              </CountUp>
-              %
-            </h4>
+            <h4>{this.props.completedMeals}%</h4>
             <h5>of my meals</h5>
           </div>
           <div className="user-stat">
             <FontAwesomeIcon icon={faHandHoldingHeart} />
             <h5>I averaged</h5>
-            <h4>
-              <CountUp
-                start={0}
-                end={this.props.completedMeals}
-                duration={3}
-                delay={1}
-                redraw={true}
-              >
-                {({ countUpRef, start }) => (
-                  <VisibilitySensor onChange={start} delayedCall>
-                    <span ref={countUpRef} />
-                  </VisibilitySensor>
-                )}
-              </CountUp>
-            </h4>
+            <h4>{this.props.completedMeals}</h4>
             <h5>cal/meal</h5>
           </div>
         </div>
