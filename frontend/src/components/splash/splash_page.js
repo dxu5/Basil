@@ -1,11 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import "../../stylesheets/colors.css";
 import "./splash.css";
 
 class SplashPage extends React.Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   render() {
     return (
       <div class="splash">
@@ -74,7 +77,10 @@ class SplashPage extends React.Component {
           <div className="profiles">
             <div className="profile">
               <div className="linkedin">
-                <a href="https://www.linkedin.com/in/derek-jinxiao-xu/" target="_blank">
+                <a
+                  href="https://www.linkedin.com/in/derek-jinxiao-xu/"
+                  target="_blank"
+                >
                   <FontAwesomeIcon icon={faLinkedin} />
                 </a>
               </div>
@@ -83,7 +89,10 @@ class SplashPage extends React.Component {
             </div>
             <div className="profile">
               <div className="linkedin">
-                <a href="https://www.linkedin.com/in/lisa-lam-64607743/" target="_blank">
+                <a
+                  href="https://www.linkedin.com/in/lisa-lam-64607743/"
+                  target="_blank"
+                >
                   <FontAwesomeIcon icon={faLinkedin} />
                 </a>
               </div>
@@ -92,7 +101,10 @@ class SplashPage extends React.Component {
             </div>
             <div className="profile">
               <div className="linkedin">
-                <a href="https://www.linkedin.com/in/nathan-oh-cpa-8062075a/" target="_blank">
+                <a
+                  href="https://www.linkedin.com/in/nathan-oh-cpa-8062075a/"
+                  target="_blank"
+                >
                   <FontAwesomeIcon icon={faLinkedin} />
                 </a>
               </div>
@@ -101,7 +113,10 @@ class SplashPage extends React.Component {
             </div>
             <div className="profile">
               <div className="linkedin">
-                <a href="https://www.linkedin.com/in/zhang-zhang-0911/" target="_blank">
+                <a
+                  href="https://www.linkedin.com/in/zhang-zhang-0911/"
+                  target="_blank"
+                >
                   <FontAwesomeIcon icon={faLinkedin} />
                 </a>
               </div>
