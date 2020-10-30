@@ -72,62 +72,42 @@ class SplashPage extends React.Component {
         </div>
         <div className="about-us-links">
           <div className="profiles">
-            <a
-              href="https://www.linkedin.com/in/derek-jinxiao-xu/"
-              target="_blank"
-            >
-              <div className="profile">
-                <div className="linkedin">
-                  <a href="https://www.linkedin.com/in/derek-jinxiao-xu/" target="_blank">
-                    <FontAwesomeIcon icon={faLinkedin} />
-                  </a>
-                </div>
-                <img src="/images/Derek.png" className="dev-img"></img>
-                <span className="prof-name">Derek</span>
+            <div className="profile">
+              <div className="linkedin">
+                <a href="https://www.linkedin.com/in/derek-jinxiao-xu/" target="_blank">
+                  <FontAwesomeIcon icon={faLinkedin} />
+                </a>
               </div>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/lisa-lam-64607743/"
-              target="_blank"
-            >
-              <div className="profile">
-                <div className="linkedin">
-                  <a href="https://www.linkedin.com/in/lisa-lam-64607743/" target="_blank">
-                    <FontAwesomeIcon icon={faLinkedin} />
-                  </a>
-                </div>
-                <img src="/images/Lisa.jpeg" className="dev-img"></img>
-                <span className="prof-name">Lisa</span>
+              <img src="/images/Derek.png" className="dev-img"></img>
+              <span className="prof-name">Derek</span>
+            </div>
+            <div className="profile">
+              <div className="linkedin">
+                <a href="https://www.linkedin.com/in/lisa-lam-64607743/" target="_blank">
+                  <FontAwesomeIcon icon={faLinkedin} />
+                </a>
               </div>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/nathan-oh-cpa-8062075a/"
-              target="_blank"
-            >
-              <div className="profile">
-                <div className="linkedin">
-                  <a href="https://www.linkedin.com/in/nathan-oh-cpa-8062075a/" target="_blank">
-                    <FontAwesomeIcon icon={faLinkedin} />
-                  </a>
-                </div>
-                <img src="/images/Nate.jpg" className="dev-img"></img>
-                <span className="prof-name">Nate</span>
+              <img src="/images/Lisa.jpeg" className="dev-img"></img>
+              <span className="prof-name">Lisa</span>
+            </div>
+            <div className="profile">
+              <div className="linkedin">
+                <a href="https://www.linkedin.com/in/nathan-oh-cpa-8062075a/" target="_blank">
+                  <FontAwesomeIcon icon={faLinkedin} />
+                </a>
               </div>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/zhang-zhang-0911/"
-              target="_blank"
-            >
-              <div className="profile">
-                <div className="linkedin">
-                  <a href="https://www.linkedin.com/in/zhang-zhang-0911/" target="_blank">
-                    <FontAwesomeIcon icon={faLinkedin} />
-                  </a>
-                </div>
-                <img src="/images/Zhang.jpg" className="dev-img"></img>
-                <span className="prof-name">Zhang</span>
+              <img src="/images/Nate.jpg" className="dev-img"></img>
+              <span className="prof-name">Nate</span>
+            </div>
+            <div className="profile">
+              <div className="linkedin">
+                <a href="https://www.linkedin.com/in/zhang-zhang-0911/" target="_blank">
+                  <FontAwesomeIcon icon={faLinkedin} />
+                </a>
               </div>
-            </a>
+              <img src="/images/Zhang.jpg" className="dev-img"></img>
+              <span className="prof-name">Zhang</span>
+            </div>
           </div>
           <div className="github">
             <a href="https://github.com/dxu5/Basil" target="_blank">
