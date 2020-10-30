@@ -7,12 +7,10 @@ class Show extends React.Component{
     }
 
     componentDidMount(){
-        debugger
         this.props.getMealInfo(Number(this.props.match.params.mealId));
     }
 
     render(){
-        debugger
         const {meal} = this.props
         if(!meal) {return null}
         return (
