@@ -28,7 +28,6 @@ class UserInfo extends React.Component {
   }
 
   render() {
-    debugger;
     return (
       <div className="user-info-div">
         <div className="user-info-head">
@@ -56,8 +55,8 @@ class UserInfo extends React.Component {
           <div className="user-stat">
             <FontAwesomeIcon icon={faCheck} />
             <h5>I completed</h5>
-            <h4>{this.props.completedMeals}%</h4>
-            <h5>of my meals</h5>
+            <h4>{this.props.completedThisWeek} / 21</h4>
+            <h5>of my meals this week</h5>
           </div>
           <div className="user-stat">
             <FontAwesomeIcon icon={faHandHoldingHeart} />
@@ -75,7 +74,18 @@ const mapStateToProps = (state) => {
   return {
     user: state.session.user,
     completedMeals: state.session.user.completedMeals,
+    completedThisWeek: countCompleted(
+      state.entities.mealplans.completedMealplans
+    ),
   };
+};
+
+const countCompleted = (week) => {
+  let final = 0;
+  for (const day in week) {
+    final += week[day].length;
+  }
+  return final;
 };
 
 export default connect(mapStateToProps, null)(UserInfo);

@@ -19,7 +19,6 @@ class CalendarItem extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     let bool;
-    debugger;
     if (prevProps.completedMeals) {
       if (
         Object.keys(prevProps.completedMeals).length !==
