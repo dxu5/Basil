@@ -1,24 +1,23 @@
-.meal-plan-form-div{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10%;
-    margin-left: 10%;
-    width: 80%;
-    height: 100%;
-    /* border: 1px solid red; */
-    /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace; */
+.meal-plan-form-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+  margin-left: 10%;
+  width: 80%;
+  height: 100%;
+  /* border: 1px solid red; */
+  /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace; */
 }
-.meal-plan-form{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* border:1px solid red; */
-
+.meal-plan-form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border:1px solid red; */
 }
 
 form {
@@ -44,7 +43,7 @@ form {
   /* justify-content: top; */
 }
 
-.diet-item-div-1{
+.diet-item-div-1 {
   width: 100%;
   display: flex;
   padding-top: 1em;
@@ -65,7 +64,7 @@ form {
   width: 85%;
 }
 
-.toggle-1{
+.toggle-1 {
   --width: 50px;
   --height: calc(var(--width) / 2);
   --border-radius: calc(var(--height) / 2);
@@ -138,14 +137,14 @@ form {
   align-items: center;
 }
 
-.min-max{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+.min-max {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.alert{
-    margin-left: 70%;
+.alert {
+  margin-left: 70%;
 }
 .cal-tips {
   /* border:1px solid red; */
@@ -216,13 +215,13 @@ form {
   /* text-decoration: underline; */
 }
 
-.learnmore{
-  text-decoration: underline;  
+.learnmore {
+  text-decoration: underline;
   color: #1f2d20;
   margin-left: 0.5em;
 }
 
-.question-div{
+.question-div {
   display: flex;
   align-items: center;
   justify-content: space-between;

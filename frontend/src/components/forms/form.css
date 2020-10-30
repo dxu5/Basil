@@ -13,9 +13,9 @@
   /* width: 100vh; */
 }
 
-form {
+.login-form {
   width: 100vw;
-  height: 0 !important;
+  height: 0;
   overflow: hidden;
 }
 

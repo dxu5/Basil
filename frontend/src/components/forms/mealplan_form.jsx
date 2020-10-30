@@ -44,6 +44,7 @@ class MealPlanForm extends React.Component {
 
   componentDidMount() {
     document.querySelector(".meal-plan-form-div").scrollIntoView();
+    window.scrollTo(0, 0);
   }
 
   componentWillUnmount() {
@@ -162,8 +163,8 @@ class MealPlanForm extends React.Component {
           className="cal-slider"
         />
         <p className="cal-tips">
-          The recommended daily caloric intake is 2,000 calories a
-          day for women and 2,500 for men.
+          The recommended daily caloric intake is 2,000 calories a day for women
+          and 2,500 for men.
         </p>
         {/* </div> */}
       </div>
@@ -308,8 +309,8 @@ class MealPlanForm extends React.Component {
           <div className="diet-infor-div">
             <label className="diet-options">Vegan</label>
             <label style={{ color: "#4f4846" }} className="diet-description">
-              Excludes meat or meat by-products, such as bones
-              or gelatin, eggs, dairy, or honey.
+              Excludes meat or meat by-products, such as bones or gelatin, eggs,
+              dairy, or honey.
               <a
                 href="https://en.wikipedia.org/wiki/Veganism"
                 target="_blank"
@@ -361,8 +362,8 @@ class MealPlanForm extends React.Component {
           <div className="diet-infor-div">
             <label className="diet-options">Paleo</label>
             <label style={{ color: "#4f4846" }} className="diet-description">
-              Excludes legumes (e.g. beans and lentils),
-              grains, dairy, refined sugar, and processed foods.
+              Excludes legumes (e.g. beans and lentils), grains, dairy, refined
+              sugar, and processed foods.
               <a
                 href="https://thepaleodiet.com/"
                 target="_blank"
@@ -388,8 +389,8 @@ class MealPlanForm extends React.Component {
           <div className="diet-infor-div">
             <label className="diet-options">Primal</label>
             <label style={{ color: "#4f4846" }} className="diet-description">
-              Raw, minimally processed foods, such
-              as fruits, vegetables, certain oils, and dairy products.
+              Raw, minimally processed foods, such as fruits, vegetables,
+              certain oils, and dairy products.
               <a
                 href="https://www.medicalnewstoday.com/articles/320516"
                 target="_blank"
@@ -415,9 +416,8 @@ class MealPlanForm extends React.Component {
           <div className="diet-infor-div">
             <label className="diet-options">Whole30</label>
             <label style={{ color: "#4f4846" }} className="diet-description">
-              Excludes added sweeteners,alcohol, grains,
-              legumes, and food additives, such as carrageenan, MSG, and
-              sulfites.
+              Excludes added sweeteners,alcohol, grains, legumes, and food
+              additives, such as carrageenan, MSG, and sulfites.
               <a
                 href="https://en.wikipedia.org/wiki/Whole30"
                 target="_blank"
