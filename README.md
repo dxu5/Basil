@@ -4,7 +4,8 @@
 
 Basil aims to provide a clean, interactive, and streamlined environment for users who need quick meal suggestions for the week with personalization in mind. Not only can users select their food preferences but also track their dietary progress through interaction in the app. Basil's design keeps two core principles in mind:
 
-Personalization: Users are receiving personal meal recommendations, can view their own calendar of meals, and track their progress.
+Personalized: Users are receiving personal meal recommendations, can view their own calendar of meals, and track their progress.
+
 Intuitive: Users can expect a responsive application that is simple, practical, and intuitive to use.
 
 Basil is primarily built with the MERN stack, a combination of the following four technologies: MongoDB, Express, React/Redux, and Node.js.
