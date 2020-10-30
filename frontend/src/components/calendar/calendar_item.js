@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import * as UserAPIUtil from '../../util/user_api_util'
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class CalendarItem extends React.Component {
     constructor(props) {
@@ -108,12 +109,14 @@ class CalendarItem extends React.Component {
     render() {
         return(
             <div className={`meal-${this.props.mealNum}`}>
-                <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/${this.props.id}-636x393.${this.props.imageType}`}/></div>
-                <div className='meal-description'>
-                    {this.displayIcon()}
-                    <p className='meal-title'>{this.props.title}</p>
-                    <p className='meal-time'>{this.props.readyInMinutes} minutes</p>
-                </div>
+                <Link to={`/meal/${this.props.id}`}>
+                    <div className='meal-img'><img src={`https://spoonacular.com/recipeImages/${this.props.id}-636x393.${this.props.imageType}`}/></div>
+                    <div className='meal-description'>
+                        {this.displayIcon()}
+                        <p className='meal-title'>{this.props.title}</p>
+                        <p className='meal-time'>{this.props.readyInMinutes} minutes</p>
+                    </div>
+                </Link>
                 {this.displayCompleteButton()}
             </div>
         )

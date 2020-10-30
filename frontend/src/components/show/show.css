@@ -1,0 +1,13 @@
+.show{
+    padding-top: 80px;
+    background: var(--white);
+}
+
+.show li{
+    list-style: none;
+}
+
+.show-header{
+    height: 50vh;
+    background-image: url('../../images/showBG1.jpg');
+}

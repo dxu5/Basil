@@ -1,17 +1,18 @@
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import { getMealInfo } from "../../actions/meal_actions";
 import Show from "./show";
 
 const mapStateToProps = (state) => {
     return({
-        currentMeal: state.entities.meals.currentMeal
+        meal: state.entities.meals.currentMeal
     })
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getMealInfo: (meal) => dispatch(getMealInfo(meal)),
+    getMealInfo: (mealId) => dispatch(getMealInfo(mealId)),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Show);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Show));
