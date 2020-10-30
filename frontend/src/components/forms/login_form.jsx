@@ -71,7 +71,7 @@ class LoginForm extends React.Component {
             <label for="input-1">
               <span className="label-text">Username</span>
               <span className="nav-dot"></span>
-              <div className="signup-button-trigger">Log in</div>
+              <div className="signup-button-trigger loginbtn">Log in</div>
               {this.state.errors["username"] ? <div className="error-text">
                 {this.state.errors["username"]}
             </div> : null}
