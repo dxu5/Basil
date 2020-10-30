@@ -383,36 +383,7 @@ class MealPlanForm extends React.Component {
   }
 
   showExclude() {
-    const CssTextField = withStyles({
-      root: {
-        "& label.Mui-focused": {
-          color: "#6a996b",
-        },
-        "& .MuiInput-underline:after": {
-          borderBottomColor: "green",
-        },
-        "& .MuiOutlinedInput-root": {
-          "& fieldset": {
-            //   borderColor: 'red',
-          },
-          "&:hover fieldset": {
-            //   borderColor: 'yellow',
-          },
-          "&.Mui-focused fieldset": {
-            borderColor: "green",
-          },
-        },
-      },
-    })(TextField);
-    //   const classes = useStyles();
     return (
-        <div>
-            <div className="ex-item-item">
-                <ExcludeList
-                    exclude={Object.keys(this.state.exclude)}
-                    deleteItem={this.deleteItem}
-                />
-            </div>
             <div className="group">
                 <div className="ex-div">
                     <TextField
@@ -423,10 +394,15 @@ class MealPlanForm extends React.Component {
                         onChange={this.handleExcludeInputChange}
                         color="error"
                     />
-                    <button onClick={this.handleSubmitExclude} className="add-btn">ADD</button>
+                    <button onClick={this.handleSubmitExclude} style={{marginLeft: '3em'}} className="add-btn">ADD</button>
                 </div>
+                <div className="ex-item-item">
+                <ExcludeList
+                    exclude={Object.keys(this.state.exclude)}
+                    deleteItem={this.deleteItem}
+                />
             </div>
-        </div>
+            </div>
       
     );
   }
@@ -533,7 +509,7 @@ class MealPlanForm extends React.Component {
                 Save Mealplan
             </button> */}
             {savebtn}
-            
+
         </div>
           
       </div>
