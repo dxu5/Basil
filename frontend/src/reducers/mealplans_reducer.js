@@ -1,15 +1,14 @@
 import {
   RECEIVE_MEAL_PLAN,
   RECEIVE_NEW_MEAL_PLAN,
+  CLEAR_PROSPECTIVE_MEAL_PLAN,
 } from "../actions/mealplan_actions";
 import {
   RECEIVE_CURRENT_USER,
   RECEIVE_USER_LOGOUT,
   RECEIVE_USER_INFO_HOME,
 } from "../actions/session_actions";
-import {
-  RECEIVE_COMPLETED_MEAL
-} from "../actions/user_actions"
+import { RECEIVE_COMPLETED_MEAL } from "../actions/user_actions";
 
 const _nullState = {
   currentMealplan: undefined,
@@ -19,7 +18,6 @@ const _nullState = {
 };
 
 const mealplansReducer = (state = _nullState, action) => {
-
   Object.freeze(state);
   let newState = Object.assign({}, state);
   switch (action.type) {
@@ -55,23 +53,28 @@ const mealplansReducer = (state = _nullState, action) => {
           action.user.currentMealplanStartTime;
       }
       if (action.user.completedMealplans) {
-        newState.completedMealplans = JSON.parse(action.user.completedMealplans);
+        newState.completedMealplans = JSON.parse(
+          action.user.completedMealplans
+        );
       }
       return newState;
     case RECEIVE_COMPLETED_MEAL:
-
-      const mealCompletedObj = JSON.parse(action.completedMealInfo)
-      const weekday = mealCompletedObj['weekday']
-      if(!newState.completedMealplans[weekday]){
+      const mealCompletedObj = JSON.parse(action.completedMealInfo);
+      const weekday = mealCompletedObj["weekday"];
+      if (!newState.completedMealplans[weekday]) {
         newState.completedMealplans[weekday] = [];
       }
-      if(mealCompletedObj['completed']){
-        newState.completedMealplans[weekday].push(mealCompletedObj['mealId']) ;
+      if (mealCompletedObj["completed"]) {
+        newState.completedMealplans[weekday].push(mealCompletedObj["mealId"]);
+      } else {
+        newState.completedMealplans[weekday] = newState.completedMealplans[
+          weekday
+        ].filter((id) => id !== mealCompletedObj["mealId"]);
       }
-      else{
-        newState.completedMealplans[weekday] = newState.completedMealplans[weekday].filter(id => id !== mealCompletedObj['mealId'])
-      }
-      
+
+      return newState;
+    case CLEAR_PROSPECTIVE_MEAL_PLAN:
+      newState.prospectiveMealplan = undefined;
       return newState;
     case RECEIVE_USER_LOGOUT:
       return _nullState;

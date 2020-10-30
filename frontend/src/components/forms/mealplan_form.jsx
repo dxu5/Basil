@@ -26,7 +26,7 @@ class MealPlanForm extends React.Component {
       statusDiet: false,
       statusExclude: false,
       inputExclude: "",
-      isSubmit:false
+      isSubmit: false,
     };
     this.update = this.update.bind(this);
     this.showCal = this.showCal.bind(this);
@@ -39,7 +39,7 @@ class MealPlanForm extends React.Component {
     this.handleExcludeInputChange = this.handleExcludeInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     // this.formref = React.createRef();
-    this.handleSave = this.handleSave.bind(this)
+    this.handleSave = this.handleSave.bind(this);
   }
 
   update(field) {
@@ -103,7 +103,7 @@ class MealPlanForm extends React.Component {
     let newCopy = {};
 
     this.setState({
-        isSubmit:true
+      isSubmit: true,
     });
 
     if (this.state.statusCal) {
@@ -119,7 +119,7 @@ class MealPlanForm extends React.Component {
     this.props.getMealPlans(newCopy);
   }
 
-  handleSave(e){
+  handleSave(e) {
     e.preventDefault();
     let newCopy = {};
 
@@ -134,7 +134,7 @@ class MealPlanForm extends React.Component {
     }
 
     this.props.addMealplan(this.props.previewMealplan).then(() => {
-        this.props.history.push('/home')
+      this.props.history.push("/home");
     });
   }
 
@@ -142,21 +142,21 @@ class MealPlanForm extends React.Component {
     return (
       <div className="range-div">
         {/* <div> */}
-            <div className="min-max">
-                <span>Min: 1000</span>
-                <span>Max: 4000</span>
-            </div>
-          <Slider
-            min={1000}
-            max={4000}
-            value={this.state.targetCalories}
-            onChange={this.handleChangeSlider}
-            className="cal-slider"
-          />
-          <p className="cal-tips">
-            Generally, the recommended daily calorie intake is 2,000 calories a
-            day for women and 2,500 for men.
-          </p>
+        <div className="min-max">
+          <span>Min: 1000</span>
+          <span>Max: 4000</span>
+        </div>
+        <Slider
+          min={1000}
+          max={4000}
+          value={this.state.targetCalories}
+          onChange={this.handleChangeSlider}
+          className="cal-slider"
+        />
+        <p className="cal-tips">
+          Generally, the recommended daily calorie intake is 2,000 calories a
+          day for women and 2,500 for men.
+        </p>
         {/* </div> */}
       </div>
     );
@@ -170,7 +170,14 @@ class MealPlanForm extends React.Component {
             <label className="diet-options">Gluten Free</label>
             <div style={{ color: "#4f4846" }} className="diet-description">
               Avoiding wheat, barley, rye, and other gluten-containing grains
-              and foods. <a href="https://en.wikipedia.org/wiki/Gluten-free_diet" target="_blank" className="learnmore">Learn more.</a>
+              and foods.{" "}
+              <a
+                href="https://en.wikipedia.org/wiki/Gluten-free_diet"
+                target="_blank"
+                className="learnmore"
+              >
+                Learn more.
+              </a>
             </div>
           </div>
           <label className="toggle">
@@ -190,7 +197,13 @@ class MealPlanForm extends React.Component {
             <label className="diet-options">Ketogenic</label>
             <label style={{ color: "#4f4846" }} className="diet-description">
               Avoiding high fat, protein-rich foods and high carbohydrate foods.
-              <a href="https://en.wikipedia.org/wiki/Ketogenic_diet" target="_blank" className="learnmore">Learn more.</a>
+              <a
+                href="https://en.wikipedia.org/wiki/Ketogenic_diet"
+                target="_blank"
+                className="learnmore"
+              >
+                Learn more.
+              </a>
             </label>
           </div>
           <label className="toggle">
@@ -210,7 +223,13 @@ class MealPlanForm extends React.Component {
             <label className="diet-options">Vegetarian</label>
             <label style={{ color: "#4f4846" }} className="diet-description">
               Avoiding meat or meat by-products, such as bones or gelatin.
-            <a href="https://en.wikipedia.org/wiki/Vegetarianism" target="_blank" className="learnmore">Learn more.</a>
+              <a
+                href="https://en.wikipedia.org/wiki/Vegetarianism"
+                target="_blank"
+                className="learnmore"
+              >
+                Learn more.
+              </a>
             </label>
           </div>
           <label className="toggle">
@@ -231,7 +250,13 @@ class MealPlanForm extends React.Component {
             <label style={{ color: "#4f4846" }} className="diet-description">
               All ingredients must be vegetarian and none of the ingredients can
               be or contain egg.
-            <a href="https://en.wikipedia.org/wiki/Lacto_vegetarianism" target="_blank" className="learnmore">Learn more.</a>
+              <a
+                href="https://en.wikipedia.org/wiki/Lacto_vegetarianism"
+                target="_blank"
+                className="learnmore"
+              >
+                Learn more.
+              </a>
             </label>
           </div>
           <label className="toggle">
@@ -252,7 +277,13 @@ class MealPlanForm extends React.Component {
             <label style={{ color: "#4f4846" }} className="diet-description">
               All ingredients must be vegetarian and none of the ingredients can
               be or contain dairy.
-                <a href="https://en.wikipedia.org/wiki/Ovo_vegetarianism" target="_blank" className="learnmore">Learn more.</a>
+              <a
+                href="https://en.wikipedia.org/wiki/Ovo_vegetarianism"
+                target="_blank"
+                className="learnmore"
+              >
+                Learn more.
+              </a>
             </label>
           </div>
           <label className="toggle">
@@ -273,7 +304,13 @@ class MealPlanForm extends React.Component {
             <label style={{ color: "#4f4846" }} className="diet-description">
               No ingredients may contain meat or meat by-products, such as bones
               or gelatin, nor may they contain eggs, dairy, or honey.
-            <a href="https://en.wikipedia.org/wiki/Veganism" target="_blank" className="learnmore">Learn more.</a>
+              <a
+                href="https://en.wikipedia.org/wiki/Veganism"
+                target="_blank"
+                className="learnmore"
+              >
+                Learn more.
+              </a>
             </label>
           </div>
           <label className="toggle">
@@ -294,7 +331,13 @@ class MealPlanForm extends React.Component {
             <label style={{ color: "#4f4846" }} className="diet-description">
               Everything is allowed except meat and meat by-products - some
               pescetarians eat eggs and dairy, some do not.
-              <a href="https://en.wikipedia.org/wiki/Pescetarianism" target="_blank" className="learnmore">Learn more.</a>
+              <a
+                href="https://en.wikipedia.org/wiki/Pescetarianism"
+                target="_blank"
+                className="learnmore"
+              >
+                Learn more.
+              </a>
             </label>
           </div>
           <label className="toggle">
@@ -315,7 +358,13 @@ class MealPlanForm extends React.Component {
             <label style={{ color: "#4f4846" }} className="diet-description">
               Ingredients not allowed include legumes (e.g. beans and lentils),
               grains, dairy, refined sugar, and processed foods.
-              <a href="https://thepaleodiet.com/" target="_blank" className="learnmore">Learn more.</a>
+              <a
+                href="https://thepaleodiet.com/"
+                target="_blank"
+                className="learnmore"
+              >
+                Learn more.
+              </a>
             </label>
           </div>
           <label className="toggle">
@@ -336,7 +385,13 @@ class MealPlanForm extends React.Component {
             <label style={{ color: "#4f4846" }} className="diet-description">
               It stresses that people eat raw, minimally processed foods, such
               as fruits, vegetables, certain oils, and dairy products.
-              <a href="https://www.medicalnewstoday.com/articles/320516" target="_blank" className="learnmore">Learn more.</a>
+              <a
+                href="https://www.medicalnewstoday.com/articles/320516"
+                target="_blank"
+                className="learnmore"
+              >
+                Learn more.
+              </a>
             </label>
           </div>
           <label className="toggle">
@@ -358,7 +413,13 @@ class MealPlanForm extends React.Component {
               Ingredients not allowed include added sweeteners,alcohol, grains,
               legumes, and food additives, such as carrageenan, MSG, and
               sulfites.
-              <a href="https://en.wikipedia.org/wiki/Whole30" target="_blank" className="learnmore">Learn more.</a>
+              <a
+                href="https://en.wikipedia.org/wiki/Whole30"
+                target="_blank"
+                className="learnmore"
+              >
+                Learn more.
+              </a>
             </label>
           </div>
           <label className="toggle">
@@ -378,26 +439,31 @@ class MealPlanForm extends React.Component {
 
   showExclude() {
     return (
-            <div className="group">
-                <div className="ex-div">
-                    <TextField
-                        id="outlined-basic"
-                        label="Excluded foods"
-                        variant="outlined"
-                        value={this.state.inputExclude}
-                        onChange={this.handleExcludeInputChange}
-                        color="error"
-                    />
-                    <button onClick={this.handleSubmitExclude} style={{marginLeft: '3em'}} className="add-btn">ADD</button>
-                </div>
-                <div className="ex-item-item">
-                <ExcludeList
-                    exclude={Object.keys(this.state.exclude)}
-                    deleteItem={this.deleteItem}
-                />
-                </div>
-            </div>
-      
+      <div className="group">
+        <div className="ex-div">
+          <TextField
+            id="outlined-basic"
+            label="Excluded foods"
+            variant="outlined"
+            value={this.state.inputExclude}
+            onChange={this.handleExcludeInputChange}
+            color="error"
+          />
+          <button
+            onClick={this.handleSubmitExclude}
+            style={{ marginLeft: "3em" }}
+            className="add-btn"
+          >
+            ADD
+          </button>
+        </div>
+        <div className="ex-item-item">
+          <ExcludeList
+            exclude={Object.keys(this.state.exclude)}
+            deleteItem={this.deleteItem}
+          />
+        </div>
+      </div>
     );
   }
 
@@ -407,7 +473,7 @@ class MealPlanForm extends React.Component {
     let exclude_div;
     let savebtn;
     let btnInfor;
-    
+
     if (this.state.statusCal) {
       cal_div = this.showCal();
     } else {
@@ -424,41 +490,44 @@ class MealPlanForm extends React.Component {
       exclude_div = null;
     }
 
-    if(this.state.isSubmit){
-        savebtn=(<button onClick={this.handleSave} className="sub-btn">
-            Save Mealplan
-        </button>)
-        btnInfor = (<div className="btn-infor">
-        <label>
-            Want To Generate Another One?
-        </label>
-        <label>
-            Save and Go To Home Page?
-        </label>
-    </div>)
+    if (this.state.isSubmit) {
+      savebtn = (
+        <button onClick={this.handleSave} className="sub-btn">
+          Save Mealplan
+        </button>
+      );
+      btnInfor = (
+        <div className="btn-infor">
+          <label>Want To Generate Another One?</label>
+          <label>Save and Go To Home Page?</label>
+        </div>
+      );
     }
 
     return (
-        // ref={this.formref}
+      // ref={this.formref}
       <div className="meal-plan-form-div">
-          <p>The following questions are optional. If you do not want to customize, just press Generate Mealplan!</p>
+        <p>
+          The following questions are optional. If you do not want to customize,
+          just press Generate Mealplan!
+        </p>
         <form className="meal-plan-form">
           <div className="category">
             <label className="mealoptions">
-                Want To Set Daily Target Calories?
+              Want To Set Daily Target Calories?
             </label>
             <div className="question-div">
-                <div>No</div>
-                <label className="toggle-1" for="myToggle1">
-                    <input
-                        type="checkbox"
-                        className="toggle-input"
-                        id="myToggle1"
-                        onClick={this.handleChange("statusCal")}
+              <div>No</div>
+              <label className="toggle-1" for="myToggle1">
+                <input
+                  type="checkbox"
+                  className="toggle-input"
+                  id="myToggle1"
+                  onClick={this.handleChange("statusCal")}
                 />
-                    <div className="toggle-fill"></div>
-                </label>
-                <div>Yes</div>
+                <div className="toggle-fill"></div>
+              </label>
+              <div>Yes</div>
             </div>
             {cal_div}
           </div>
@@ -467,57 +536,56 @@ class MealPlanForm extends React.Component {
               Have Any Specific Diets You Want To Adhere To?
             </label>
             <div className="question-div">
-                <div>No</div>
-                <label className="toggle-1" for="myToggle2">
-                    <input
-                        className="toggle-input"
-                        type="checkbox"
-                        id="myToggle2"
-                        onClick={this.handleChange("statusDiet")}
-                    />
-                    <div className="toggle-fill"></div>
-                </label>
-                <div>Yes</div>
+              <div>No</div>
+              <label className="toggle-1" for="myToggle2">
+                <input
+                  className="toggle-input"
+                  type="checkbox"
+                  id="myToggle2"
+                  onClick={this.handleChange("statusDiet")}
+                />
+                <div className="toggle-fill"></div>
+              </label>
+              <div>Yes</div>
             </div>
-            
+
             {diet_div}
           </div>
           <div className="category">
-            <label className="mealoptions">Have Any Foods That You Don't Vibe With?</label>
+            <label className="mealoptions">
+              Have Any Foods That You Don't Vibe With?
+            </label>
             <div className="question-div">
-                <div>No</div>
-                <label className="toggle-1" for="myToggle3">
-                    <input
-                        type="checkbox"
-                        id="myToggle3"
-                        className="toggle-input"
-                        onClick={this.handleChange("statusExclude")}
-                    />
-                    <div className="toggle-fill"></div>
-                </label>
-                <div>Yes</div>
-            </div>            
+              <div>No</div>
+              <label className="toggle-1" for="myToggle3">
+                <input
+                  type="checkbox"
+                  id="myToggle3"
+                  className="toggle-input"
+                  onClick={this.handleChange("statusExclude")}
+                />
+                <div className="toggle-fill"></div>
+              </label>
+              <div>Yes</div>
+            </div>
             {exclude_div}
           </div>
 
           {Object.keys(this.props.previewMealplan).length > 0 ? (
             <PreviewCalendarContainer />
           ) : null}
-
         </form>
-            {btnInfor}
+        {btnInfor}
         <div className="mealplan-btn-div">
-            <button onClick={this.handleSubmit} className="sub-btn">
-                Generate Mealplan          
-            </button>
-            
-            {/* <button onClick={this.handleSave} className="sub-btn">
+          <button onClick={this.handleSubmit} className="sub-btn">
+            Generate Mealplan
+          </button>
+
+          {/* <button onClick={this.handleSave} className="sub-btn">
                 Save Mealplan
             </button> */}
-            {savebtn}
-
+          {savebtn}
         </div>
-          
       </div>
     );
   }
