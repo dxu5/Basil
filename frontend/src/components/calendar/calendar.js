@@ -152,37 +152,51 @@ class Calendar extends React.Component {
         });
 
       return (
-        <div className="calendar-container">
-          <table className="table">
-            <div className="day-container">
-              <p id="Sunday">Sunday</p>
-              {displayMeal("Sunday")}
+        <div>
+          <div className="calendar-container">
+            <table className="table">
+              <div className="day-container">
+                <p id="Sunday">Sunday</p>
+                {displayMeal("Sunday")}
+              </div>
+              <div className="day-container">
+                <p id="Monday">Monday</p>
+                {displayMeal("Monday")}
+              </div>
+              <div className="day-container">
+                <p id="Tuesday">Tuesday</p>
+                {displayMeal("Tuesday")}
+              </div>
+              <div className="day-container">
+                <p id="Wednesday">Wednesday</p>
+                {displayMeal("Wednesday")}
+              </div>
+              <div className="day-container">
+                <p id="Thursday">Thursday</p>
+                {displayMeal("Thursday")}
+              </div>
+              <div className="day-container">
+                <p id="Friday">Friday</p>
+                {displayMeal("Friday")}
+              </div>
+              <div className="day-container">
+                <p id="Saturday">Saturday</p>
+                {displayMeal("Saturday")}
+              </div>
+            </table>
+          </div>
+          <div className="center-div">
+            <div className="regenerate-text">
+              Don't Like Your Current Mealplan?
             </div>
-            <div className="day-container">
-              <p id="Monday">Monday</p>
-              {displayMeal("Monday")}
-            </div>
-            <div className="day-container">
-              <p id="Tuesday">Tuesday</p>
-              {displayMeal("Tuesday")}
-            </div>
-            <div className="day-container">
-              <p id="Wednesday">Wednesday</p>
-              {displayMeal("Wednesday")}
-            </div>
-            <div className="day-container">
-              <p id="Thursday">Thursday</p>
-              {displayMeal("Thursday")}
-            </div>
-            <div className="day-container">
-              <p id="Friday">Friday</p>
-              {displayMeal("Friday")}
-            </div>
-            <div className="day-container">
-              <p id="Saturday">Saturday</p>
-              {displayMeal("Saturday")}
-            </div>
-          </table>
+            <button
+              className="create-meal-btn"
+              style={{ outline: "none" }}
+              onClick={this.handleClick}
+            >
+              Generate a new mealplan
+            </button>
+          </div>
         </div>
       );
     }

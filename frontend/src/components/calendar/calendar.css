@@ -148,3 +148,13 @@
   background: var(--dark-green) !important;
   color: white;
 }
+
+.regenerate-text {
+  text-align: center;
+  font-size: 28px;
+  text-transform: uppercase;
+}
+
+.center-div {
+  text-align: center;
+}
