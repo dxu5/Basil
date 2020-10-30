@@ -14,9 +14,6 @@ import {
   createMuiTheme,
 } from "@material-ui/core/styles";
 import PreviewCalendarContainer from "../preview_calendar/preview_calendar_container.js";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-// import { faGithub } from "@fortawesome/free-brands-svg-icons"
 
 class MealPlanForm extends React.Component {
   constructor(props) {
@@ -45,9 +42,6 @@ class MealPlanForm extends React.Component {
     this.handleSave = this.handleSave.bind(this)
   }
 
-  componentDidMount() {
-    // this.formref.current.focus();
-  }
   update(field) {
     return (e) =>
       this.setState({
@@ -147,7 +141,7 @@ class MealPlanForm extends React.Component {
   showCal() {
     return (
       <div className="range-div">
-        <div>
+        {/* <div> */}
             <div className="min-max">
                 <span>Min: 1000</span>
                 <span>Max: 4000</span>
@@ -163,7 +157,7 @@ class MealPlanForm extends React.Component {
             Generally, the recommended daily calorie intake is 2,000 calories a
             day for women and 2,500 for men.
           </p>
-        </div>
+        {/* </div> */}
       </div>
     );
   }
@@ -176,7 +170,7 @@ class MealPlanForm extends React.Component {
             <label className="diet-options">Gluten Free</label>
             <div style={{ color: "#4f4846" }} className="diet-description">
               Avoiding wheat, barley, rye, and other gluten-containing grains
-              and foods. <a href="https://en.wikipedia.org/wiki/Gluten-free_diet" target="_blank" className="learnmore">Learn more</a>
+              and foods. <a href="https://en.wikipedia.org/wiki/Gluten-free_diet" target="_blank" className="learnmore">Learn more.</a>
             </div>
           </div>
           <label className="toggle">
@@ -195,8 +189,8 @@ class MealPlanForm extends React.Component {
           <div className="diet-infor-div">
             <label className="diet-options">Ketogenic</label>
             <label style={{ color: "#4f4846" }} className="diet-description">
-              Avoiding high fat, protein-rich foods and high carbohydrate foods. 
-              <a href="https://en.wikipedia.org/wiki/Ketogenic_diet" target="_blank" className="learnmore">Learn more</a>
+              Avoiding high fat, protein-rich foods and high carbohydrate foods.
+              <a href="https://en.wikipedia.org/wiki/Ketogenic_diet" target="_blank" className="learnmore">Learn more.</a>
             </label>
           </div>
           <label className="toggle">
@@ -216,7 +210,7 @@ class MealPlanForm extends React.Component {
             <label className="diet-options">Vegetarian</label>
             <label style={{ color: "#4f4846" }} className="diet-description">
               Avoiding meat or meat by-products, such as bones or gelatin.
-            <a href="https://en.wikipedia.org/wiki/Vegetarianism" target="_blank" className="learnmore">Learn more</a>
+            <a href="https://en.wikipedia.org/wiki/Vegetarianism" target="_blank" className="learnmore">Learn more.</a>
             </label>
           </div>
           <label className="toggle">
@@ -237,7 +231,7 @@ class MealPlanForm extends React.Component {
             <label style={{ color: "#4f4846" }} className="diet-description">
               All ingredients must be vegetarian and none of the ingredients can
               be or contain egg.
-            <a href="https://en.wikipedia.org/wiki/Lacto_vegetarianism" target="_blank" className="learnmore">Learn more</a>
+            <a href="https://en.wikipedia.org/wiki/Lacto_vegetarianism" target="_blank" className="learnmore">Learn more.</a>
             </label>
           </div>
           <label className="toggle">
@@ -258,7 +252,7 @@ class MealPlanForm extends React.Component {
             <label style={{ color: "#4f4846" }} className="diet-description">
               All ingredients must be vegetarian and none of the ingredients can
               be or contain dairy.
-                <a href="https://en.wikipedia.org/wiki/Ovo_vegetarianism" target="_blank" className="learnmore">Learn more</a>
+                <a href="https://en.wikipedia.org/wiki/Ovo_vegetarianism" target="_blank" className="learnmore">Learn more.</a>
             </label>
           </div>
           <label className="toggle">
@@ -279,7 +273,7 @@ class MealPlanForm extends React.Component {
             <label style={{ color: "#4f4846" }} className="diet-description">
               No ingredients may contain meat or meat by-products, such as bones
               or gelatin, nor may they contain eggs, dairy, or honey.
-            <a href="https://en.wikipedia.org/wiki/Veganism" target="_blank" className="learnmore">Learn more</a>
+            <a href="https://en.wikipedia.org/wiki/Veganism" target="_blank" className="learnmore">Learn more.</a>
             </label>
           </div>
           <label className="toggle">
@@ -300,7 +294,7 @@ class MealPlanForm extends React.Component {
             <label style={{ color: "#4f4846" }} className="diet-description">
               Everything is allowed except meat and meat by-products - some
               pescetarians eat eggs and dairy, some do not.
-              <a href="https://en.wikipedia.org/wiki/Pescetarianism" target="_blank" className="learnmore">Learn more</a>
+              <a href="https://en.wikipedia.org/wiki/Pescetarianism" target="_blank" className="learnmore">Learn more.</a>
             </label>
           </div>
           <label className="toggle">
@@ -321,7 +315,7 @@ class MealPlanForm extends React.Component {
             <label style={{ color: "#4f4846" }} className="diet-description">
               Ingredients not allowed include legumes (e.g. beans and lentils),
               grains, dairy, refined sugar, and processed foods.
-              <a href="https://thepaleodiet.com/" target="_blank" className="learnmore">Learn more</a>
+              <a href="https://thepaleodiet.com/" target="_blank" className="learnmore">Learn more.</a>
             </label>
           </div>
           <label className="toggle">
@@ -342,7 +336,7 @@ class MealPlanForm extends React.Component {
             <label style={{ color: "#4f4846" }} className="diet-description">
               It stresses that people eat raw, minimally processed foods, such
               as fruits, vegetables, certain oils, and dairy products.
-              <a href="https://www.medicalnewstoday.com/articles/320516" target="_blank" className="learnmore">Learn more</a>
+              <a href="https://www.medicalnewstoday.com/articles/320516" target="_blank" className="learnmore">Learn more.</a>
             </label>
           </div>
           <label className="toggle">
@@ -364,7 +358,7 @@ class MealPlanForm extends React.Component {
               Ingredients not allowed include added sweeteners,alcohol, grains,
               legumes, and food additives, such as carrageenan, MSG, and
               sulfites.
-              <a href="https://en.wikipedia.org/wiki/Whole30" target="_blank" className="learnmore">Learn more</a>
+              <a href="https://en.wikipedia.org/wiki/Whole30" target="_blank" className="learnmore">Learn more.</a>
             </label>
           </div>
           <label className="toggle">
@@ -401,7 +395,7 @@ class MealPlanForm extends React.Component {
                     exclude={Object.keys(this.state.exclude)}
                     deleteItem={this.deleteItem}
                 />
-            </div>
+                </div>
             </div>
       
     );
@@ -447,50 +441,62 @@ class MealPlanForm extends React.Component {
     return (
         // ref={this.formref}
       <div className="meal-plan-form-div">
+          <p style={{textDecoration: "underline"}}>The following questions are optional, if you do not want to customize, just press Generate Mealplan!</p>
         <form className="meal-plan-form">
           <div className="category">
             <label className="mealoptions">
                 Want To Set Daily Target Calories?
             </label>
-            <label className="toggle" for="myToggle1">
-              <input
-                type="checkbox"
-                className="toggle-input"
-                id="myToggle1"
-                onClick={this.handleChange("statusCal")}
-              />
-              <div className="toggle-fill"></div>
-            </label>
+            <div className="question-div">
+                <div>No</div>
+                <label className="toggle-1" for="myToggle1">
+                    <input
+                        type="checkbox"
+                        className="toggle-input"
+                        id="myToggle1"
+                        onClick={this.handleChange("statusCal")}
+                />
+                    <div className="toggle-fill"></div>
+                </label>
+                <div>Yes</div>
+            </div>
             {cal_div}
           </div>
           <div className="category">
             <label className="mealoptions">
               Have Any Specific Diets You Want To Adhere To?
             </label>
-            <label className="toggle" for="myToggle2">
-              <input
-                className="toggle-input"
-                type="checkbox"
-                id="myToggle2"
-                onClick={this.handleChange("statusDiet")}
-              />
-              <div className="toggle-fill"></div>
-            </label>
+            <div className="question-div">
+                <div>No</div>
+                <label className="toggle-1" for="myToggle2">
+                    <input
+                        className="toggle-input"
+                        type="checkbox"
+                        id="myToggle2"
+                        onClick={this.handleChange("statusDiet")}
+                    />
+                    <div className="toggle-fill"></div>
+                </label>
+                <div>Yes</div>
+            </div>
+            
             {diet_div}
           </div>
           <div className="category">
             <label className="mealoptions">Have Any Foods That You Don't Vibe With?</label>
-            
-            <label className="toggle" for="myToggle3">
-              <input
-                type="checkbox"
-                id="myToggle3"
-                className="toggle-input"
-                onClick={this.handleChange("statusExclude")}
-              />
-              <div className="toggle-fill"></div>
-            </label>
-            
+            <div className="question-div">
+                <div>No</div>
+                <label className="toggle-1" for="myToggle3">
+                    <input
+                        type="checkbox"
+                        id="myToggle3"
+                        className="toggle-input"
+                        onClick={this.handleChange("statusExclude")}
+                    />
+                    <div className="toggle-fill"></div>
+                </label>
+                <div>Yes</div>
+            </div>            
             {exclude_div}
           </div>
 
