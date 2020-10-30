@@ -1,351 +1,185 @@
-.meal-plan-form-div{
-    margin-top: 10%;
-    margin-left: 20%;
-    width: 60%;
-    height: 100%;
-    border: 1px solid red;
+.meal-plan-form-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+  margin-left: 10%;
+  width: 80%;
+  height: 100%;
+  /* border: 1px solid red; */
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.meal-plan-form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border:1px solid red; */
 }
 
 form {
-    width: 100%;
-    height: 100%;
-    /* overflow: hidden; */
-    /* border: 1px solid red; */
-
+  width: 100%;
+  height: 100%;
 }
 
-input{
-    color:red;
+.diet-div {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30;
+  align-items: center;
+}
+.diet-item-div {
+  width: 100%;
+  /* border:1px solid red;    */
+  display: flex;
+  /* justify-content:space-between; */
+  /* justify-content: top; */
 }
 
-
-
-.toggle{
-    --width: 50px;
-    --height: calc(var(--width) / 2);
-    --border-radius: calc(var(--height) / 2);
-    display: inline-block;
-    cursor: pointer;
-
+.diet-infor-div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* border:1px solid red;    */
 }
 
-.toggle-input{
-    display: none;
+.diet-description {
+  /* border:1px solid red; */
+  display: flex;
+  position: relative;
+  width: 85%;
 }
 
-.toggle-fill{
-    position: relative;
-    width: var(--width);
-    height: var(--height);
-    border-radius: var(--border-radius);
-    background-color: #dddddd;
-    transition: background 0.2s;
+.toggle {
+  --width: 50px;
+  --height: calc(var(--width) / 2);
+  --border-radius: calc(var(--height) / 2);
+  display: inline-block;
+  cursor: pointer;
+  margin-top: 3%;
+  /* border: solid red; */
 }
 
-.toggle-input:checked ~ .toggle-fill{
-    background: #4d774e;
+.toggle-input {
+  display: none;
 }
 
-.toggle-fill::after{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: var(--height);
-    width: var(--height);
-    background: BLACK;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-    border-radius: var(--border-radius);
-    transition: transform 0.2s;
+.toggle-fill {
+  position: relative;
+  width: var(--width);
+  height: var(--height);
+  border-radius: var(--border-radius);
+  background-color: #dddddd;
+  transition: background 0.2s;
+}
+
+.toggle-input:checked ~ .toggle-fill {
+  background: #6a996b;
+}
+
+.toggle-fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: var(--height);
+  width: var(--height);
+  background: #1f2d20;
+  opacity: 0.8;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  border-radius: var(--border-radius);
+  transition: transform 0.2s;
 }
 
 .toggle-input:checked ~ .toggle-fill::after {
-    transform: translateX(var(--height));
+  transform: translateX(var(--height));
 }
 
-.radio-btn{
-    display: none;
+.radio-btn {
+  position: absolute;
+  display: none;
 }
 
 /* range bar */
-.range-div{
-    width: 60%;
-    margin: 24% auto;
-    position: relative;
-}
-#slider{
-    -webkit-appearance: none;
-    background-color: red;
-    width: 100%;
-    height: 7px;
-    outline: none;
-    border-radius: 3px;
+.range-div {
+  display: flex;
+  position: relative;
+  width: 78%;
+  margin: 6% auto;
+  /* border:1px solid red; */
+  /* position: relative; */
 }
 
-#slider::-webkit-slider-thumb{
-    /* -webkit-appearance: none; */
-    width: 48px;
-    height: 48px;
-    cursor: pointer;
-    z-index: 3;
-    position: relative;
+.max-span {
+  margin-left: 67%;
+  position: absolute;
 }
 
-#selector{
-    height: 104px;
-    width: 48px;
-    position: absolute;
-    bottom: -20px;
-    left:50%;
-    transition: translateX(-50%);
-    z-index:2
+.cal-tips {
+  /* border:1px solid red; */
+  display: flex;
+  margin-top: 50px;
+  /* position: absolute; */
+  /* top:10% */
 }
-.select-btn{
-    height: 48px;
-    width: 48px;
-    background: url('./test-slider.png');
-    background-size: cover;
-    background-position: center;
-    border-radius: 50%;
-    position: absolute;
-    bottom: 0;
+.rangeslider-horizontal {
+  width: 100%;
 }
 
-.cal-tips{
-    width: 400px;
-    height: 100px;
-    display: flex;
-    position: relative;
-    margin-top: 80px;
-    margin-left: -50px;
+.category {
+  /* position: relative; */
+  height: 100%;
+  display: flex;
+  position: relative;
+  /* justify-content: space-between; */
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  width: 76%;
+  /* flex-wrap: nowrap;  */
+  /* background-color: darkkhaki; */
 }
 
-
-
-/* exclude input field */
-
-
-
-/* form starting stylings ------------------------------- */
-.group{ 
-  position:relative; 
-  margin-bottom:45px; 
-}
-.exclude-input {
-  font-size:18px;
-  padding:10px 10px 10px 5px;
-  display:block;
-  width:300px;
-  border:none;
-  border-bottom:1px solid #757575;
-}
-.exclude-input:focus{ 
-    outline:none; 
-    border: none;
+.excludeitem-div {
+  /* border: 1px solid red; */
+  background: #dddddd;
+  border-radius: 30px;
+  /* width: 100%; */
+  /* display: inline-block; */
+  display: flex;
+  white-space: nowrap;
+  width: fit-content;
+  margin-right: 2em;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2%;
 }
 
-/* LABEL ======================================= */
-.exclude-label{
-  color:#999; 
-  font-size:18px;
-  font-weight:normal;
-  position:absolute;
-  pointer-events:none;
-  left:5px;
-  top:10px;
-  transition:0.2s ease all; 
-  -moz-transition:0.2s ease all; 
-  -webkit-transition:0.2s ease all;
+.item-div {
+  white-space: nowrap;
+  display: flex;
+  /* width: 100%; */
+  /* border: 1px solid blue; */
+  /* align-items:center; */
+  justify-content: center;
 }
 
-/* active state */
-.exclude-input:focus ~ .exclude-label, .exclude-input:valid ~ .exclude-label 		{
-  top:-20px;
-  font-size:14px;
-  color:#5264AE;
-  /* border: none; */
+.item-span {
+  margin-left: 0.8em;
 }
 
-/* BOTTOM BARS ================================= */
-.bar{ 
-    position:relative; 
-    display:block; width:300px; 
-}
-.bar:before, .bar:after{
-  content:'';
-  height:2px; 
-  width:0;
-  bottom:1px; 
-  position:absolute;
-  background:#5264AE; 
-  transition:0.2s ease all; 
-  -moz-transition:0.2s ease all; 
-  -webkit-transition:0.2s ease all;
-}
-.bar:before {
-  left:50%;
-}
-.bar:after {
-  right:50%; 
+.diet-options {
+  font-weight: bold;
+  font-size: 1.1em;
+  text-decoration: underline;
 }
 
-/* active state */
-.exclude-input:focus ~ .bar:before, .exclude-input:focus ~ .bar:after {
-  width:50%;
-  border: none;
+.mealoptions {
+  font-size: 1.5em;
+  color: #1a0000;
+  /* text-decoration: underline; */
 }
-
-/* HIGHLIGHTER ================================== */
-.highlight {
-  position:absolute;
-  height:60%; 
-  width:100px; 
-  top:25%; 
-  left:0;
-  pointer-events:none;
-  opacity:0.5;
-}
-
-/* active state */
-.exclude-input:focus ~ .highlight {
-  -webkit-animation:inputHighlighter 0.3s ease;
-  -moz-animation:inputHighlighter 0.3s ease;
-  animation:inputHighlighter 0.3s ease;
-  border: none;
-}
-
-/* ANIMATIONS ================ */
-@-webkit-keyframes inputHighlighter {
-	from { background:#5264AE; }
-  to 	{ width:0; background:transparent; }
-}
-@-moz-keyframes inputHighlighter {
-	from { background:#5264AE; }
-  to 	{ width:0; background:transparent; }
-}
-@keyframes inputHighlighter {
-	from { background:#5264AE; }
-  to 	{ width:0; background:transparent; }
-}
-
-
-
-
-/* new input */
-
-.exclude-form{
-    border: none;
-}
-
-input:focus {
-    outline: 0;
-}
-  /* Question */
-  
-.question {
-    font-size: 48px;
-    font-weight: 300;
-    border-radius: 2px;
-    margin: 0;
-    border: none;
-    width: 80%;
-    background: rgba(0, 0, 0, 0);
-    transition: padding-top 0.2s ease, margin-top 0.2s ease;
-    overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
-    color: #4d774e;
-}
-/* Underline and Placeholder */
-
-.question + .question-label{
-    border: none;
-    display: block;
-    position: relative;
-    white-space: nowrap;
-    padding: 0;
-    margin: 0;
-    width: 10%;
-    border-top: 1px solid #4d774e;
-    -webkit-transition: width 0.4s ease;
-    transition: width 0.4s ease;
-    height: 0px;
-  }
-  
-  .question:focus + .question-label{
-    width: 80%;
-  }
-  
-  .question:focus,.question:valid {
-    padding-top: 35px;
-  }
-  
-  
-  .question:focus + .question-label > span,
-  .question:valid + .question-label > span {
-    top: -100px;
-    font-size: 22px;
-    color: #333;
-  }
-  
-
-  .question:valid + .question-label{
-    border-color: green;
-  }
-  
-  .question:invalid{
-    box-shadow: none;
-  }
-  
-  .question + .question-label > span{
-    font-weight: 300;
-    margin: 0;
-    position: absolute;
-    color: #8F8F8F;
-    font-size: 48px;
-    top: -66px;
-    left: 0px;
-    z-index: -1;
-    -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
-    transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
-  }
-  .question-label{
-      position: relative;
-  }
-  input[type="submit"] {
-    -webkit-transition: opacity 0.2s ease, background 0.2s ease;
-    transition: opacity 0.2s ease, background 0.2s ease;
-    display: block;
-    opacity: 0;
-    margin: 10px 0 0 0;
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  input[type="submit"]:hover {
-    background: #EEE;
-  }
-  
-  input[type="submit"]:active {
-    background: #999;
-  }
-  
-  .question:valid ~ input[type="submit"] {
-    -webkit-animation: appear 1s forwards;
-    animation: appear 1s forwards;
-  }
-  
-  .question:invalid ~ input[type="submit"]{
-    display: none;
-  }
-  
-  @-webkit-keyframes appear {
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes appear {
-    100% {
-      opacity: 1;
-    }
-  }
-  

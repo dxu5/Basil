@@ -27,7 +27,7 @@ class ProgressBar extends React.Component {
     return (
       <div className="progress-bar-div">
         <div className="progress-bar-head">
-          <h3>Complete meals and watch your garden grow!</h3>
+          <h3>Complete your meals and watch the garden grow!</h3>
         </div>
         <div className="grow-basil">
           {basils}

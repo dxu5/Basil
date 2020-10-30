@@ -47,8 +47,9 @@ class Calendar extends React.Component {
             "Saturday",
           ];
           const weekday = new Date();
+          const startDay = new Date(this.props.currentMealPlanTime);
           const currentDay = days[weekday.getDay()];
-          const pastDays = days.slice(0, weekday.getDay());
+          const pastDays = days.slice(startDay, weekday.getDay());
 
           pastDays.forEach((day) => {
             if (document.getElementById(day)) {
@@ -75,7 +76,8 @@ class Calendar extends React.Component {
       "Saturday",
     ];
     const weekday = new Date();
-    return days.slice(weekday.getDay() + 1);
+    const startDay = new Date(this.props.currentMealPlanTime).getDay();
+    return days.slice(0, startDay).concat(days.slice(weekday.getDay() + 1));
   }
 
   componentDidMount() {
@@ -101,9 +103,10 @@ class Calendar extends React.Component {
             "Saturday",
           ];
           const weekday = new Date();
+          const startDay = new Date(this.props.currentMealPlanTime).getDay();
           const currentDay = days[weekday.getDay()];
-          const pastDays = days.slice(0, weekday.getDay());
-
+          const pastDays = days.slice(startDay, weekday.getDay());
+          
           pastDays.forEach((day) => {
             if (document.getElementById(day)) {
               document.getElementById(day).classList.add("past");
@@ -150,7 +153,6 @@ class Calendar extends React.Component {
 
       return (
         <div className="calendar-container">
-          {/* <div className='table-responsive'> */}
           <table className="table">
             <div className="day-container">
               <p id="Sunday">Sunday</p>
@@ -181,7 +183,6 @@ class Calendar extends React.Component {
               {displayMeal("Saturday")}
             </div>
           </table>
-          {/* </div> */}
         </div>
       );
     }

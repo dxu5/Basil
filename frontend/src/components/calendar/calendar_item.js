@@ -8,12 +8,6 @@ import { Link } from 'react-router-dom';
 class CalendarItem extends React.Component {
     constructor(props) {
         super(props);
-        // let bool = false;
-        
-        // if (this.props.completedMeals[this.props.day]) {
-        //     bool = this.props.completedMeals[this.props.day].includes(this.props.id) ? true : false;
-        // }
-        // debugger
         this.state = {
             completed: false
         }
@@ -26,11 +20,13 @@ class CalendarItem extends React.Component {
 
     componentDidUpdate(prevProps, prevState) {
         let bool;
-        if (Object.keys(prevProps.completedMeals).length === 0 && Object.keys(this.props.completedMeals).length !== 0) {
-            if (this.props.completedMeals[this.props.day]) {
-                bool = this.props.completedMeals[this.props.day].includes(this.props.id) ? true : false;
-                this.setState({completed: bool})
-            }
+        if (Object.keys(prevProps.completedMeals).length === 0 && 
+            Object.keys(this.props.completedMeals).length !== 0) {
+            
+                if (this.props.completedMeals[this.props.day]) {
+                    bool = this.props.completedMeals[this.props.day].includes(this.props.id) ? true : false;
+                    this.setState({completed: bool})
+                }
         }
     }
 
