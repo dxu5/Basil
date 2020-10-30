@@ -11,7 +11,7 @@ class Home extends React.Component {
 
   componentDidMount() {
     this.props.getUserInfo();
-    window.scrollTo(0, 0);
+    document.querySelector(".home").scrollIntoView();
   }
 
   render() {
