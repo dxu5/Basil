@@ -171,7 +171,7 @@
     position: relative;
 }
 
-.read-me-img.quote{
+.read-me-img .quote{
     top: 8%;
     left: 50%;
     width: 40%;
@@ -187,7 +187,7 @@
     position: relative;
 }
 
-.follow-me-img.quote{
+.follow-me-img .quote{
     top: 12%;
     left: 25%;
     width: 60%;
