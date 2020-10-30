@@ -6,7 +6,7 @@
 } 
 
 .signup-background {
-    opacity: 50%;
+    opacity: 0.5;
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url('../../images/lemon.jpg');
