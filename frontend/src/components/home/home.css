@@ -43,7 +43,7 @@
   top: 22%;
   left: 3%;
   background: none;
-  opacity: 100%;
+  opacity: 1.0;
   width: 24%;
 }
 
@@ -79,7 +79,7 @@
   background: white;
   border-radius: 3px;
   padding: 7px;
-  opacity: 70%;
+  opacity: 0.7;
 }
 .ptext-home-page .border {
   background-color: #9e9c9c;
@@ -162,7 +162,7 @@
   flex-wrap: wrap;
   width: 30%;
   background: white;
-  opacity: 70%;
+  opacity: 0.7;
   line-height: 1.5;
   font-size: 18px;
   padding: 5px;
