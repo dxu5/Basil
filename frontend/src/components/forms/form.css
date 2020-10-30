@@ -155,7 +155,16 @@ form {
 .signup-button-trigger {
     opacity: 0;
     pointer-events: auto;
+    position: absolute;
+    top: 50%;
+    width: 255px;
+    height: 80px
 }
+
+.signup-button-trigger.loginbtn {
+    width: 296px;
+}
+
 .label-text {
     position: fixed;
     top: calc(50% - 4rem);
