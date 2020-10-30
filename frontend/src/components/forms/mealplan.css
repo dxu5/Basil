@@ -49,8 +49,8 @@ form {
 
 .diet-description {
   /* border:1px solid red; */
-  display: flex;
-  position: relative;
+  /* display: flex; */
+  /* position: relative; */
   width: 85%;
 }
 
@@ -114,15 +114,20 @@ form {
   /* position: relative; */
 }
 
-.max-span {
-  margin-left: 67%;
-  position: absolute;
+.min-max{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
+.alert{
+    margin-left: 70%;
+}
 .cal-tips {
   /* border:1px solid red; */
   display: flex;
   margin-top: 50px;
+  text-align: center;
   /* position: absolute; */
   /* top:10% */
 }
@@ -182,4 +187,10 @@ form {
   font-size: 1.5em;
   color: #1a0000;
   /* text-decoration: underline; */
+}
+
+.learnmore{
+  text-decoration: underline;  
+  color: #1f2d20;
+  margin-left: 0.5em;
 }
