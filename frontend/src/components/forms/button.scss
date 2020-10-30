@@ -1,3 +1,26 @@
+@mixin transition($in) {
+	transition:$in;
+	-webkit-transition:$in;
+	-moz-transition:$in;
+	-o-transition:$in;
+	-ms-transition:$in;
+}
+@mixin transform($in) {
+	transform:$in;
+	-webkit-transform:$in;
+	-moz-transform:$in;
+	-o-transform:$in;
+	-ms-transform:$in;
+}
+@mixin animation($in) {
+	animation:$in;
+	-webkit-animation:$in;
+	-moz-animation:$in;
+	-o-animation:$in;
+	-ms-animation:$in;
+}
+
+
 .add-btn{
     position: relative;
     outline: none;
@@ -19,7 +42,9 @@
     letter-spacing: 0.7px;
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
     &:hover {
-      animation: rotate 0.7s ease-in-out both;
+      background-color:#4d774e;
+      color:#ffffff;
+      @include animation(shakeThatBooty 0.7s linear 1);	
       span{
           animation: storm 0.7s ease-in-out both;
           animation-delay: 0.06s;
@@ -65,77 +90,100 @@
   }
   
 }
+
 
 .sub-btn{
-    position: relative;
-    outline: none;
-    text-decoration: none;
-    border-radius: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    text-transform: uppercase;
-    height: 9vh;
-    width: 180px;
-    opacity: 1;
-    background-color: #ffffff;
-    border: 1px solid #6a996b;
-    color: #4d774e;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-    margin-top: 1em;
-    margin-bottom: 5%;
-    line-height: 150%;
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-    &:hover {
-      animation: rotate 0.7s ease-in-out both;
-      span{
-          animation: storm 0.7s ease-in-out both;
-          animation-delay: 0.06s;
-      }
-  }
-  &:focus{
-      outline:none;
-  }
-
-  @keyframes rotate {
-    0% {
-      transform: rotate(0deg) translate3d(0, 0, 0);
+  position: relative;
+  outline: none;
+  text-decoration: none;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  height: 9vh;
+  width: 180px;
+  opacity: 1;
+  background-color: #ffffff;
+  border: 1px solid #6a996b;
+  color: #4d774e;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  margin-top: 1em;
+  margin-bottom: 5%;
+  line-height: 150%;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  &:hover {
+    // animation: rotate 0.7s ease-in-out both;
+    // border-color:red;
+    background-color:#4d774e;
+    color:#ffffff;
+    @include animation(shakeThatBooty 0.7s linear 1);	
+    span{
+        animation: storm 0.7s ease-in-out both;
+        animation-delay: 0.06s;
     }
-    25% {
-      transform: rotate(3deg) translate3d(0, 0, 0);
-    }
-    50% {
-      transform: rotate(-3deg) translate3d(0, 0, 0);
-    }
-    75% {
-      transform: rotate(1deg) translate3d(0, 0, 0);
-    }
-    100% {
-      transform: rotate(0deg) translate3d(0, 0, 0);
-    }
-  }
-  @keyframes storm {
-    0% {
-      transform: translate3d(0, 0, 0) translateZ(0);
-    }
-    25% {
-      transform: translate3d(4px, 0, 0) translateZ(0);
-    }
-    50% {
-      transform: translate3d(-3px, 0, 0) translateZ(0);
-    }
-    75% {
-      transform: translate3d(2px, 0, 0) translateZ(0);
-    }
-    100% {
-      transform: translate3d(0, 0, 0) translateZ(0);
-    }
-  }
-  
 }
+&:focus{
+    outline:none;
+}
+
+@keyframes shakeThatBooty {
+	33% {
+		@include transform(rotateZ(10deg));
+	}
+	67% {
+		@include transform(rotateZ(-10deg));
+	}
+	100% {
+		@include transform(rotateZ(10deg));
+	}
+}
+
+
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+  25% {
+    transform: rotate(3deg) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotate(-3deg) translate3d(0, 0, 0);
+  }
+  75% {
+    transform: rotate(1deg) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+@keyframes storm {
+  0% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+  25% {
+    transform: translate3d(4px, 0, 0) translateZ(0);
+  }
+  50% {
+    transform: translate3d(-3px, 0, 0) translateZ(0);
+  }
+  75% {
+    transform: translate3d(2px, 0, 0) translateZ(0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+}
+
+}
+
+
+
+
 
 .group{
   display: flex;
