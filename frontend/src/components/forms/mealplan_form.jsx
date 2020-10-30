@@ -463,9 +463,11 @@ class MealPlanForm extends React.Component {
             </label>
             {exclude_div}
           </div>
+
           {Object.keys(this.props.previewMealplan).length > 0 ? (
             <PreviewCalendarContainer />
           ) : null}
+
           <button type="submit" className="sub-btn">
             Create Mealplan
           </button>
