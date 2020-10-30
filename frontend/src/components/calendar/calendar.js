@@ -129,7 +129,7 @@ class Calendar extends React.Component {
           style={{ outline: "none" }}
           onClick={this.handleClick}
         >
-          Create a mealplan!
+          Create a mealplan
         </button>
       );
     } else {

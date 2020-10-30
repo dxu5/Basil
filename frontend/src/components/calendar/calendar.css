@@ -125,6 +125,7 @@
   transition: all 0.4s;
   background-color: var(--oatmeal);
   color: var(--dark-green);
+  text-transform: uppercase;
 }
 
 .create-meal-btn:hover {
