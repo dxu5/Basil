@@ -33,9 +33,9 @@ class NavBar extends React.Component {
             <Link class="nav-link" to={"/home"}>
               Home
             </Link>
-            <Link class="nav-link" to={"/profile"}>
+            {/* <Link class="nav-link" to={"/profile"}>
               Profile
-            </Link>
+            </Link> */}
 
             <div class="nav-link" onClick={this.logoutUser}>
               Logout
