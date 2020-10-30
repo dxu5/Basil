@@ -125,6 +125,7 @@
   transition: all 0.4s;
   background-color: var(--oatmeal);
   color: var(--dark-green);
+  text-transform: uppercase;
 }
 
 .create-meal-btn:hover {
@@ -147,4 +148,14 @@
 .preview-day {
   background: var(--dark-green) !important;
   color: white;
+}
+
+.regenerate-text {
+  text-align: center;
+  font-size: 28px;
+  text-transform: uppercase;
+}
+
+.center-div {
+  text-align: center;
 }
