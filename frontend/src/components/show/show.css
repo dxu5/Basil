@@ -4,16 +4,34 @@
     /* padding: 30px; */
 }
 
-.show li{
+.show-right li{
     list-style: none;
 }
 
+/* .show-steps li{
+    list-style-type: decimal;
+    list-style-position: outside; 
+} */
+
 .show-header{
     height: 50vh;
-    background-image: url('../../images/showBG2.jpg');
+    background-image: url('../../images/showBG4.jpg');
     background-size: cover;
     opacity: 0.9;
     background-position: center;
+    position: relative;
+}
+
+.show-header h1{
+    background: white;
+    opacity: .7;
+    border-radius: 3px;
+    padding: 7px;
+    color: var(--black);
+    width: fit-content;
+    position: absolute;
+    top: 80%;
+    left: 1%;
 }
 
 .show-basics{
@@ -23,8 +41,14 @@
     height: 100px;
 }
 
-.show-img{
+.show-main{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
 
+.show-img{
+    
 }
 
 .show-ingredients{
@@ -51,33 +75,86 @@
     align-items: center;
 }
 
-.show-ing-imgs{
+.show-right{
     display: flex;
     flex-wrap: wrap;
     width: 600px;
+    margin-top: 50px;
 }
 
 .show-ing:hover .show-ing-img-info{
-    display: block;
+    display: flex;
     background: rgba(255,255,255,.8);
     position: absolute;
     top: 75px;
     left: 75px;
+    flex-direction: column;
+}
+
+.show-left h3{
+    margin-left: 60px;
+    margin-top: 60px;
+    text-transform: uppercase;
+    font-size: 20px;
 }
 
 .show-ing-list{
-
+    padding: 20px 60px;
 }
 
-.show-instructions, .show-steps{
-    background: var(--oatmeal);
-    width: 100%;
-    padding: 20%;
+.show-ing-list li{
+    padding: 5px 0;
 }
 
 .show-summary{
-    width: 100%;
-    padding: 20%;
+    background-image: url('../../images/spoon.jpg');
+    background-size: cover;
+    opacity: 0.9;
+    background-position-y: -60px;
+    background-repeat: no-repeat;
+    padding: 5% 10%;
 }
+
+.show h2{
+    text-transform: uppercase;
+    margin-bottom: 3%;
+}
+
+.show-summary div{
+    margin-bottom: 25%;
+}
+
+.show-instructions, .show-steps{
+    width: 100%;
+    display: flex;
+}
+
+.show-instructions div:last-child,
+.show-steps div:first-child{
+    display: flex;
+    flex-direction: column;
+    background: #f0f1ec;
+    width: 50%;
+    padding: 10%;
+}
+
+.read-me-img{
+    background-image: url('../../images/potatoes.jpg');
+    background-size: cover;
+    opacity: 0.9;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50%;
+}
+
+.follow-me-img{
+    background-image: url('../../images/eggs.jpg');
+    background-size: cover;
+    opacity: 0.9;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50%;
+}
+
 
 

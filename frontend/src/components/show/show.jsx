@@ -21,9 +21,10 @@ class Show extends React.Component{
               <h1>{meal.title}</h1>
             </div>
             <section className="show-summary">
-              <div
-                dangerouslySetInnerHTML={{ __html: `${meal.summary}` }}
-              ></div>
+                <h2>About me</h2>
+                <div
+                    dangerouslySetInnerHTML={{ __html: `${meal.summary}` }}
+                ></div>
             </section>
             <section className="show-basics">
               <p>Total Time: {`${meal.readyInMinutes} minutes`}</p>
@@ -31,14 +32,18 @@ class Show extends React.Component{
               <p>Cook Time: {`${meal.cookingMinutes} minutes`}</p>
               <p>Servings: {meal.servings}</p>
             </section>
-            <img src={meal.image} className="show-img" />
-            <section className="show-ingredients">
-              <ul className="show-ing-list">
-                {meal.extendedIngredients.map((ingredient) => {
-                  return <li>{ingredient.original}</li>;
-                })}
-              </ul>
-              <div className="show-ing-imgs">
+            <section className="show-main">
+                <div className="show-left">
+                    <img src={meal.image} className="show-img" />
+                    <h3>Ingredients</h3>
+                    <ul className="show-ing-list">
+                        {meal.extendedIngredients.map((ingredient) => {
+                        return <li>{ingredient.original}</li>;
+                        })}
+                    </ul>
+                </div>
+            
+              <div className="show-right">
                 {meal.extendedIngredients.map((ingredient) => {
                   return (
                     <ul className="show-ing">
@@ -58,13 +63,22 @@ class Show extends React.Component{
               </div>
             </section>
             <section className="show-instructions">
-              <p>{meal.instructions}</p>
+                <div className="read-me-img"></div>
+                <div>
+                    <h2>Read me</h2>
+                    <p>{meal.instructions}</p>
+                </div>
             </section>
             <section className="show-steps">
-              Steps:{" "}
-              {meal.analyzedInstructions[0].steps.map((stepObj) => {
-                return <li>{stepObj.step}</li>;
-              })}
+                <div>
+                    <h2>Follow me</h2>
+                    <ol>
+                        {meal.analyzedInstructions[0].steps.map((stepObj) => {
+                            return <li>{stepObj.step}</li>;
+                        })}
+                    </ol>
+                </div>
+                <div className="follow-me-img"></div>
             </section>
 
             {/* <section>Wine Pairing</section> */}
