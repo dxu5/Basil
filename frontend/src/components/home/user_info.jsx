@@ -19,12 +19,18 @@ class UserInfo extends React.Component {
     this.state = {
       //placeholder for user info
       viewPortEntered: false,
-      completed: this.props.user.completedMeals,
+      completed: this.props.completedMeals,
     };
     this.myCountUp = React.createRef();
   }
+  componentDidUpdate(prevProps) {
+    if (prevProps.completedMeals !== this.props.completedMeals) {
+      this.setState({ completed: this.props.completedMeals });
+    }
+  }
 
   render() {
+    debugger;
     return (
       <div className="user-info-div">
         <div className="user-info-head">
@@ -40,9 +46,10 @@ class UserInfo extends React.Component {
           <div className="user-stat">
             <FontAwesomeIcon icon={faMedal} />
             <h5>I am level</h5>
+            {this.state.completed}
             <h4>
               <CountUp
-                end={Math.floor(this.state.completed / 10)}
+                end={Math.floor(this.props.completedMeals / 10)}
                 duration={3}
                 delay={1}
                 ref={this.myCountUp}
@@ -63,7 +70,7 @@ class UserInfo extends React.Component {
             <h4>
               <CountUp
                 start={0}
-                end={this.state.completed}
+                end={this.props.completedMeals}
                 duration={3}
                 delay={1}
                 redraw={true}
@@ -83,7 +90,7 @@ class UserInfo extends React.Component {
             <h4>
               <CountUp
                 start={0}
-                end={this.state.completed}
+                end={this.props.completedMeals}
                 duration={3}
                 delay={1}
                 redraw={true}
@@ -104,7 +111,7 @@ class UserInfo extends React.Component {
             <h4>
               <CountUp
                 start={0}
-                end={this.state.completed}
+                end={this.props.completedMeals}
                 duration={3}
                 delay={1}
                 redraw={true}
@@ -127,6 +134,7 @@ class UserInfo extends React.Component {
 const mapStateToProps = (state) => {
   return {
     user: state.session.user,
+    completedMeals: state.session.user.completedMeals,
   };
 };
 
