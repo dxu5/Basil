@@ -441,7 +441,7 @@ class MealPlanForm extends React.Component {
     return (
         // ref={this.formref}
       <div className="meal-plan-form-div">
-          <p>The following questions are optional, if you do not want to customize, just press Generate Mealplan!</p>
+          <p>The following questions are optional. If you do not want to customize, just press Generate Mealplan!</p>
         <form className="meal-plan-form">
           <div className="category">
             <label className="mealoptions">
