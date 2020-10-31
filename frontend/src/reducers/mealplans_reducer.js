@@ -2,6 +2,7 @@ import {
   RECEIVE_MEAL_PLAN,
   RECEIVE_NEW_MEAL_PLAN,
   CLEAR_PROSPECTIVE_MEAL_PLAN,
+  CLEAR_CURRENT_MEAL_PLAN
 } from "../actions/mealplan_actions";
 import {
   RECEIVE_CURRENT_USER,
@@ -75,6 +76,10 @@ const mealplansReducer = (state = _nullState, action) => {
       return newState;
     case CLEAR_PROSPECTIVE_MEAL_PLAN:
       newState.prospectiveMealplan = undefined;
+      return newState;
+    case CLEAR_CURRENT_MEAL_PLAN:
+      newState.currentMealplan = {};
+      newState.completedMealplans = {};
       return newState;
     case RECEIVE_USER_LOGOUT:
       return _nullState;

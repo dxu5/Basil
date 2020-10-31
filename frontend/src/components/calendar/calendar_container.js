@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { receiveMealPlan } from "../../actions/mealplan_actions";
+import { receiveMealPlan, clearCurrentMealPlan } from "../../actions/mealplan_actions";
 import { receiveCompletedMeal } from "../../actions/user_actions";
 
 import Calendar from "./calendar";
@@ -17,7 +17,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchMealPlan: (mealId) => dispatch(receiveMealPlan(mealId)),
-    receiveCompletedMeal: (count, mealInfo) => dispatch(receiveCompletedMeal(count, mealInfo))
+    receiveCompletedMeal: (count, mealInfo) => dispatch(receiveCompletedMeal(count, mealInfo)),
+    clearCurrentMealPlan: () => dispatch(clearCurrentMealPlan())
   };
 };
 

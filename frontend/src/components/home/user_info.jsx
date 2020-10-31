@@ -75,12 +75,19 @@ const mapStateToProps = (state) => {
     user: state.session.user,
     completedMeals: state.session.user.completedMeals,
     completedThisWeek: countCompleted(
-      state.entities.mealplans.completedMealplans
+      state.entities.mealplans.completedMealplans,
+      state.entities.mealplans.currentMealplanStartTime,
     ),
   };
 };
 
-const countCompleted = (week) => {
+const countCompleted = (week, startTime) => {
+  let today = new Date();
+
+  if (((today - new Date(startTime) )/ 1000 ) > (604800) ) {
+    return 0;
+  }
+  
   let final = 0;
   for (const day in week) {
     final += week[day].length;
