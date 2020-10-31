@@ -59,7 +59,6 @@ class MealPlanForm extends React.Component {
   }
 
   deleteItem(item) {
-    
     return (e) => {
       e.preventDefault();
       let newCopy = Object.assign({}, this.state.exclude);
