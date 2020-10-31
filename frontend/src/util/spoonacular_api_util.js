@@ -33,12 +33,22 @@ export const getMealInfo = (mealId) => {
 
 export const saveMealplan = (mealplan) => {
   const strMealplan = JSON.stringify(mealplan);
-  return axios({
-    method: "PATCH",
-    url: "/api/users/mealplan",
-    data: {
+  return axios.patch(
+    "/api/users/mealplan",
+    {
       completedMealplans: "{}",
       mealplan: strMealplan,
     },
-  });
+    {
+      headers: { Authorization: localStorage.jwtToken },
+    }
+  );
+  // return axios({
+  //   method: "PATCH",
+  //   url: "/api/users/mealplan",
+  //   data: {
+  //     completedMealplans: "{}",
+  //     mealplan: strMealplan,
+  //   },
+  // });
 };
