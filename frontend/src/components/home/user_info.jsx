@@ -44,18 +44,18 @@ class UserInfo extends React.Component {
             <FontAwesomeIcon icon={faMedal} />
             <h5>level</h5>
 
-            <h4>{Math.floor(this.state.completed / 10)}</h4>
+            <h4>{String(Math.floor(this.state.completed / 10))}</h4>
           </div>
           <div className="user-stat">
             <FontAwesomeIcon icon={faUtensils} />
             <h5>made</h5>
-            <h4>{this.props.completedMeals}</h4>
+            <h4>{String(this.props.completedMeals)}</h4>
             <h5>meals</h5>
           </div>
           <div className="user-stat">
             <FontAwesomeIcon icon={faCheck} />
             <h5>completed</h5>
-            <h4>{this.props.completedThisWeek} / 21</h4>
+            <h4>{String(this.props.completedThisWeek)} / 21</h4>
             <h5>meals this week</h5>
           </div>
           {/* <div className="user-stat">
@@ -76,7 +76,7 @@ const mapStateToProps = (state) => {
     completedMeals: state.session.user.completedMeals,
     completedThisWeek: countCompleted(
       state.entities.mealplans.completedMealplans,
-      state.entities.mealplans.currentMealplanStartTime,
+      state.entities.mealplans.currentMealplanStartTime
     ),
   };
 };
@@ -84,10 +84,10 @@ const mapStateToProps = (state) => {
 const countCompleted = (week, startTime) => {
   let today = new Date();
 
-  if (((today - new Date(startTime) )/ 1000 ) > (604800) ) {
+  if ((today - new Date(startTime)) / 1000 > 604800) {
     return 0;
   }
-  
+
   let final = 0;
   for (const day in week) {
     final += week[day].length;

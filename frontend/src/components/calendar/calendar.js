@@ -81,12 +81,14 @@ class Calendar extends React.Component {
   }
 
   componentDidMount() {
-    
     let today = new Date();
 
-    if (((today - new Date(this.props.currentMealPlanTime) )/ 1000 ) > (604800) ) {
+    if ((today - new Date(this.props.currentMealPlanTime)) / 1000 > 604800) {
       this.props.clearCurrentMealPlan();
-    } else if (this.props.mealPlan && Object.keys(this.props.mealPlan).length > 0) {
+    } else if (
+      this.props.mealPlan &&
+      Object.keys(this.props.mealPlan).length > 0
+    ) {
       this.setState(
         {
           Monday: this.props.mealPlan.week.monday,
@@ -159,7 +161,7 @@ class Calendar extends React.Component {
       return (
         <div>
           <div className="calendar-container">
-            <table className="table">
+            <div className="table">
               <div className="day-container">
                 <p id="Sunday">Sunday</p>
                 {displayMeal("Sunday")}
@@ -188,7 +190,7 @@ class Calendar extends React.Component {
                 <p id="Saturday">Saturday</p>
                 {displayMeal("Saturday")}
               </div>
-            </table>
+            </div>
           </div>
           <div className="center-div">
             <div className="regenerate-text">

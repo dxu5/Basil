@@ -16,7 +16,6 @@ router.get(
   "/current",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    console.log(req.headers);
     res.json(req.user);
   }
 );
@@ -109,10 +108,10 @@ router.post("/login", (req, res) => {
         const payload = {
           id: user.id,
           username: user.username,
-          currentMealplan: user.currentMealplan,
-          currentMealplanStartTime: user.currentMealplanStartTime,
-          completedMealplans: user.completedMealplans,
-          completedMeals: user.completedMeals,
+          // currentMealplan: user.currentMealplan,
+          // currentMealplanStartTime: user.currentMealplanStartTime,
+          // completedMealplans: user.completedMealplans,
+          // completedMeals: user.completedMeals,
         };
 
         jwt.sign(

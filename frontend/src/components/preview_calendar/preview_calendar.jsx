@@ -67,7 +67,7 @@ export default class PreviewCalendar extends Component {
         </div>
         <div className="preview-calendar" style={{ marginTop: "2em" }}>
           <div className="calendar-container">
-            <table className="table">
+            <div className="table">
               <div className="day-container">
                 <p className="preview-day" id="Sunday">
                   Sunday
@@ -110,7 +110,7 @@ export default class PreviewCalendar extends Component {
                 </p>
                 {displayMeal("Saturday")}
               </div>
-            </table>
+            </div>
           </div>
         </div>
       </div>

@@ -26,16 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
       iat: decodedUser.iat,
       id: decodedUser.id,
       username: decodedUser.username,
-      completedMeals: decodedUser.completedMeals,
+      // completedMeals: decodedUser.completedMeals,
     };
     const preloadedState = {
       entities: {
         mealplans: {
-          currentMealplan: decodedUser.currentMealplan
-            ? JSON.parse(decodedUser.currentMealplan)
-            : undefined,
-          currentMealplanStartTime:
-            decodedUser.currentMealplanStartTime || undefined,
+          currentMealplan: undefined,
+          currentMealplanStartTime: undefined,
           // completedMealplans: decodedUser.completedMealplans
           //   ? JSON.parse(decodedUser.completedMealplans)
           //   : {},
