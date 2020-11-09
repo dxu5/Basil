@@ -26,18 +26,15 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       return (
         <nav className="navbar fixed-top navbar-light bg-light">
-          <a class="navbar-brand" href="#">
+          <a className="navbar-brand" href="#">
             <img src="/logoDark.png" />
           </a>
           <div className="navbar-links">
-            <Link class="nav-link" to={"/home"}>
+            <Link className="nav-link" to={"/home"}>
               Home
             </Link>
-            {/* <Link class="nav-link" to={"/profile"}>
-              Profile
-            </Link> */}
 
-            <div class="nav-link" onClick={this.logoutUser}>
+            <div className="nav-link" onClick={this.logoutUser}>
               Logout
             </div>
           </div>
@@ -46,7 +43,7 @@ class NavBar extends React.Component {
     } else {
       return (
         <nav className="navbar fixed-top">
-          <a class="navbar-brand" href="#">
+          <a className="navbar-brand" href="#">
             <img src="/logoDark.png" />
           </a>
           <div className="navbar-links">

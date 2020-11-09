@@ -67,7 +67,6 @@ class MealPlanForm extends React.Component {
     };
   }
 
-   
   handleSubmitExclude(e) {
     e.preventDefault();
     if (this.state.inputExclude !== "") {

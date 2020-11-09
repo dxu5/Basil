@@ -9,10 +9,12 @@ import SignupFormContainer from "./forms/signup_form_container";
 import HomeContainer from "./home/home_container";
 import MealPlanContainer from "./forms/mealplan_container";
 import ShowContainer from "./show/show_container";
+import Scroll from './scroll/scroll'
 
 const App = () => (
   <div>
     <NavBarContainer />
+    <Scroll />
     <Switch>
       <ProtectedRoute path="/home" component={HomeContainer} />
       <ProtectedRoute path="/mealplan" component={MealPlanContainer} />
