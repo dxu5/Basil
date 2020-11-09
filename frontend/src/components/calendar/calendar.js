@@ -81,7 +81,12 @@ class Calendar extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.mealPlan && Object.keys(this.props.mealPlan).length > 0) {
+    
+    let today = new Date();
+
+    if (((today - new Date(this.props.currentMealPlanTime) )/ 1000 ) > (604800) ) {
+      this.props.clearCurrentMealPlan();
+    } else if (this.props.mealPlan && Object.keys(this.props.mealPlan).length > 0) {
       this.setState(
         {
           Monday: this.props.mealPlan.week.monday,

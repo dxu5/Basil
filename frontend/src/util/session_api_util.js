@@ -17,5 +17,7 @@ export const login = (userData) => {
 };
 
 export const getUserInfo = () => {
-  return axios.get("/api/users/current");
+  return axios.get("/api/users/current", {
+    headers: { Authorization: localStorage.jwtToken },
+  });
 };

@@ -6,7 +6,7 @@ export const apiBaseURL = "https://api.spoonacular.com";
 //target calories (api will get as close to this value DAILY)
 //diet (there is a list on spoonacular)
 //exclude (comma separated list of lowercase ingredients)
-axios.get("http://example.com");
+// axios.get("http://example.com");
 
 export const getWeeklyMealPlan = (details) => {
   return axios.get(`${apiBaseURL}/mealplanner/generate`, {
@@ -33,12 +33,22 @@ export const getMealInfo = (mealId) => {
 
 export const saveMealplan = (mealplan) => {
   const strMealplan = JSON.stringify(mealplan);
-  return axios({
-    method: "PATCH",
-    url: "/api/users/mealplan",
-    data: {
+  return axios.patch(
+    "/api/users/mealplan",
+    {
       completedMealplans: "{}",
       mealplan: strMealplan,
     },
-  });
+    {
+      headers: { Authorization: localStorage.jwtToken },
+    }
+  );
+  // return axios({
+  //   method: "PATCH",
+  //   url: "/api/users/mealplan",
+  //   data: {
+  //     completedMealplans: "{}",
+  //     mealplan: strMealplan,
+  //   },
+  // });
 };

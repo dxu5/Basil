@@ -59,13 +59,15 @@ class MealPlanForm extends React.Component {
   }
 
   deleteItem(item) {
-    return () => {
+    return (e) => {
+      e.preventDefault();
       let newCopy = Object.assign({}, this.state.exclude);
       delete newCopy[item];
       this.setState({ exclude: newCopy });
     };
   }
 
+   
   handleSubmitExclude(e) {
     e.preventDefault();
     if (this.state.inputExclude !== "") {
@@ -452,7 +454,6 @@ class MealPlanForm extends React.Component {
             variant="outlined"
             value={this.state.inputExclude}
             onChange={this.handleExcludeInputChange}
-            color="error"
           />
           <button
             onClick={this.handleSubmitExclude}
