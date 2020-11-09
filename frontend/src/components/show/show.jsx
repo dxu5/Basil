@@ -15,6 +15,7 @@ class Show extends React.Component {
   }
 
   componentDidMount() {
+    this.props.getUserInfo();
     this.props.getMealInfo(Number(this.props.match.params.mealId));
   }
   componentDidUpdate() {
@@ -68,8 +69,8 @@ class Show extends React.Component {
             <div className="show-ing-container">
               <h2>Ingredients</h2>
               <ul className="show-ing-list">
-                {meal.extendedIngredients.map((ingredient) => {
-                  return <li>{ingredient.original}</li>;
+                {meal.extendedIngredients.map((ingredient, idx) => {
+                  return <li key={idx}>{ingredient.original}</li>;
                 })}
               </ul>
               <div className="show-left-bg"></div>
@@ -77,9 +78,9 @@ class Show extends React.Component {
           </div>
 
           <div className="show-right">
-            {meal.extendedIngredients.map((ingredient) => {
+            {meal.extendedIngredients.map((ingredient, idx) => {
               return (
-                <ul className="show-ing">
+                <ul className="show-ing" key={idx}>
                   <li>
                     <img
                       src={`https://spoonacular.com/cdn/ingredients_500x500/${ingredient.image}`}
@@ -113,8 +114,8 @@ class Show extends React.Component {
           <div>
             <h2>Follow me</h2>
             <ol>
-              {meal.analyzedInstructions[0].steps.map((stepObj) => {
-                return <li>{stepObj.step}</li>;
+              {meal.analyzedInstructions[0].steps.map((stepObj, idx) => {
+                return <li key={idx}>{stepObj.step}</li>;
               })}
             </ol>
           </div>

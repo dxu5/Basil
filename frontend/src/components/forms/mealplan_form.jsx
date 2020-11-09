@@ -43,6 +43,7 @@ class MealPlanForm extends React.Component {
   }
 
   componentDidMount() {
+    this.props.getUserInfo();
     document.querySelector(".meal-plan-form-div").scrollIntoView();
     window.scrollTo(0, 0);
   }
@@ -524,7 +525,7 @@ class MealPlanForm extends React.Component {
             </label>
             <div className="question-div">
               <div>No</div>
-              <label className="toggle-1" for="myToggle1">
+              <label className="toggle-1">
                 <input
                   type="checkbox"
                   className="toggle-input"
@@ -543,7 +544,7 @@ class MealPlanForm extends React.Component {
             </label>
             <div className="question-div">
               <div>No</div>
-              <label className="toggle-1" for="myToggle2">
+              <label className="toggle-1">
                 <input
                   className="toggle-input"
                   type="checkbox"
@@ -563,7 +564,7 @@ class MealPlanForm extends React.Component {
             </label>
             <div className="question-div">
               <div>No</div>
-              <label className="toggle-1" for="myToggle3">
+              <label className="toggle-1">
                 <input
                   type="checkbox"
                   id="myToggle3"
