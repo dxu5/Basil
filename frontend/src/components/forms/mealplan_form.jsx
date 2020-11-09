@@ -67,7 +67,6 @@ class MealPlanForm extends React.Component {
     };
   }
 
-   
   handleSubmitExclude(e) {
     e.preventDefault();
     if (this.state.inputExclude !== "") {
@@ -160,6 +159,7 @@ class MealPlanForm extends React.Component {
         <Slider
           min={1000}
           max={4000}
+          step={1}
           value={this.state.targetCalories}
           onChange={this.handleChangeSlider}
           className="cal-slider"
