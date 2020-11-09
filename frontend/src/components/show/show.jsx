@@ -20,10 +20,12 @@ class Show extends React.Component{
 
     render(){
         const {meal} = this.props
+        const BG = Math.ceil(Math.random() * 7);
         if(!meal) {return null}
         return (
           <div className="show">
             <div className="show-header">
+              {/* {document.querySelector(".show-header").background = `../../images/showBG${BG}.jpg`} */}
               <h1>{meal.title}</h1>
             </div>
             <section className="show-summary">
