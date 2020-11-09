@@ -159,7 +159,7 @@ class MealPlanForm extends React.Component {
         <Slider
           min={1000}
           max={4000}
-          step={1}
+          step={5}
           value={this.state.targetCalories}
           onChange={this.handleChangeSlider}
           className="cal-slider"

@@ -16,7 +16,6 @@ router.get(
   "/current",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    console.log(req.headers);
     res.json(req.user);
   }
 );
