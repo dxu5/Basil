@@ -10,6 +10,8 @@ Intuitive: Users can expect a responsive application that is simple, practical, 
 
 Basil is primarily built with the MERN stack, a combination of the following four technologies: MongoDB, Express, React/Redux, and Node.js.
 
+Checkout [Basil Live](https://basil-mern.herokuapp.com/)!
+
 # MVP
 ### 1. New account creation, login, and guest/demo login (1 Day)
   + Users can sign up, login, log out
